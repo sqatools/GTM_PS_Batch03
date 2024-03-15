@@ -40,3 +40,5 @@ print("Check the value : ", var6!=var7)
 varn=5
 print("Check the square value : ", varn**2)
 print("Check the square value : ", varn**3)
+
+
