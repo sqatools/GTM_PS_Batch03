@@ -1,1 +1,6 @@
 welcome to python program
+print("wwelcome")
+
+var1 = 10
+
+print(id(var1))
