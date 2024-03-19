@@ -22,23 +22,27 @@ y = 10
 z=x+y
 print(z, type(x))
 print('-'*50)
+
 ## Float
 x = 20.0
 y = 10.0
 z=x+y
 print(z, type(x))
 print('-'*50)
+
 ## Complex
 x = 20+10j
 y= 10+5j
 z=x+y
 print("Value : ",z, type(z))
 print('-'*50)
+
 ##String
 str1 = "WELCOME"
 print(str1[2],type(str1))   # +ve indexing
 print(str1[-2],type(str1))  # -ve indexing
 print('-'*50)
+
 ##List
 list1 = [1,2,3,4,'Hello',[3,4]]
 print("List1 ",list1,type(list1))
@@ -49,6 +53,7 @@ print("List1 ",list1)
 print("List1 string  : ",list1[4])
 print("List1 string first letter : ",list1[4][0])
 print('-'*50)
+
 #Tuple
 tup1 = (1,3,4,5,3)
 print(tup1,type(tup1))
