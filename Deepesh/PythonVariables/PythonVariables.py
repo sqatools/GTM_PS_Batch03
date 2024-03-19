@@ -54,8 +54,8 @@ print("value of r:", r)
 +  : plus operator
 -  : minus operator
 *  : multiplication
-/  : division with single slace
-// : division with double slace
+/  : division with single slash
+// : division with double slash
 %  : reminder operator
 == : equal to operator
 != : not equal to operator
@@ -83,11 +83,11 @@ print("multiplication :", varp*varq)
 # division of values
 var_1 = 12
 var_2 = 5
-# if we divide the number with single slace, then it will provide output in float.
+# if we divide the number with single slash, then it will provide output in float.
 var_3 = var_1 / var_2
 print("division :", var_3) # 2.4
 
-# if we divide the number with double slace, then it will provide output in integer
+# if we divide the number with double slash, then it will provide output in integer
 var_4 = var_1 // var_2
 print("division :", var_4) # 2
 
@@ -113,7 +113,18 @@ print("cube value :", var_g**3)    # 343
 print("4 power value :", var_g**4) # 2401
 
 
+print("_"*50)
+# Solve below equation
 
+# (a+b)^2  =a^2 + b^2 + 2ab
+a = 4
+b = 7
+
+lhs = (a+b)**2
+print("lhs result :", lhs)
+
+rhs = a**2 + b**2 + 2*a*b
+print("rhs result:", rhs )
 
 
 
