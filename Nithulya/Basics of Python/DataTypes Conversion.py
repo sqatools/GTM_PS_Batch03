@@ -129,6 +129,23 @@ print(dict_output, type(dict_output))
 print(dict_output['Name'])
 # Keerthi
 
+### string -> set ####
+print("_" * 50)
+str_j = "Python Programming"
+set1 = set(str_j)
+print(set1, type(set1))
+# {'n', 'h', ' ', 'r', 'm', 'i', 'a', 'P', 't', 'y', 'g', 'o'} <class 'set'>
+
+### string -> boolean ####
+str_k = ""
+b1 = bool(str_k)
+print(b1)  # False
+
+str_l = "Hello"
+b2 = bool(str_l)
+print(b2)  # True
+
+
 ############################ List ######################
 
 ### list  -> int #### conversion is not possible
