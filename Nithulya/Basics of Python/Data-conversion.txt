@@ -1,0 +1,74 @@
+########## Integer ########
+
+# int -> float
+# int -> string
+# int -> list # conversion is not possible
+# int ->  tuple # conversion is not possible
+# int -> dict # conversion is not possible
+# int -> set # conversion is not possible
+# int -> boolean
+
+########## Float ###########
+
+# float -> int
+# float -> string 
+# float -> list # conversion is not possible
+# float -> dict # conversion is not possible
+# float -> tuple # conversion is not possible
+# float -> set # conversion is not possible
+# float -> boolean
+
+######## string ###########
+
+# string -> int # if string contains character then conversion is not possible
+                # if the string contains only number, then str to int conversion is possible
+
+# string  -> float   # if string contains character then str to float conversion is not possible
+                     # if string contains only number or pointer values then conversion is possible
+
+# string -> list 
+# string -> tuple 
+# string -> dict # If string contains any plain word, then str to dict conversion is not possible
+# string -> set 
+# string -> boolean 
+
+######### List #############
+
+# list  -> int     # conversion is not possible
+# list -> float    # conversion is not possible
+# list -> string 
+# list -> tuple 
+# list -> dict 
+# list -> set 
+# list -> Boolean
+
+########## Tuple ############
+
+# tuple -> int     # conversion is not possible
+# tuple -> float   # conversion is not possible
+# tuple -> string
+# tuple -> list
+# tuple -> dict    # conversion is not possible
+# tuple -> set 
+# tuple -> boolean 
+
+######### Dictionary #########
+
+# dict -> int      # conversion is not possible
+# dict -> float    # conversion is not possible
+# dict -> string 
+# dict -> list 
+# dict -> tuple 
+# dict -> set 
+# dict -> boolean 
+
+########### Set #############
+
+# set -> int      # conversion is not possible
+# set -> float    # conversion is not possible
+# set -> string 
+# set -> list 
+# set -> tuple 
+# set -> dictionary  # conversion is not possible
+# set -> boolean 
+
