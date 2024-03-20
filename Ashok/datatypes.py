@@ -115,9 +115,9 @@ List can be created in two ways.
 3. Length function (len) cane be used in list.
 4. List can contain any type of data, int, float, string, list, dict, tuple, set, boolean
 """
-list1 = [2, 3.5, 'Hello', [4, 6], (6, 8, 9), {'a': 123, 'b': 444}]
+list1 = [2, 3.5, 'Hello', True, [4, 6], (6, 8, 9), {1, "hi"}, {'a': 123, 'b': 444}]
 print(list1, type(list1))
-# [2, 3.5, 'Hello', [4, 6], (6, 8, 9), {'a': 123, 'b': 444}] <class 'list'>
+# [2, 3.5, 'Hello', True, [4, 6], (6, 8, 9), {1, "hi"}, {'a': 123, 'b': 444}] <class 'list'>
 
 list2 = []
 print("list2 :", list2, type(list2))
@@ -140,6 +140,11 @@ print(list4[1][1])  # 7
 list5 = [5, 7, 9, 20]
 print("list5 :", list5)  # [5, 7, 9, 20]
 
+# List can allow duplicate members
+list6 = [2, 3.5, 'Hello', True, [4, 6], (6, 8, 9), {1, "hi"}, {'a': 123, 'b': 444}, 2, 3.5, 'Hello', True, [4, 6],
+         (6, 8, 9), {1, "hi"}, {'a': 123, 'b': 444}]
+print(list6)
+
 # Tuple #
 """properties :
  - tuple is immutable data type, cannot changes once it is defined
@@ -153,12 +158,23 @@ tup1 = (4, 7, 9, 10)
 print(tup1, type(tup1))
 print(tup1[2])  # 9
 print(tup1[-3])  # 7
-tup2 = (2, 3.5, (4, 5, 6), [2, 8, 3], 'Python', {'a': 345, 'b': 478})
 
-print(tup2[3][1])  # 8
-print(tup2[-2][-4])  # t
-print(tup2[2][-1])  # 6
-print(tup2[4][4])  # o
+tup2 = (2, 3.5, "Python", False, [2, 8, 3, "Hi"], (4, 5, 6, "hi"), {1, 2, "hi"},
+        {'a': 345, 'b': 478, 5: 4})
+print(tup2)
+print(tup2[3])
+print(tup2[2][1])
+print(tup2[4][1])
+print(tup2[4][3])
+print(tup2[7]["a"])
+print(tup2[7][5])
+
+# Tuple allows duplicate members
+tup3 = (2, 3.5, "Python", False, [2, 8, 3, "Hi"], (4, 5, 6, "hi"), {1, 2, "hi"},
+        {'a': 345, 'b': 478, 5: 4}, 2, 3.5, "Python", False, [2, 8, 3, "Hi"], (4, 5, 6, "hi"), {1, 2, "hi"},
+        {'a': 345, 'b': 478, 5: 4})
+print(tup3)
+print("*" * 40)
 
 # Dictionary #
 """ Properties :
@@ -167,20 +183,16 @@ print(tup2[4][4])  # o
 -> Only immutable data type can be in dict -> int, float, string, tuple, boolean.
 -> All type of data can value in the dict e.g. int, float, string, tuple, boolean, list, set, dict.
 """
-dict1 = {'Name': 'Rahul', 'age': 25, 'email': 'rahul@gmail.com'}
+dict1 = {'Name': 'Rahul', 'age': 25, 'email': 'rahul@gmail.com', 5: 'hi', 2.2: "hello", True: 'World',
+         (1, 2, 3): 45}
 print(dict1, type(dict1))
-# {'Name': 'Rahul', 'age': 25, 'email': 'rahul@gamil.com'} <class 'dict'>
+# {'Name': 'Rahul', 'age': 25, 'email': 'rahul@gmail.com', 5: 'hi', 2.2: "hello", True: 'World',
+# (1, 2, 3): 45} <class 'dict'>
 
 print(dict1['age'])  # 25
 print(dict1['email'])  # 'rahul@gmail.com'
-dict1['city'] = 'Mumbai'
-
-print(dict1)
-# {'Name': 'Rahul', 'age': 25, 'email': 'rahul@gmail.com', 'city': 'Mumbai'}
-
+print(dict1[(1, 2, 3)])
 dict1['age'] = 30
-print(dict1)
-# {'Name': 'Rahul', 'age': 30, 'email': 'rahul@gmail.com', 'city': 'Mumbai'}
 
 print(dir(dict))
 # 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values'
@@ -193,13 +205,16 @@ print(dict2)
 # print(dict2)
 # int, float, string, tuple, boolean.
 
+# dictionary as key is not allowed
 # dict2[{'a' : 123}] = 7000
 # print(dict2)
 # TypeError: unhashable type: 'dict'
 
+# set as key is not allowed
 # dict2[{5, 7, 8}] = {5, 8, 23, 33}
 # print(dict2)
 # TypeError: unhashable type: 'set'
+print("*" * 50)
 
 # set #
 """properties :
@@ -214,6 +229,18 @@ set1 = {3, 55.55, 'Hello', (5, 7, 8), True, False, 3, 'Hello'}
 print(set1)
 set1.add(100)
 print(set1)
+
+# dictionary is not allowed
+# set1 = {3, 55.55, 'Hello', (5, 7, 8), True, False, 3, 'Hello', {'a': 5}}
+# unhashable type: 'dict'
+
+# list is not allowed
+# set1 = {3, 55.55, 'Hello', (5, 7, 8), True, False, 3, 'Hello', [5]}
+# unhashable type: 'list'
+
+# set is not allowed
+# set1 = {3, 55.55, 'Hello', (5, 7, 8), True, False, 3, 'Hello', {5}}
+# unhashable type: 'set'
 
 # Boolean #
 # boolean data type has only two values True and False
