@@ -46,8 +46,25 @@
 #     print(f"The cube value of {num3} is : ", num3**3)
 
 #7. Write a python program to check given number is divisible by 3 and 7 and not by 11
-num4 = int(input("Enter the number : "))
-if num4%3==0 and num4%7==0 and num4%11!=0:
-    print(f"The number {num4} is divisible by 3 and 7 and not by 11 ")
-else :
-    print(f"The number {num4} can not divide by 3 and 7 and not by 11 ")
+# num4 = int(input("Enter the number : "))
+# if num4%3==0 and num4%7==0 and num4%11!=0:
+#     print(f"The number {num4} is divisible by 3 and 7 and not by 11 ")
+# else :
+#     print(f"The number {num4} can not divide by 3 and 7 and not by 11 ")
+
+#8.
+gate1 = 'Open'
+gate2 = 'Open'
+gate3 = 'close'
+if gate1 =="Open":
+    print('Welcome to the house, Gate1 is opened!!')
+    if gate2 == "Open":
+        print('Welcome to the room, Gate2 is opened!!')
+        if gate3 == "Open":
+            print('Welcome to the locker, Gate3 is opened!!')
+        else:
+            print("Sorry gate3 couldn't open, Try again")
+    else:
+        print("Sorry gate2 couldn't open, Try again")
+else:
+    print("Sorry gate1 couldn't open, Try again")
