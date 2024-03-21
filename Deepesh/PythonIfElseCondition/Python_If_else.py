@@ -83,3 +83,75 @@ else:
 
 # program1 : write a python program to check given is even the print square or value else cube of value
 # program2 : write a python to check given number divisible 3 and 7 and not by 11
+
+
+##############################
+
+"""
+if condition1:
+    code
+elif condition2:
+    code
+elif condition3:
+    code
+else:
+    code
+"""
+
+print("_"*50)
+a = 40
+b = 500
+c = 70
+
+if a > b and a > c:
+    print("a has greater value")
+elif b > c and b > a:
+    print("b has greater value")
+elif c > a and c > b:
+    print("c  has greater value")
+else:
+    print("No one has greater")
+
+# Home Work
+# Write a python program to print student result as per the marks
+
+"""
+Nested if condition
+
+if cond1:
+    code
+    if cond2:
+        code
+    else:
+        code
+else:
+    code
+
+"""
+
+print("_"*50)
+# write a python program for interview process.
+round1 = "pass"
+round2 = "pass"
+round3 = "fail"
+
+
+if round1 == "pass":
+    print("Congrats your first round is cleared")
+    if round2 == "pass":
+        print("Congrats your 2nd round is cleared")
+        if round3 == "pass":
+            print("Congrats you are selected")
+        else:
+            print("Failed in 3rd round, try next time")
+    else:
+        print("Failed in 2nd round, try next time")
+else:
+    print("Failed in first round, try next time")
+
+
+print("_"*50)
+# write a if condition in one single line
+n = 51
+result = "even" if n%2 == 0 else "odd"
+print(result)
