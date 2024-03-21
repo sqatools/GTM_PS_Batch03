@@ -61,6 +61,7 @@ else:
 
 print("*" * 50)
 
+
 # program2 : write a python to check given number divisible 3 and 7 and not by 11
 
 num_2 = int(input("Enter a number"))
@@ -70,7 +71,6 @@ else:
     print("The given number is divisible by 3 and 7 and 11 is ", num_2)
 
 # program 3:
-
 main_door = "have access"
 bed_room = "have access"
 locker_room = "have access"
@@ -87,3 +87,4 @@ if main_door == "have access":
         print("Don't have access for bed room")
 else:
     print("Don't have access for main room")
+
