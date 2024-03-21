@@ -4,7 +4,7 @@ In python, there are three forms of if...else statements
 2. if...else statements
 3. if...elif...else statements
 """
-'''
+
 num1 = 100
 num2 = 200
 print(num1 == num2)
@@ -60,7 +60,7 @@ else:
     print("The given number is odd", num_1 ** 3)
 
 print("*" * 50)
-'''
+
 # program2 : write a python to check given number divisible 3 and 7 and not by 11
 
 num_2 = int(input("Enter a number"))
@@ -69,7 +69,21 @@ if num_2 % 3 == 0 and num_2 % 7 == 0 and num_2 % 11 != 0:
 else:
     print("The given number is divisible by 3 and 7 and 11 is ", num_2)
 
+# program 3:
 
+main_door = "have access"
+bed_room = "have access"
+locker_room = "have access"
 
-
-
+if main_door == "have access":
+    print("Welcome to house")
+    if bed_room == "have access":
+        print("Welcome to bedroom")
+        if locker_room == "have access":
+            print("Welcome to bedroom")
+        else:
+            print("Don't have access for locker room")
+    else:
+        print("Don't have access for bed room")
+else:
+    print("Don't have access for main room")
