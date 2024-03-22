@@ -70,10 +70,11 @@
 #     print("Sorry gate1 couldn't open, Try again")
 #
 #9).  If else program to assign grades as per total marks.
+
 marks=int(input("Enter your mark : "))
-if marks>=40 and marks<50:
+if 40 <= marks < 50:
     print("Congrats!!, You have got grade C")
-elif marks>=50 and marks<60:
+elif 50 <= marks < 60:
     print("Congrats!!, You have got grade B")
 elif marks>=60 and marks<70:
     print("Congrats!!, You have got grade A")
