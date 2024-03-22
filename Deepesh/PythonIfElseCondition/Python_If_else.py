@@ -143,7 +143,7 @@ if round1 == "pass":
         if round3 == "pass":
             print("Congrats you are selected")
         else:
-            print("Failed in 3rd round, try next time")
+            p+rint("Failed in 3rd round, try next time")
     else:
         print("Failed in 2nd round, try next time")
 else:

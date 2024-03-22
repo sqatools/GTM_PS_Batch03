@@ -53,18 +53,37 @@
 #     print(f"The number {num4} can not divide by 3 and 7 and not by 11 ")
 
 #8.
-gate1 = 'Open'
-gate2 = 'Open'
-gate3 = 'close'
-if gate1 =="Open":
-    print('Welcome to the house, Gate1 is opened!!')
-    if gate2 == "Open":
-        print('Welcome to the room, Gate2 is opened!!')
-        if gate3 == "Open":
-            print('Welcome to the locker, Gate3 is opened!!')
-        else:
-            print("Sorry gate3 couldn't open, Try again")
-    else:
-        print("Sorry gate2 couldn't open, Try again")
-else:
-    print("Sorry gate1 couldn't open, Try again")
+# gate1 = 'Open'
+# gate2 = 'Open'
+# gate3 = 'close'
+# if gate1 =="Open":
+#     print('Welcome to the house, Gate1 is opened!!')
+#     if gate2 == "Open":
+#         print('Welcome to the room, Gate2 is opened!!')
+#         if gate3 == "Open":
+#             print('Welcome to the locker, Gate3 is opened!!')
+#         else:
+#             print("Sorry gate3 couldn't open, Try again")
+#     else:
+#         print("Sorry gate2 couldn't open, Try again")
+# else:
+#     print("Sorry gate1 couldn't open, Try again")
+#
+#9).  If else program to assign grades as per total marks.
+marks=int(input("Enter your mark : "))
+if marks>=40 and marks<50:
+    print("Congrats!!, You have got grade C")
+elif marks>=50 and marks<60:
+    print("Congrats!!, You have got grade B")
+elif marks>=60 and marks<70:
+    print("Congrats!!, You have got grade A")
+elif marks>=70 and marks<80:
+    print("Congrats!!, You have got grade A+")
+elif marks>=80 and marks<90:
+    print("Congrats!!, You have got grade A++")
+elif marks>=90 and marks<=100:
+    print("Grade Excellent!!")
+elif marks>100:
+    print("Invalid marks")
+else :
+    print("You are fail. Try again")
