@@ -57,6 +57,9 @@ else:
     print("The number can not divide by 3 :", a)
 
 # 2. If else program to get all the numbers divided by 3 from 1 to 30.
+for i in range(1, 30):
+    if i % 3 == 0:
+        print(i, end=' ')
 
 # 3. If else program to assign grades as per total marks.
 marks = int(input("Enter marks:"))
@@ -92,6 +95,16 @@ else:
     print("The number is not divisible by 11")
 
 # 6. Python program to check given number is a prime number or not.
+num = 13
+count = 0
+for i in range(2, num):
+    if num % i == 0:
+        count = count + 1
+        break
+if count == 0:
+    print("This is prime number")
+else:
+    print("This is not a prime number")
 
 # 7. Check given number is even or odd
 temp = int(input("Enter a number"))
@@ -99,7 +112,6 @@ if temp % 2 == 0:
     print("The give number is even", temp)
 else:
     print("The give number is odd", temp)
-
 
 # 8. Python program to check a given number is part of the Fibonacci series from 1 to 10.
 fib = [1, 1, 2, 3, 5, 8, 11]
@@ -124,7 +136,6 @@ if user_id in list_user_id:
     print("This is valid")
 else:
     print("This is not valid")
-
 
 # 11. Python program to print a square or cube if the given number is divided by 2 or 3 respectively
 num_3 = int(input("Enter a number"))
@@ -264,9 +275,11 @@ else:
     print("False")
 
 # 28. Python program to print all the numbers from 10-15 except 13
+for i in range(10, 15):
+    if i != 13:
+        print(i)
 
 # 29. Python program to find the electricity bill. According to the following conditions:
-
 units = int(input("Enter units:"))
 if units <= 50:
     bill_1 = 0.50 * units
@@ -282,3 +295,5 @@ elif units > 250:
     print("Over all bill is", bill_4 + (bill_4 * 0.17))
 
 # 30. Python program to check whether a given year is a leap or not.
+
+
