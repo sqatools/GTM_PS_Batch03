@@ -86,6 +86,8 @@ for i in range(2, num//2):
     if num%i == 0:
         prime = False
         break
+    else:
+        pass
 
 if prime:
     print("This is prime number :", num)
@@ -118,4 +120,115 @@ for i in range(1, 7):
 
 
 
+"""
+* * * * *
+* * * *
+* * *
+* *
+*
+"""
+"""
+step1 : write a loop to print initial line to print * start with
+        for i in range(6, 1):
+            print("*", end=" ") 
+step2 : to repeat above, add above code in nested loop
+step3 : now modify the code to repeat in decreasing order
+         for i in range(k , 1, -1)
+            print("*", end=" ")
 
+"""
+print("_"*40)
+temp = 1
+for k in range(6, 1, -1):
+    for i in range(k, 1, -1):
+            print(temp, end="  ")
+            temp += 1
+    print()
+
+
+
+print("_"*40)
+temp = 65
+for k in range(6, 1, -1):
+    for i in range(k, 1, -1):
+            print(chr(temp), end="  ")
+            temp += 1
+    print()
+
+
+print(ord("a")) # 97
+
+# small case ascii value : 97 - 122
+# capital letter ascii value : 65-90
+
+for i in range(97, 123):
+    print(chr(i), end=" ")
+print()
+for i in range(65, 91):
+    print(chr(i), end=" ")
+
+print()
+print("_"*50)
+# write a program to remove the duplicate value from list
+list1 = ['rahul', 'mahesh', 'rahul', 'ashok', 'mahesh']
+count = 0
+dict1 = {}
+
+for val in list1:
+    if val in dict1:
+        #count += 1
+        dict1[val] += 1
+    else:
+        #count = 0
+        dict1[val] = 1
+
+list1 = []
+for k, v  in dict1.items():
+    if v > 1 not in list1:
+        list1.append(k)
+    else:
+        list1.append(k)
+
+print("val1 :", list1)
+
+###########################
+
+list2 = ['rahul', 'mahesh', 'rahul', 'ashok', 'mahesh']
+result = []
+for val in list2:
+    if val not in result:
+        result.append(val)
+    else:
+        continue
+
+print("result :", result)
+
+############### solve with list comprehension #################
+list3 = ['rahul', 'mahesh', 'rahul', 'ashok', 'mahesh']
+output = []
+[output.append(val) for val in list3 if val not in output]
+print("result :" ,output)
+
+
+############ BREAK , Continue, PASS ##########
+print("_"*40)
+for i in range(1, 11):
+    if i == 3 or i == 4:
+        continue
+    print(i)
+
+
+# break
+print("_"*50)
+for i in range(1, 11):
+    if i == 5:
+        break
+    print(i)
+
+print("_"*60)
+# pass
+
+for i in range(1, 6):
+    if i == 4:
+        pass
+    print(i)
