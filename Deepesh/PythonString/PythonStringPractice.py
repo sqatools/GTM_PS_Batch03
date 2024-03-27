@@ -102,3 +102,90 @@ print(str_b[-7: 10]) # Morni
 print(str_b[-7:2]) # blank output
 
 print(str_b[2:-7]) # od
+
+#######################
+print("_"*50)
+### Rule2 str1[:last index]
+# in this rule default initial index is zero and last index will be the position we have defined.
+
+str1 = "IPL 2024 Mumbai Indian"
+print(str1[: 5])   #IPL 2
+print(str1[: -7])  # IPL 2024 Mumbai
+
+#################
+# Rule3 : str[initial index : ]
+# in this rule the default last index will be end of the string
+str2= "India is great country"
+print(str2[2:]) # dia is great country
+print(str2[-5:]) # untry
+
+###########
+# Rule4 : str1[initial index : last index : difference of index]
+# In this rule initial index value will be included and last index value will excluded.
+
+strc = "Good MorningH"
+
+print(strc[2:8:1])  # od Mor
+
+print(strc[2: 13: 2]) # o onnH
+
+print(strc[-1:-6:-1]) # Hgnin
+
+print(strc[-1:2:-1])  # HgninroM d
+
+###################
+print("_"*50)
+# Rule5 str1[:last index:different index value]
+# by default initial index is zero if the difference is positive
+# by default initial index is -1 if the difference is negative
+
+
+str_d = "Learning Python"
+
+# default initial index is zero
+print(str_d[:8:1])  # Learning
+
+# default initial index is -1
+print(str_d[:8:-1])  # nohtyP
+
+print(str_d[:2:-2])  # nhy nn
+
+##################
+# Rule6 : str[::difference value]
+# the default initial index will be zero and last index will end of the string if difference is positive
+# The default initial index will be -1 and last index will be begining of string if difference is negative
+
+str_e = "Very Good Evening"
+
+# the default initial index will be zero and last index will end of the string if difference is positive
+print(str_e[::1]) # Very Good Evening
+print(str_e[::2]) # Vr odEeig
+
+
+# The default initial index will be -1 and last index will be begining of string if difference is negative
+print(str_e[::-1])  # gninevE dooG yreV
+# str_e[-1:-len(str)-1: -1]
+
+print(str_e[::-2]) # gieEdo rV
+
+########################################################
+
+# Practice Assingment
+
+# replace first char with last char
+str1 = "IPL 2024 Cricket Trophy"
+fist_char = str1[0]
+last_char = str1[-1]
+remaining_part = str1[1:-1]
+#result = f"{last_char}{remaining_part}{fist_char}"
+result = f"{str1[-1]}{str1[1:-1]}{str1[0]}"
+print("Result :", result)  # yPL 2024 Cricket TrophI
+
+
+# question2:  Repeat every second character 2 times in the given string
+str1 = "Python"
+# output = "pyythhonn"
+
+# question3 :
+str2 = "Good Morning"
+# output = "ggninroM dooGG"
