@@ -239,41 +239,53 @@
 # * *   * *
 # * *   * *
 
-for i in range(5):
-    if i==0 or i==4:
-        print(' ', end=' ')
-    else:
-        print('*', end=' ')
-print()
-for i in range(5):
-    print('*', end=' ')
-print()
-for i in range(5):
-    if i==2:
-        print(' ', end=' ')
-    else:
-        print('*', end=' ')
-print()
-for i in range(5):
-    if i==2:
-        print(' ', end=' ')
-    else:
-        print('*', end=' ')
-print()
-for i in range(5):
-    print('*', end=' ')
-print()
-for i in range(5):
-    print('*', end=' ')
-print()
-for i in range(5):
-    if i==2:
-        print(' ', end=' ')
-    else:
-        print('*', end=' ')
-print()
-for i in range(5):
-    if i==2:
-        print(' ', end=' ')
-    else:
-        print('*', end=' ')
+# for i in range(5):
+#     if i==0 or i==4:
+#         print(' ', end=' ')
+#     else:
+#         print('*', end=' ')
+# print()
+# for i in range(5):
+#     print('*', end=' ')
+# print()
+# for i in range(5):
+#     if i==2:
+#         print(' ', end=' ')
+#     else:
+#         print('*', end=' ')
+# print()
+# for i in range(5):
+#     if i==2:
+#         print(' ', end=' ')
+#     else:
+#         print('*', end=' ')
+# print()
+# for i in range(5):
+#     print('*', end=' ')
+# print()
+# for i in range(5):
+#     print('*', end=' ')
+# print()
+# for i in range(5):
+#     if i==2:
+#         print(' ', end=' ')
+#     else:
+#         print('*', end=' ')
+# print()
+# for i in range(5):
+#     if i==2:
+#         print(' ', end=' ')
+#     else:
+#         print('*', end=' ')
+
+#21. Python Loops program to construct the following pattern,
+# * * * * *
+# * * * *
+# * * *
+# * *
+# *
+
+for i in range(5,0,-1):
+    for j in range(i):
+        print('*',end=' ')
+    print()
