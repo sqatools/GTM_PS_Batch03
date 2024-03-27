@@ -68,6 +68,10 @@ for i in range(len(str7)):
     print(str7[i], end=" ")
 print()
 
+for i in range(len(str7)-1, -1, -1):
+    print(str7[i], end=" ")
+print()
+
 # Slicing - Access a range of character in a string by using slice operator 'colon(:)'
 # Rule1: str[initial index: last index], It will return the initial index value and exclude the last index value.
 #   0   1   2   3   4    5    6    7     8   9    10    11  12  13  14  15
@@ -77,7 +81,7 @@ print()
 str8 = "Welcome to India"
 print(len(str8))
 print(str8[0:16])
-print(str8[-1:len(str8):-1])
+print(str8[-1:-len(str8)-1:-1])
 print(str8[1:6])
 print(str8[0:4])
 print(str8[2: -2])
@@ -118,6 +122,28 @@ print(str8[::-1])
 print(str8[-1:-len(str8)-1:-1])  # Another way
 print(str8[::-2])
 
+# Practice - Summary with +ve indexing#
+str11 = "Hi Hyderabad"
+print(len(str11))
+print(str11[0:12:1])                      # [Start: Stop: Step]
+print(str11[0:len(str11):1])              # [Start: Stop: Step]
+print(str11[:len(str11):1])               # [     : Stop: Step]
+print(str11[::1])                         # [     :     : Step]
+print(str11[::])                          # [     :     :     ]
+print(str11[0::1])                        # [Start:     : Step]
+print(str11[0:len(str11):])               # [Start: Stop:     ]
+print(str11[0::])                         # [Start:     :     ]
+
+# Practice - Summary with -ve indexing#
+print(str11[-1:-13:-1])                      # [Start: Stop: Step]
+print(str11[-1:-len(str11)-1:-1])            # [Start: Stop: Step]
+print(str11[:-len(str11)-1:-1])              # [     : Stop: Step]
+print(str11[::-1])                           # [     :     : Step]
+print(str11[::])                             # [     :     :     ]  # Hi Hyderabad
+print(str11[-1:-len(str11)-1:])              # [Start: Stop:     ]  # blank o/p
+print(str11[-1::])                           # [Start:     :     ]  # o/p: d
+print(str11[-1::-1])                         # [Start:     : Step]  # dabaredyH iH
+
 # Practice #
 # 1.  replace first char with last char
 str1 = "IPL 2024 Cricket Trophy"
@@ -130,7 +156,6 @@ print("Result :", result)  # yPL 2024 Cricket TrophI
 
 # question2:  Repeat every second character 2 times in the given string
 str1 = "Python"   # output = "pyythhonn"
-
 
 # Question3:
 str9 = "Good Morning"
@@ -146,7 +171,4 @@ last_char = str10[-1] * 2
 remaining_part = str10[-2:-len(str10):-1]
 result = f"{last_char}{remaining_part}{fist_char}"
 print(result)
-
-
-
 
