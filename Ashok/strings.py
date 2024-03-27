@@ -90,25 +90,25 @@ print(str8[-7: 12])
 print(str8[-7: 2])   # Blank output
 print(str8[2: -7])  # Need to check with trainer
 
-# # Rule2: str[:last index], In this rule default initial index is zero and last index will be the position
-# # which we defined.
+# Rule2: str[:last index], In this rule default initial index is zero and last index will be the position
+# which we defined.
 print(str8[:5])
 print(str8[:-7])
 
-# # Rule3: str[initial index:], In this rule default last index is will be end of string.
+# Rule3: str[initial index:], In this rule default last index is will be end of string.
 print(str8[5:])
 print(str8[-7:])
 
-# # Rule 4: str[initial index: last index: difference of index],
-# # In this rule initial index value will be included and last index value will be excluded.
+# Rule 4: str[initial index: last index: difference of index],
+# In this rule initial index value will be included and last index value will be excluded.
 print(str8[2:8:1])
 print(str8[2:13:2])
 print(str8[-1: -6: -1])
 print(str8[-1: 2: -1])
 
-# # Rule 5:str[:last index :difference index value]
-# # by default initial index value is zero if the difference is positive
-# # by default initial index value is -1  if the difference value is negative
+# Rule 5:str[:last index :difference index value]
+# by default initial index value is zero if the difference is positive
+# by default initial index value is -1  if the difference value is negative
 print(str8[: -6: -1])
 print(str8[: 2: -1])
 print(str8[: 2: -2])
@@ -155,7 +155,7 @@ result = f"{last_char}{remaining_part}{fist_char}"
 print("Result :", result)  # yPL 2024 Cricket TrophI
 
 # question2:  Repeat every second character 2 times in the given string
-str1 = "Python"   # output = "pyythhonn"
+str12 = "Python"   # output = "pyythhonn"
 
 # Question3:
 str9 = "Good Morning"
