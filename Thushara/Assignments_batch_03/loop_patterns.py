@@ -105,7 +105,7 @@ for i in range(8):
             print("*", end=" ")
 
     print()
-print("#"*50)
+print("#"*120)
 """
 # # # # # # # # # #           # #           #   # # # # #   #           #   # # # # #     # # # # #     # # # # #                 
         #         #           # #           # #             #           # #           # #           # #           #               
@@ -150,7 +150,7 @@ for i in range(7):
         elif i==0 and(44<j<50):
             print("#",end=" ")
 
-        elif (j==44 ) and 0<i<7:
+        elif (j==44 ) and 0<=i<7:
             print("#", end=" ")
         elif j==50 and ((0<i<3) or(3<i<7)):
             print("#",end=" ")
