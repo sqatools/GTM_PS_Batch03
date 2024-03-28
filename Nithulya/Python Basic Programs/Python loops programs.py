@@ -67,17 +67,33 @@
 
 
 #6). Python for loop program to print the alphabet pattern ‘O’ using python.
-# Output:
-#   ***
-# *       *
-# *       *
-# *       *
-# *       *
-# *       *
-#    ***
-# for i in range(1,8):
-#     for j in range(1, 8):
-#         if
+"""
+   * * *
+ *       *
+ *       *
+ *       *
+ *       *
+ *       *
+   * * *
+"""
+# for i in range(1, 6):
+#     if i == 1 or i == 5:
+#         print(" ", end=" ")
+#     else:
+#         print("*", end=" ")
+# print()
+# for i in range(1, 6):
+#     for j in range(1, 6):
+#         if j == 1 or j == 5:
+#             print("*", end=" ")
+#         else:
+#             print(" ", end=" ")
+#     print()
+# for i in range(1, 6):
+#     if i == 1 or i == 5:
+#         print(" ", end=" ")
+#     else:
+#         print("*", end=" ")
 
 
 #7). Python Loops program to print all even numbers between 1 to 100 in python.
@@ -284,8 +300,113 @@
 # * * *
 # * *
 # *
+#
+# for i in range(5,0,-1):
+#     for j in range(i):
+#         print('*',end=' ')
+#     print()
 
-for i in range(5,0,-1):
-    for j in range(i):
-        print('*',end=' ')
+
+#22. Python Loops program to construct the following pattern,
+"""
+* * * * * *
+* * * * * *
+    * *
+    * *
+    * *
+    * *
+"""
+# for i in range(1,3):
+#     for j in range(1,7):
+#         print('*', end=' ')
+#     print()
+# for i in range(1,5):
+#     for j in range(1,7):
+#         if j==3 or j==4:
+#             print('*', end=' ')
+#         else:
+#             print(' ',end=' ')
+#     print()
+
+#23. Python Loops program to construct the following pattern,
+"""
+  * * *
+*       *
+*       *
+*       *
+* * * * *
+*       *
+*       *
+*       *  
+"""
+# for i in range(1,2):
+#     for j in range(1,6):
+#         if j==1 or j==5:
+#             print(' ', end=' ')
+#         else:
+#             print('*', end=' ')
+#     print()
+# for i in range(1,4):
+#     for j in range(1,6):
+#         if j==1 or j==5:
+#             print('*', end=' ')
+#         else:
+#             print(' ', end=' ')
+#     print()
+# for i in range(1,2):
+#     for j in range(1,6):
+#         print('*', end=' ')
+#     print()
+# for i in range(1,4):
+#     for j in range(1,6):
+#         if j==1 or j==5:
+#             print('*', end=' ')
+#         else:
+#             print(' ', end=' ')
+#     print()
+
+
+#24. Python Loops program to construct the following pattern,
+"""
+
+  * *   * * * * * 
+  * *   * * * * * 
+  * *   * * 
+  * * * * * * * *
+  * * * * * * * *
+        * *   * *
+  * * * * *   * *
+  * * * * *   * *
+"""
+for i in range(1,3):
+    for j in range(1,9):
+        if j==3:
+            print(' ', end=' ')
+        else:
+            print('*', end=' ')
+    print()
+for i in range(1,2):
+    for j in range(1,9):
+        if j==3 or j==6 or j==7 or j==8:
+            print(' ', end=' ')
+        else:
+            print('*', end=' ')
+    print()
+for i in range(1,3):
+    for j in range(1,9):
+        print('*', end=' ')
+    print()
+for i in range(1,2):
+    for j in range(1,9):
+        if j==1 or j==2 or j==3 or j==6:
+            print(' ', end=' ')
+        else:
+            print('*', end=' ')
+    print()
+for i in range(1,3):
+    for j in range(1,9):
+        if j==6:
+            print(' ', end=' ')
+        else:
+            print('*', end=' ')
     print()
