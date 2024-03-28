@@ -68,7 +68,7 @@ for i in range(len(str7)):
     print(str7[i], end=" ")
 print()
 
-for i in range(len(str7)-1, -1, -1):
+for i in range(len(str7) - 1, -1, -1):
     print(str7[i], end=" ")
 print()
 
@@ -81,14 +81,14 @@ print()
 str8 = "Welcome to India"
 print(len(str8))
 print(str8[0:16])
-print(str8[-1:-len(str8)-1:-1])
+print(str8[-1:-len(str8) - 1:-1])
 print(str8[1:6])
 print(str8[0:4])
 print(str8[2: -2])
-print(str8[-5: -1])  # Need to check with trainer
+print(str8[-5: -1])
 print(str8[-7: 12])
-print(str8[-7: 2])   # Blank output
-print(str8[2: -7])  # Need to check with trainer
+print(str8[-7: 2])  # Blank output
+print(str8[2: -7])
 
 # Rule2: str[:last index], In this rule default initial index is zero and last index will be the position
 # which we defined.
@@ -107,8 +107,8 @@ print(str8[-1: -6: -1])
 print(str8[-1: 2: -1])
 
 # Rule 5:str[:last index :difference index value]
-# by default initial index value is zero if the difference is positive
-# by default initial index value is -1  if the difference value is negative
+# by default initial index value will be zero if the difference is positive
+# by default initial index value will be -1  if the difference value is negative
 print(str8[: -6: -1])
 print(str8[: 2: -1])
 print(str8[: 2: -2])
@@ -119,30 +119,30 @@ print(str8[: 2: -2])
 print(str8[::1])
 print(str8[::2])
 print(str8[::-1])
-print(str8[-1:-len(str8)-1:-1])  # Another way
+print(str8[-1:-len(str8) - 1:-1])  # Another way
 print(str8[::-2])
 
 # Practice - Summary with +ve indexing#
 str11 = "Hi Hyderabad"
 print(len(str11))
-print(str11[0:12:1])                      # [Start: Stop: Step]
-print(str11[0:len(str11):1])              # [Start: Stop: Step]
-print(str11[:len(str11):1])               # [     : Stop: Step]
-print(str11[::1])                         # [     :     : Step]
-print(str11[::])                          # [     :     :     ]
-print(str11[0::1])                        # [Start:     : Step]
-print(str11[0:len(str11):])               # [Start: Stop:     ]
-print(str11[0::])                         # [Start:     :     ]
+print(str11[0:12:1])  # [Start: Stop: Step]
+print(str11[0:len(str11):1])  # [Start: Stop: Step]
+print(str11[:len(str11):1])  # [     : Stop: Step]
+print(str11[::1])  # [     :     : Step]
+print(str11[::])  # [     :     :     ]
+print(str11[0::1])  # [Start:     : Step]
+print(str11[0:len(str11):])  # [Start: Stop:     ]
+print(str11[0::])  # [Start:     :     ]
 
 # Practice - Summary with -ve indexing#
-print(str11[-1:-13:-1])                      # [Start: Stop: Step]
-print(str11[-1:-len(str11)-1:-1])            # [Start: Stop: Step]
-print(str11[:-len(str11)-1:-1])              # [     : Stop: Step]
-print(str11[::-1])                           # [     :     : Step]
-print(str11[::])                             # [     :     :     ]  # Hi Hyderabad
-print(str11[-1:-len(str11)-1:])              # [Start: Stop:     ]  # blank o/p
-print(str11[-1::])                           # [Start:     :     ]  # o/p: d
-print(str11[-1::-1])                         # [Start:     : Step]  # dabaredyH iH
+print(str11[-1:-13:-1])  # [Start: Stop: Step]
+print(str11[-1:-len(str11) - 1:-1])  # [Start: Stop: Step]
+print(str11[:-len(str11) - 1:-1])  # [     : Stop: Step]
+print(str11[::-1])  # [     :     : Step]
+print(str11[::])  # [     :     :     ]  # Hi Hyderabad
+print(str11[-1:-len(str11) - 1:])  # [Start: Stop:     ]  # blank o/p
+print(str11[-1::])  # [Start:     :     ]  # o/p: d
+print(str11[-1::-1])  # [Start:     : Step]  # dabaredyH iH
 
 # Practice #
 # 1.  replace first char with last char
@@ -155,7 +155,14 @@ result = f"{last_char}{remaining_part}{fist_char}"
 print("Result :", result)  # yPL 2024 Cricket TrophI
 
 # question2:  Repeat every second character 2 times in the given string
-str12 = "Python"   # output = "pyythhonn"
+str12 = "Python"  # output = "pyythhonn"
+str2 = " "
+for i in range(len(str12)):
+    if i % 2 == 0:
+        str2 = str2 + str12[i]
+    else:
+        str2 = str2 + str12[i] * 2
+print(str2)
 
 # Question3:
 str9 = "Good Morning"
@@ -171,4 +178,89 @@ last_char = str10[-1] * 2
 remaining_part = str10[-2:-len(str10):-1]
 result = f"{last_char}{remaining_part}{fist_char}"
 print(result)
+
+# String Methods #
+print(dir(str))
+"""
+'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 
+'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower',
+ 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 
+ 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 
+ 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 
+ 'translate', 'upper', 'zfill'   """
+
+# Inquiry methods # - Will display true or false
+print("HELLO".isupper())
+print("Hello".isupper())
+print("hello".isupper())
+print("hello".islower())
+print("Hello".islower())
+print("HELLO".islower())
+print("Hello".istitle())
+print("Hello World".istitle())
+print("hello".istitle())
+print("hello World".istitle())
+
+# Changing case #
+# First letter will be upper case and the remaining letter will be lower case
+print('hello dear'.capitalize())  # Hello dear
+
+# Upper to lower case
+print('HELLO'.lower())  # hello
+
+# Lower to upper case
+print('hello'.upper())  # HELLO
+
+# First letter of every word will be Upper case and the remaining will be lower case
+print('hEllo deAr'.title())  # Hello Dear
+
+# Lower to Upper, Upper to lower
+print('hEllo deAr'.swapcase())  # HeLLO DEaR
+
+# count method: This method return counts the given sub string/char in given string.
+print('We Learning Python Programming'.count("P"))  # 2
+print('We Learning Python Programming'.count("ing"))  # 2
+print('We Learning Python Programming'.count("p"))  # 0
+
+# index() method : This method returns the index of any sub-string/char in the target string
+print('We Learning Python Programming'.index("e"))  # 1
+print('We Learning Python Programming'.index("ing"))  # 8
+# print('We Learning Python Programming'.index("s"))  # ValueError: substring not found
+
+# find method: This method find the sub-string/char in the target and string if it is available,
+# then it will return index of substring else it will return -1
+print('We Learning Python Programming'.find("e"))  # 1
+print('We Learning Python Programming'.find("s"))  # -1 It means not available.
+
+# split method: This method split the target string from given delimiter and return the list of substrings
+str_s = "Today is sunny day"
+result = str_s.split(" ")
+print("Result :", result)  # ['Today', 'is', 'sunny', 'day']
+
+str_ss = "I,am,working,as,software,engineer"
+word_list = str_ss.split(",")
+print(word_list)  # ['I', 'am', 'working', 'as', 'software', 'engineer']
+
+str_sss = "I am working as software engineer"
+word_list = str_sss.split(",")
+print(word_list)
+print(str_sss.split("i"))  # ['I am work', 'ng as software eng', 'neer']
+
+url = "https://www.google.com"
+protocol1 = url.split(":")[0]
+protocol2 = url.split(":")[1]
+print("protocol :", protocol1)  # https
+print("protocol :", protocol2)  # //www.google.com
+print("Web :", url.split(".")[0])  # https://www
+print("domain :", url.split(".")[1])  # google
+print("server :", url.split(".")[2])  # com
+print(url.split("//")[1].split(".")[0])  # www
+
+# replace method: This method replace the one word to another from given string.
+print('a-b-c-d-e'.replace('-', ','))
+print("Welcome to Hyderabad".replace("Welcome", "Hi"))
+print("Welcome to Hyderabad".replace("Hyderabad", "India"))
+
+
+
 
