@@ -1,0 +1,61 @@
+a=1
+b=17
+c=1
+d=1
+e=20
+f=0
+g=30
+h=1
+k=40
+l=1
+m=41
+n=53
+o=0
+p=1
+q=64
+for i in range(0,9):
+    for j in range(0,90):
+        if i==a and j==a:
+            print("#",end="")
+            a+=1
+        elif i==c and j== b:
+            print("#",end="")
+            c=c+1
+            b=b-1
+        elif i==d and j==e:
+            print("#",end="")
+            d=d+1
+        elif f<i<8 and j==g:
+            print("#",end="")
+            f=f+1
+        elif i==8 and (24<j<30):
+            print("#",end="")
+        elif i==7 and j==24:
+            print("#", end="")
+        elif i==h and j==k:
+            print("#",end="")
+            h=h+1
+            k=k-1
+        elif i==l and j==m:
+            print("#",end="")
+            l=l+1
+            m=m+1
+        elif i==4 and (37<j<45):
+            print("#",end="")
+        elif o<i<=5 and j==n:
+            print("#",end="")
+            n=n+1
+            o=o+1
+        elif i== p and j==q:
+            print("#",end="")
+            p=p+1
+            q=q-1
+
+
+        else:
+            print(" ", end="")
+
+
+
+
+    print()
