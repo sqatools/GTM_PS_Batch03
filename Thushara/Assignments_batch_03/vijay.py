@@ -1,7 +1,18 @@
-a=c=d=h=p=1
+"""
+ #             #    #         #         #         #         #
+  #           #     #         #        # #         #       #
+   #         #      #         #       #   #         #     #
+    #       #       #         #      #######         #   #
+     #     #        #         #     #       #         # #
+      #   #         #         #    #         #         #
+       # #          #   #     #   #           #       #
+        #           #    #####   #             #     #
+
+
+"""
+a=c=d=h=p=f=o=1
 b=15
 e=20
-f=o=0
 g=30
 k=40
 l=2
@@ -21,12 +32,12 @@ for i in range(0,9):
         elif i==d and j==e:
             print("#",end="")
             d=d+1
-        elif f<i<8 and j==g:
+        elif f<=i<8 and j==g:
             print("#",end="")
             f=f+1
-        elif i==8 and (24<j<30):
+        elif i==8 and (22<j<30):
             print("#",end="")
-        elif i==7 and j==24:
+        elif i==7 and j==23:
             print("#", end="")
         elif i==h and j==k:
             print("#",end="")
@@ -38,7 +49,7 @@ for i in range(0,9):
             m=m+1
         elif i==4 and (37<j<44):
             print("#",end="")
-        elif o<i<=5 and j==n:
+        elif o<=i<=5 and j==n:
             print("#",end="")
             n=n+1
             o=o+1
