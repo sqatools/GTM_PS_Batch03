@@ -1,20 +1,15 @@
-a=1
+a=c=d=h=l=p=1
 b=17
-c=1
-d=1
 e=20
-f=0
+f=o=0
 g=30
-h=1
 k=40
-l=1
 m=41
 n=53
-o=0
-p=1
 q=64
 for i in range(0,9):
     for j in range(0,90):
+
         if i==a and j==a:
             print("#",end="")
             a+=1
