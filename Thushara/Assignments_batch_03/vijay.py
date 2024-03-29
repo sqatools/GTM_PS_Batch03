@@ -1,19 +1,20 @@
-a=c=d=h=l=p=1
-b=17
+a=c=d=h=p=1
+b=15
 e=20
 f=o=0
 g=30
 k=40
+l=2
 m=41
-n=53
-q=64
+n=50
+q=60
 for i in range(0,9):
     for j in range(0,90):
 
         if i==a and j==a:
             print("#",end="")
             a+=1
-        elif i==c and j== b:
+        elif c<=i<9 and j== b:
             print("#",end="")
             c=c+1
             b=b-1
@@ -35,7 +36,7 @@ for i in range(0,9):
             print("#",end="")
             l=l+1
             m=m+1
-        elif i==4 and (37<j<45):
+        elif i==4 and (37<j<44):
             print("#",end="")
         elif o<i<=5 and j==n:
             print("#",end="")
