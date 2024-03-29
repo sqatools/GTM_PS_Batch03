@@ -193,3 +193,101 @@ str2 = "Good Morning"
 # output = "ggninroM dooGG"
 result = f"{str2[-1]*2}{str2[-2:0:-1]}{str2[0]*2}"
 print(result)
+########################### String Methods #############
+print(dir(str))
+"""
+'capitalize', 'casefold', 'center', 'count', 'encode',
+ 'endswith', 'expandtabs', 'find', 'format', 'format_map', 
+ 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 
+ 'isdigit', 'isidentifier', 'islower', 'isnumeric', 
+ 'isprintable', 'isspace', 'istitle', 'isupper', 
+ 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 
+ 'partition', 'removeprefix', 'removesuffix', 
+ 'replace', 'rfind', 'rindex', 'rjust', 
+ 'rpartition', 'rsplit', 'rstrip', 'split', 
+ 'splitlines', 'startswith', 'strip', 'swapcase', 
+ 'title', 'translate', 'upper', 'zfill'
+
+"""
+
+# lower() method: this method convert all the characters in the lower case.
+stra = "Python PrograMMing Is Fun"
+print(stra.lower())  # python programming is fun
+
+# upper() method :
+print(stra.upper())  # PYTHON PROGRAMMING IS FUN
+
+# islower() method : check given string is lower or not
+str_b = "Hello"
+str_c = "PYTHON"
+str_d = "learning"
+
+print(str_b.islower())  # False
+print(str_d.islower())  # True
+
+# isupper method : This method check given string in upper or not
+print(str_b.isupper())  # False
+print(str_c.isupper())  # True
+
+# swapcase method : This method convert all upper case to lower and lower case to upper.
+str_e = "We Learning Python Programming"
+print(str_e.swapcase())  # wE lEARNING pYTHON pROGRAMMING
+
+# title method : This method convert the given sentence in the title case, it means first
+#                character of each word should be capital
+
+str_f = "ipl 2024 india premier league"
+print(str_f.title())  # Ipl 2024 India Premier League
+
+# istitle() method : This method check given string is title case or not.
+str_g = "We Learning Python Programming"
+str_h = "We LeaRning pyThon ProGraMming"
+print("Is title method :", str_g.istitle())  # True
+print("Is title method :", str_h.istitle())  # False
+
+# count method: This method return count any given sub string/char in given string.
+str_g = "We Learning Python Programming"
+print("count of P :", str_g.count("P"))  # 2
+print("count of ing :", str_g.count("ing"))  # 2
+print("count of n :", str_g.count("n"))  # 4
+
+# index() method : This method return the index of any sub-string/char in the target string
+str_g = "We Learning Python Programming"
+print(str_g.index("L"))  # 3
+print("index of ing:", str_g.index("ing"))  # 8
+# print("index of M :", str_g.index("M")) # ValueError: substring not found
+
+
+# find method:  This method find the sub-string/char in the target and string
+#                if it is available, then it will return index of substring else it will return -1
+
+str_h = "Python Programming"
+print("find p:", str_h.find('p'))  # -1 # it means its not available
+print("find r:", str_h.find("r"))  # 8
+
+
+# split method: This method split the target string from given delimeter and return the list of substrings
+
+str_k = "Today is sunny day"
+result = str_k.split(" ")
+print("Result :", result)  # ['Today', 'is', 'sunny', 'day']
+
+str_l = "I,am,working,as,software,engineer"
+word_list = str_l.split(",")
+print(word_list) # ['I', 'am', 'working', 'as', 'software', 'engineer']
+
+print(str_k.split("i"))  # ['Today ', 's sunny day']
+
+url = "https://www.google.com"
+protcol = url.split(":")[1]
+print("protocol :", protcol)  # https
+print("domain :", url.split(".")[2])  # com
+print("server :", url.split(".")[1])  # google
+print(url.split("//")[1].split(".")[0])  # www
+
+
+# replace method: This method replace the one word from another from given string.
+str_z = "Python Programming Language"
+print(str_z.replace("Python", "Java")) # Java Programming Language
+
+
