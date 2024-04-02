@@ -84,3 +84,48 @@ print(((a - b) ** 3) == (a ** 3) - (3 * (a ** 2) * b) + (3 * a * (b ** 2)) - (b 
 # 15. Python program to calculate the area of square. area = a * a
 a = 9
 print("Area of square:", a ** 2)
+
+# 16. Python program to calculate the area of a circle. Formula = PI*r*r
+radius = 5
+Pi = 3.14
+print("Area of circle:", Pi * (radius * radius))
+
+# 17. Python program to calculate the area of a cube. Formula = 6*a*a
+a = 5
+print("Area of cube:", 6 * a * a)
+
+# 18. Python program to calculate the area of the cylinder. Formula = 2*PI*r*h + 2*PI*r*r
+radius = 5
+height = 6
+Pi = 3.14
+print("Area of cylinder:", 2 * Pi * radius * height + 2 * Pi * radius * height)
+
+# 19. Python program to check whether the given number is an Armstrong number or not.
+# Example: 153 = 1*1*1 + 5*5*5 + 3*3*3
+num = 153
+rev = 0
+temp = num
+while temp > 0:
+    rem = temp % 10
+    rev = rev + rem ** 3
+    temp = temp // 10
+
+if rev == num:
+    print("It is a armstrong number")
+else:
+    print("It is not an armstrong number")
+
+# 20. Python program to calculate simple interest. Formula = P+(P/r)*t
+P = 1000
+r = 1200
+t = 12
+print("Simple interest:", P + (P / r) * t)
+
+# 21. Python program to print the current date in the given format Output: 2023 Jan 05
+import datetime
+
+date = datetime.datetime.now()
+print(date.strftime("%Y %b %d"))
+
+
+

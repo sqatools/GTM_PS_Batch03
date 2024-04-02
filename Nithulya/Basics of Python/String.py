@@ -136,19 +136,104 @@
 #3. Repeat every second character 2 times in the given string
     #str1='Python', Output = "pyythhonn"
 
-str1 = "Python"
-str2= ''
-for i in range(len(str1)):
-    if i%2==0:
-        str2=str2+str1[i]
-    else:
-        str2=str2+str1[i]*2
-    i=i+1
-print(str2)                            # Pyythhonn
+# str1 = "Python"
+# str2= ''
+# for i in range(len(str1)):
+#     if i%2==0:
+#         str2=str2+str1[i]
+#     else:
+#         str2=str2+str1[i]*2
+#     i=i+1
+# print(str2)                            # Pyythhonn
 
 #4. Question3 ? str2 = "Good Morning" , Output = "ggninroM dooGG"
-str3='Good Morning'
-word1=str3[-1:-13:-1]
-str4=f"{word1[0]}{word1}{word1[-1]}"
-print(str4)                             # ggninroM dooGG
+# str3='Good Morning'
+# word1=str3[-1:-13:-1]
+# str4=f"{word1[0]}{word1}{word1[-1]}"
+# print(str4)                             # ggninroM dooGG
 
+### lower() method: This method convert all the characters in the lower case.
+stra= "Be happy for this moment."
+print(stra.lower())                    # be happy for this moment.
+
+
+### upper() method : This method convert all the characters in the upper case.
+stra= "Be happy for this moment."
+print(stra.upper())                    # BE HAPPY FOR THIS MOMENT.
+
+### islower() method : Check given string is lower or not
+# stra='Happy'
+# strb='happy'
+# strc='HAPPY'
+# print(stra.islower())   # False
+# print(strb.islower())   # True
+# print(strc.islower())   # False
+
+### isupper method : This method check given string in upper or not
+# stra='Happy'
+# strc='HAPPY'
+# print(stra.isupper())      # False
+# print(strc.isupper())      # True
+
+### swapcase method : This method convert all upper case to lower and lower case to upper.
+# stra= "Be happy for this moment."
+# print(stra.swapcase())       # bE HAPPY FOR THIS MOMENT.
+
+### title method : This method convert the given sentence in the title case, it means first
+#                  character of each word should be capital
+# stra= "Be happy for this moment."
+# print(stra.title())          # Be Happy For This Moment.
+
+### istitle() method : This method check given string is title case or not.
+# stra= "Be happy for this moment."
+# strb= "Be Happy For This Moment."
+# print("Is title method : ",stra.istitle())     # False
+# print("Is title method : ",strb.istitle())     #
+
+### count method: This method return count any given sub string/char in given string.
+# stra= "Be happy for this moment."
+# print("Count p : ",stra.count('p'))         # Count p :  2
+# print("Count e : ",stra.count('e'))         # Count e :  2
+# print("Count B : ",stra.count('B'))         # Count B :  1
+#print("Count ent : ",stra.count('ent'))       # Count ent :  1
+
+
+### index() method : This method return the index of any sub-string/char in the target string
+# stra= "Be happy for this moment."
+# print("Index of 'h' : ",stra.index('h'))          # Index of 'h' :  3
+# print("Index of 'ent' : ",stra.index('ent'))      # Index of 'ent' :  21
+
+
+### find method:  This method find the sub-string/char in the target and string
+#                 if it is available, then it will return index of substring else it will return -1
+# stra= "Be happy for this moment."
+# print("Find of 'h' : ",stra.find('h'))     # Find of 'h' :  3
+# print("Find of 'z' : ",stra.find('z'))     # Find of 'z' :  -1  #it is not available
+
+
+### split method: This method split the target string from given delimeter and return the list of substrings
+# stra= "Be happy for this moment."
+# print(stra.split(' '))              # ['Be', 'happy', 'for', 'this', 'moment.']
+
+# stra= "Be , happy , for , this , moment."
+# print(stra.split(','))                     # ['Be ', ' happy ', ' for ', ' this ', ' moment.']
+
+# stra= "Be happy for this moment."
+# print(stra.split('a'))                       # ['Be h', 'ppy for this moment.']
+
+# stra= "Be.happy.//for this moment."
+# strb= stra.split('.')[0]
+# print('word1 : ',strb)                   # word1 :  Be
+
+# stra= "Be.happy.//for this moment."
+# strb= stra.split('.')[1]
+# print('word2 : ',strb)                    # word2 :  happy
+
+# stra= "Be.happy.//for this moment."
+# strb= stra.split('.')[2]
+# print('word3 : ',strb)                     # word3 :  //for this moment
+
+
+### replace method: This method replace the one word from another from given string.
+stra='Traditional Art Forms of Kerala'
+print(stra.replace("Kerala","India"))
