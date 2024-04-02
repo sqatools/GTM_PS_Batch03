@@ -259,7 +259,7 @@ str_h = "Python Programming"
 print("find p:", str_h.find('p'))  # -1 # it means its not available
 print("find r:", str_h.find("r"))  # 8
 
-
+##############
 # split method: This method split the target string from given delimeter and return the list of substrings
 
 str_k = "Today is sunny day"
@@ -279,9 +279,98 @@ print("domain :", url.split(".")[2])  # com
 print("server :", url.split(".")[1])  # google
 print(url.split("//")[1].split(".")[0])  # www
 
-
+###########
 # replace method: This method replace the one word from another from given string.
 str_z = "Python Programming Language"
-print(str_z.replace("Python", "Java")) # Java Programming Language
+result = str_z.replace("Python", "Java").replace("Programming", "System") # Java Programming Language
+print("result:", result )
+
+print("_"*50)
+###########
+# strip method : This method remove all the trailing space from given string.
+str3 = "  Python Programming  "
+
+print(str3)
+print(str3.strip())
+
+# remove left side space, then we can use lstrip method
+print(str3.lstrip())
+
+# remove right side space, then we can user rstrip method
+print(str3.rstrip())
+
+print(str3.replace(" ", "-")) # --Python-Programming--
+
+##################
+# join method : This method join all the character of the string with any combination
+
+str_v = "Programming"
+
+result = "-".join(str_v)
+print(result) # P-r-o-g-r-a-m-m-i-n-g
+
+result2 = "&%T&*#$".join(str_v)
+print("result2 :", result2) # P&%T&*#$r&%T&*#$o&%T&*#$g&%T&*#$r&%T&*#$a&%T&*#$m&%T&*#$m&%T&*#$i&%T&*#$n&%T&*#$g
+
+result3 = result2.replace("&%T&*#$", "")
+print("result3 :", result3) # Programming
+
+# apply join method for list of values
+list1 = ["Hello", "How", "Are", "you?"] #  Hello How Are you?
+result4 = " ".join(list1)
+print("result4 :", result4)
+
+# apply join method for tuple
+tup1 = ('8', '4', '5', '2', '67', '1', '7', '12')
+result5 = "".join(tup1)
+print("result5:", result5)
+
+
+#############
+# isnumeric() # This method check given string only contains numbers
+str11 = "54646565"
+print(str11.isnumeric())  # True
+
+str12 = "5445345 22343"
+print(str12.isnumeric())  # False
+
+
+# isalnum(): This method check, for combination of alphabate and numbers
+str13 = "Hello2345"
+print("islanum str13:", str13.isalnum()) # True
+
+# isalpha() : This method check for only alphabates
+str14 = "Python"
+print("isalpha :", str14.isalpha()) # True
+
+# isspace() :  This method check for space in the given string.
+str15 = " "
+print(str15.isspace())  # True
+
+
+# Write a python program to get mobile numbers and email ids from given string ##########
+print("_"*40)
+str15 = """
+Search safer online 2333 with McAfee® S
+ecure 434 Search powered by Yahoo. Color 
+coded search testuser@facebook.com 5465465465 results tell you which 
+sites 9898789789 are safe – and test@gmail.com which could be 
+dangerous. McAfee® Secure Search updates 
+your default admin@yahoo.com search provider 8768768756 in Chrome to 
+help you stay protected.
+"""
+
+word_list = str15.split()
+for word in word_list:
+    if word.isnumeric() and len(word) == 10:
+        print("Mobile Number :", word)
+    elif "@" in word:
+        print("email :", word)
+
+
+
+
+
+
 
 
