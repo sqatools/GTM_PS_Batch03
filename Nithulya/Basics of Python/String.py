@@ -153,13 +153,13 @@
 # print(str4)                             # ggninroM dooGG
 
 ### lower() method: This method convert all the characters in the lower case.
-stra= "Be happy for this moment."
-print(stra.lower())                    # be happy for this moment.
+# stra= "Be happy for this moment."
+# print(stra.lower())                    # be happy for this moment.
 
 
 ### upper() method : This method convert all the characters in the upper case.
-stra= "Be happy for this moment."
-print(stra.upper())                    # BE HAPPY FOR THIS MOMENT.
+# stra= "Be happy for this moment."
+# print(stra.upper())                    # BE HAPPY FOR THIS MOMENT.
 
 ### islower() method : Check given string is lower or not
 # stra='Happy'
@@ -235,5 +235,86 @@ print(stra.upper())                    # BE HAPPY FOR THIS MOMENT.
 
 
 ### replace method: This method replace the one word from another from given string.
-stra='Traditional Art Forms of Kerala'
-print(stra.replace("Kerala","India"))
+# stra='Traditional Art Forms of Kerala'
+# print(stra.replace("Kerala","India"))     # Traditional Art Forms of India
+# print(stra.replace(' ','-'))              # Traditional-Art-Forms-of-Kerala
+
+
+### strip method : This method remove all the trailing space from given string.
+# stra = "  Traditional Art Forms of Kerala  "
+# print(stra)
+# print(stra.strip())
+
+### Remove left side space, then we can use lstrip method
+# stra = "  Traditional Art Forms of Kerala  "
+# print(stra.lstrip())
+
+### Remove right side space, then we can user rstrip method
+# stra = "  Traditional Art Forms of Kerala   "
+# print(stra.rstrip())
+
+### join method : This method join all the character of the string with any combination
+# stra = "Python"
+# result = "-".join(stra)
+# print('Result : ',result)         # Result :  P-y-t-h-o-n
+#
+# result2 = "@$%^&".join(stra)
+# print("Result2 :", result2)       #  Result2 : P@$%^&y@$%^&t@$%^&h@$%^&o@$%^&n
+#
+# result3 = result2.replace("@$%^&", "")
+# print("Result3 :", result3)       # Result3 : Python
+
+
+### Apply join method for list of values
+# list1 = ["Hello", "How", "Are", "you?"]
+# result = " ".join(list1)
+# print("Result : ", result)     # Result :  Hello How Are you?
+
+
+### Apply join method for tuple
+# tup1 = ('8', '4', '5', '2', '67', '1', '7', '12')
+# result = "".join(tup1)
+# print("Result : ", result)       # Result :  8452671712.
+
+
+### isnumeric()  # This method check given string only contains numbers
+# str1 = "54646565"
+# print(str1.isnumeric())  # True
+#
+# str2 = "54453 45 22343"
+# print(str2.isnumeric())  # False
+
+
+### isalnum(): This method check, for combination of alphabate and numbers
+# str1 = "Hello2345"
+# print("islanum str1:", str1.isalnum())        # islanum str1: True
+
+### isalpha() : This method check for only alphabates
+# str1 = "Python"
+# print("isalpha str1 :", str1.isalpha())        # isalpha str1 : True
+
+### isspace() :  This method check for space in the given string.
+# str1 = " "
+# print('isspace() :',str1.isspace())       # isspace() : True
+#
+# str2 = " Hello  "
+# print('isspace() :',str2.isspace())       # isspace() : False
+
+
+### # Write a python program to get mobile numbers and email ids from given string ##########
+str1 = """
+Search safer online 2333 with McAfee® S
+ecure 434 Search powered by Yahoo. Color 
+coded search testuser@facebook.com 5465465465 results tell you which 
+sites 9898789789 are safe – and test@gmail.com which could be 
+dangerous. McAfee® Secure Search updates 
+your default admin@yahoo.com search provider 8768768756 in Chrome to 
+help you stay protected.
+"""
+
+word1 = str1.split()
+for i in word1:
+    if i.isnumeric() and len(i) == 10:
+        print("Mobile Number :", i)
+    elif "@" in i:
+        print("email :", i)
