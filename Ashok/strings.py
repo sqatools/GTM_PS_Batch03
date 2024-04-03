@@ -200,6 +200,12 @@ print("Hello".istitle())
 print("Hello World".istitle())
 print("hello".istitle())
 print("hello World".istitle())
+print("Hello123".isalnum())  # It will check whether string contain alphabets and numbers
+print("Hello".isalpha())  # It will check whether string contain only alphabets.
+print("hello".isascii())  # It will check only for ASCII character
+print("hello".isidentifier())  # This method check whether a given string can be a valid variable name.
+print("123456789".isnumeric())  # It will check whether string contain alphabets and numbers
+print("12345 6789".isnumeric())  # It will check whether string contain alphabets and numbers
 
 # Changing case #
 # First letter will be upper case and the remaining letter will be lower case
@@ -261,6 +267,90 @@ print('a-b-c-d-e'.replace('-', ','))
 print("Welcome to Hyderabad".replace("Welcome", "Hi"))
 print("Welcome to Hyderabad".replace("Hyderabad", "India"))
 
+# strip method: This method remove all the trailing space from given string
+str3 = " Python Programming "
+print(str3)
+print(str3.strip())
 
+# lstrip method: remove left side space, then we can use lstrip method
+print(str3.lstrip())
 
+# rstrip method: remove right side space, then we can use rstrip method
+print(str3.rstrip())
 
+print(str3.replace(" ", "-"))  # --Python-Programming--
+
+# join method: This method join all the characters of the string with any combination
+str_v = "Programming"
+result = "-".join(str_v)
+print(result)  # P-r-o-g-r-a-m-m-i-n-g
+
+result2 = "&%T&*#$".join(str_v)
+print("result2 :", result2)  # P&%T&*#$r&%T&*#$o&%T&*#$g&%T&*#$r&%T&*#$a&%T&*#$m&%T&*#$m&%T&*#$i&%T&*#$n&%T&*#$g
+
+result3 = result2.replace("&%T&*#$", "")
+print("result3 :", result3)  # Programming
+
+# apply join method for list of values
+list1 = ["Hello", "How", "Are", "you?"]  # Hello How Are you?
+result4 = " ".join(list1)
+print("result4 :", result4)
+
+# apply join method for tuple
+tup1 = ('8', '4', '5', '2', '67', '1', '7', '12')
+result5 = "".join(tup1)
+print("result5:", result5)
+
+# Write a python program to get mobile numbers and email ids from given string ##########
+str15 = """Search safer online 2333 with McAfee® Secure 434 Search powered by Yahoo. Color coded search 
+testuser@facebook.com 5465465465 results tell you which sites 9898789789 are safe – and test@gmail.com 
+which could be dangerous. McAfee® Secure Search updates your default admin@yahoo.com search provider 8768768756 
+in Chrome to help you stay protected. """
+
+word_list = str15.split()
+for word in word_list:
+    if word.isnumeric() and len(word) == 10:
+        print("Mobile Number :", word)
+    elif "@" in word:
+        print("email :", word)
+
+# Write a python programs to find out the smallest word from string.
+str1 = "Hello Very good morning, We are A learning Python"
+word_list = str1.split()
+print(word_list)
+
+s_len = len(word_list[0])
+s_word = word_list[0]
+
+for word in word_list:
+    # print(word)
+    word_len = len(word)
+    if word_len < s_len:  # 5 < 5, 4< 5, 4< 4, 8 < 4, 2< 4, 3< 2, 8< 2, 6< 2
+        s_len = word_len  # 5, 4, 2
+        s_word = word  # Hello, Very, We
+
+print("smallest length :", s_len)
+print("smallest word :", s_word)
+
+# Program: write a python code to find the most simultaneously repeated characters.
+
+str2 = "GGoood Mornnning, Hoppppe you are doiiiiing good"
+
+most_r_char = ''
+most_r_count = 0
+
+counter = 1
+
+for i in range(len(str2) - 1):
+    if str2[i] == str2[i + 1]:
+        counter += 1
+        if most_r_count < counter:
+            most_r_count = counter
+            most_r_char = str2[i]
+            print("most repeated char :", most_r_char, ":", most_r_count)
+        else:
+            pass
+    else:
+        counter = 1
+
+print("most repeated char :", most_r_char, ":", most_r_count)
