@@ -1,7 +1,7 @@
 from sql_connector import *
 
 class Registration:
-    def __init__(self, table_name, db_name='registration2.db'):
+    def __init__(self, table_name, db_name='registration.db'):
         self.table_name = table_name
         self.db_name = db_name
         self.con = initial_connection(db_file=db_name)
@@ -42,12 +42,12 @@ class Registration:
             first_name = fk.first_name()
             last_name = fk.last_name()
             username = fk.user_name()
-            password = f"Admin@123{i}"
+            password = "userpassword"
             email = fk.email()
             phone = fk.phone_number()
             address = fk.address()
             insert_query = fr"""insert into {self.table_name} (first_name, last_name, username, password,
-            email, phone, address) values ('{first_name}', '{last_name}', '{username}'
+            email, phone, address) values ('{first_name}', '{last_name}', '{username}',
             '{password}', '{email}', '{phone}', '{address}')        
             """
             print(insert_query)
@@ -58,14 +58,19 @@ class Registration:
         select_query = f"""select username, password from {self.table_name} where username='{username}'"""
         user_details = self.con.execute(select_query)
         user_info = user_details.fetchall()
+        print()
+        flag = False
         for data in user_info:
-            if data['username'] == username and data['password'] == password:
-                print("Login Successful")
+            if data[0] == username and data[1] == password:
+                flag = True
+                break
             else:
-                print("Permission denied, invalid credentials")
-        self.con.close()
+                continue
 
-
+        if flag:
+            print("Login Successful")
+        else:
+            print("Access Denied, Wrong Username Password")
 
 if __name__ == "__main__":
     obj = Registration("signup")
