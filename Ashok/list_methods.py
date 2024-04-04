@@ -37,8 +37,31 @@ for val in listc:
 listd = [4, 7, 22, 11, 33]
 for i in range(len(listd)):
     print(i, listd[i])
-
+"""
 # List Methods #
+----------------
+1. append() – It is used to add an element to the end of the list. It cannot add multiple values it takes 
+only one argument. Syntax: lista.append(40)
+2. extend() – It is used to add the elements of another list to the end of the current list or to combine two lists.
+   Syntax: new_list = [ 1, 2, 3, 4, 5 ]  new_list.extend( [8, 9, 10 ] )
+3. insert() – It is used to insert an element at a specific position in the list. 
+   Syntax: new_list.insert( index position, value )
+4. remove() – It is used to remove the element from the list with specified value. Syntax: new_list.remove( 4 )
+5. pop() – It removes the specific position in the list and returns the remaining elements at a
+   Syntax: new_list.pop( 4 )
+6. sort() – It sorts the elements of the list in ascending order. Syntax: new_list.sort()
+7. reverse() – It reverses the order of the elements in the list. Syntax: new_list.reverse()
+8. clear() – It is used to remove all elements from a list, effectively emptying the list. After the clear() function
+is applied to a list, the list becomes empty with a length of 0. Syntax: new_list.clear()
+9. copy () - It creates a shallow copy of a list. The shallow copy means that a new list is created with the same 
+ elements as the original list, but the elements themselves are not duplicated. Any changes made to the elements in 
+ the copied list will also affect the original list, and vice versa.
+  # Deep copy : In deep copy we use copy method or pass the data from list1 to list2, if any modification done on list2,
+   it won't affect list1
+10. index() : This return index position of specific element. Syntax: list_z.index(66)
+11. count() – It is used to count the number of occurrences of a specified element in a list. Syntax: list_v.count(8)
+"""
+
 print(dir(list))
 # 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
 
@@ -217,7 +240,6 @@ print("result :", result)
 result2 = [(val, 'even') if val % 2 == 0 else (val, 'odd') for val in list_o]
 print("result 2 :", result2)
 
-
 # apply nested loop in the list comprehension
 list1 = [1, 2, 3]
 list2 = ['a', 'b', 'c']
@@ -233,7 +255,6 @@ print("result3 :", result3)
 list1 = [5, 7, 9, 22, 7, 5, 9, 11, 12]
 duplicate = []
 result = []
-
 for val in list1:
     if val not in result:
         result.append(val)
@@ -254,5 +275,4 @@ for val in lista:
         result.append(val)
     else:
         result.insert(0, val)
-
 print("Result :", result)
