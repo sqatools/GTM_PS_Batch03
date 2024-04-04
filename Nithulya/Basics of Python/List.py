@@ -104,6 +104,163 @@
 # print('List1 : ',list1)       # # NameError: name 'list1' is not defined. Did you mean: 'list1'?
 
 #2.
-list1=['hi', 'hello', 'happy',[41, 17, 19, 22], 'good']
-del list1[1:4]
-print('List1 : ',list1)       # List1 :  ['hi', 'good']
+# list1=['hi', 'hello', 'happy',[41, 17, 19, 22], 'good']
+# del list1[1:4]
+# print('List1 : ',list1)       # List1 :  ['hi', 'good']
+
+#3. Write a python move all positive value in right side and negative value in left side
+# list1=[2,-4,-6,7,8,-22,11,-16]
+# list2=[]
+# list3=[]
+# for i in list1:
+#     if i<0:
+#         list2.append(i)
+#     else:
+#         list3.append(i)
+# list2.extend(list3)
+# print('list2 : ',list2)   # list2 :  [-4, -6, -22, -16, 2, 7, 8, 11]
+
+
+########## Replace data in the list
+#1.
+# list1 = [14, 79, 91, 322, 211, 515]
+# list1[3]=150
+# print('List1 :',list1)           # List1 : [14, 79, 91, 150, 211, 515]
+
+#2.
+# list1 = [14, 79, 91, 322, 211, 515]
+# list1[1:3]=['a','b']
+# print('List1 :',list1)          # List1 : [14, 'a', 'b', 322, 211, 515]
+
+######### count() method: This method return of number of occurence of specific element
+# list1 = ['a','b','a','c',['a','e','f'],'a']
+# print('Count "a" in list1 :',list1.count('a'))        # Count "a" in list1 : 3
+
+
+########## index method : This return index position of specific element
+# list1=['a','b','a','c',['a','e','f'],'a']
+# print(list1.index(['a','e','f']))             # 4
+
+######### sort() method: this method sort list data and modify the original list
+#1.
+# list1 = [22,11,1,4,21,12,45,5]
+# list1.sort()
+# print('List1 :',list1)         # List1 : [1, 4, 5, 11, 12, 21, 22, 45]
+
+#2.
+# list1 = [22,11,1,4,21,12,45,5]
+# list1.sort(reverse=True)
+# print('List1 :',list1)           # List1 : [45, 22, 21, 12, 11, 5, 4, 1]
+
+
+######### sorted() function : this function will provide the sorted result of the list without
+#1.
+# modifying the original list
+# list1 = [22,11,1,4,21,12,45,5]
+# list2=sorted(list1)
+# print('List1 :',list1)         # List1 : [22, 11, 1, 4, 21, 12, 45, 5]
+# print('List2 :',list2)         # List2 : [1, 4, 5, 11, 12, 21, 22, 45]
+
+
+#2.
+# list1 = [22,11,1,4,21,12,45,5]
+# list2=sorted(list1,reverse=True)
+# print('List1 :',list1)           # List1 : [22, 11, 1, 4, 21, 12, 45, 5]
+# print('List2 :',list2)           # List2 : [45, 22, 21, 12, 11, 5, 4, 1]
+
+
+######## reverse() method : This method reverse the list values and modify the original list
+# list1 = [22,11,1,4,21,12,45,5]
+# list1.reverse()
+# print('List1:',list1)           # List1: [5, 45, 12, 21, 4, 1, 11, 22]
+
+
+###### reversed function : reversed function provide the reverse list value and does not modify the original list
+# list1 = [22,11,1,4,21,12,45,5]
+# list2 = reversed(list1)
+# for i in list2:
+#     print(i,end=' ')           # 5 45 12 21 4 1 11 22
+
+
+######## copy  method:
+### Shallow copy: when we modify the reference list value, then original list will also be affected.
+# list1 = [22,11,1,4,21,12,45,5]
+# list2=list1
+# list3=list2
+# list2.append('a')
+# list3.append('b')
+# print('List1:',list1)       # List1: [22, 11, 1, 4, 21, 12, 45, 5, 'a', 'b']
+# print('List2:',list2)       # List2: [22, 11, 1, 4, 21, 12, 45, 5, 'a', 'b']
+# print('List3:',list3)       # List3: [22, 11, 1, 4, 21, 12, 45, 5, 'a', 'b']
+
+
+### Deep copy : In deep copy we use copy method or pass the data from list1 to list2,
+#               if any modification done on list2, it won't affect list1
+# list1 = [22,11,1,4,21,12,45,5]
+# list2=list1.copy()
+# list3=list2.copy()
+# list2.append('a')
+# list3.append('b')
+# print('List1:',list1)              # List1: [22, 11, 1, 4, 21, 12, 45, 5]
+# print('List2:',list2)              # List2: [22, 11, 1, 4, 21, 12, 45, 5, 'a']
+# print('List3:',list3)              # List3: [22, 11, 1, 4, 21, 12, 45, 5, 'b']
+
+
+######### Max,Min, Sum :
+# list1 = [22,11,1,4,21,12,45,5]
+# print("Max value :", max(list1))        # Max value : 45
+# print("Min value :", min(list1))        # Min value : 1
+# print("Sum of the list :", sum(list1))  # Sum of the list : 121
+
+
+
+#1. Write a python program to values which are divisible by 4 or 5
+# list1=[4,3,5,16,10,8,12,21,25]
+# list2=[]
+# for i in list1:
+#     if i%4== 0 or i%5 == 0:
+#         list2.append(i)
+#     else:
+#         continue
+# print('List2: ',list2)       # List2:  [4, 5, 16, 10, 8, 12, 25]
+
+####   List comprehension to solve the problem
+#1. Write a python program to values which are divisible by 4 or 5
+# list1=[4,3,5,16,10,8,12,21,25]
+# result = [i for i in list1 if i%4 == 0 or i%5 ==0]
+# print("Result:", result)      # Result: [4, 5, 16, 10, 8, 12, 25]
+
+#2. Program to print the list result in given manner
+#   List2: [(4, 'even'), (3, 'odd'), (16, 'even'), (10, 'even'), (21, 'odd')]
+# list1=[4,3,16,10,21]
+# list2=[]
+# for i in list1:
+#     if i%2==0:
+#         list2.append((i,'even'))
+#     else:
+#         list2.append((i,'odd'))
+# print("List2:",list2)           # List2: [(4, 'even'), (3, 'odd'), (16, 'even'), (10, 'even'), (21, 'odd')]
+
+#3. Program to print the list result in given manner
+#   List2: [(4, 'even'), (3, 'odd'), (16, 'even'), (10, 'even'), (21, 'odd')]
+#   Solve with list of comprehension
+# list1=[4,3,16,10,21]
+# list2 = [(i, 'even') if i%2==0 else (i, 'odd') for i in list1]
+# print("List2:",list2)             # List2: [(4, 'even'), (3, 'odd'), (16, 'even'), (10, 'even'), (21, 'odd')]
+
+#4.# Apply nested loop in the list comprehension
+# Result: [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c')]
+# list1 = [1, 2]
+# list2 = ['a', 'b', 'c']
+# list3=[]
+# for i in list1:
+#     for j in list2:
+#         list3.append((i,j))
+# print('Result:',list3)         # Result: [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c')]
+
+#5. Apply nested loop in the list comprehension
+# list1 = [1, 2]
+# list2 = ['a', 'b', 'c']
+# result = [(i, j) for i in list1 for j in list2]
+# print("Result:", result)       # Result: [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c')]
+
