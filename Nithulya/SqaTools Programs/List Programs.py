@@ -78,10 +78,92 @@
 # for i in list1:
 #     if i in list2:
 #         list3.append(i)
-# print('Common elements from List1 & List2 : ',list3)
+# print('Common elements from List1 & List2 : ',list3)     # Common elements from List1 & List2 :  [4, 5, 7, 2]
 
 #11). Python program to reverse a list with for loop.
 # list1=[2,3,1,5,7,11,16]
 # for i in range(len(list1)-1,-1,-1):
-#     print(list1[i], end=" ")
+#     print(list1[i], end=" ")            # 16 11 7 5 1 3 2
 
+#12). Python program to reverse a list with a while loop.
+# list1=[1,2,3,4,5,6]
+# reverse_value = len(list1)-1
+# while reverse_value>=0:
+#     print(list1[reverse_value],end=' ')        # 6 5 4 3 2 1
+#     reverse_value -= 1
+
+#13). Python program to reverse a list using index slicing.
+# list1=[1,2,3,4,5,6]
+# print(list1[::-1])       # [6, 5, 4, 3, 2, 1]
+
+#14). Python program to reverse a list with reversed and reverse methods.
+#1
+# list1=[1,2,3,4,5,6]
+# list1.reverse()
+# print('Reverse Method List1:',list1)       # Reverse Method List1: [6, 5, 4, 3, 2, 1]
+
+#2.
+# list1=[1,2,3,4,5,6]
+# print('Reversed Method List1:',list(reversed(list1)))   # Reversed Method List1: [6, 5, 4, 3, 2, 1]
+
+
+#15. Python program to copy or clone one list to another list.
+# list1 = [1, 2, 3, 4, 5, 6]
+# list2=[]
+# for i in list1:
+#     list2.append(i)
+# print('List2:',list2)           # List2: [1, 2, 3, 4, 5, 6]
+
+
+#16). Python program to return True if two lists have any common member.
+# list1=[1,2,3,4,5]
+# list2=[2,7,8]
+# for i in list1:
+#     if i in list2:
+#         print('True')         # True
+
+
+#17). Python program to print a specific list after removing the 1st, 3rd, and 6th elements from the list.
+# list1=[1,2,3,4,5,6,7]
+# list1.remove(1)
+# list1.remove(3)
+# list1.remove(6)
+# print('New list1:',list1)         # New list1: [2, 4, 5, 7]
+
+
+#18). Python program to remove negative values from the list.
+# list1=[1,-11,2,3,-7,4,-5,-6]
+# for i in list1:
+#     if i >=0:
+#         print(i,end=' ')         # 1 2 3 4
+
+
+#19). Python program to get a list of all elements which are divided by 3 and 7.
+# list1=[3,7,15,10,24,12,21,25,27]
+# list2=[]
+# for i in list1:
+#     if i%3== 0 or i%7==0:
+#         list2.append(i)
+# print('List2: ',list2)            # List2:  [3, 7, 15, 24, 12, 21, 27]
+
+
+#20). Python program to check whether the given list is palindrome or not. (should be equal from both sides).
+# list1=[1,2,3,3,2,1]
+# list2=list1[::-1]
+# if list1==list2:
+#     print('List is palindrome')          # List is palindrome
+# else:
+#     print('List is not palindrome')
+
+#22). Python Program to get a list of words which has vowels in the given string.
+#Input: “www Student ppp are qqqq learning Python vvv”
+#Output : [‘Student’, ‘are’, ‘learning’, ‘Python’]
+str1= 'www Student ppp are qqqq learning Python vvv'
+str1=str1.split()
+str2=[]
+for i in str1:
+    for j in i:
+        if ((j == 'a' or j == 'A') or (j == 'e' or j == 'E') or (j == 'i' or j == 'I') or (j == 'o' or j == 'O')):
+            str2.append(i)
+            break
+print(str2)                            # ['Student', 'are', 'learning', 'Python']
