@@ -48,13 +48,18 @@ print("result :", result)  # (1, 2, 3, 7, 8, 12, 67)
 
 #### reversed function###
 print("_"*50)
-result = reversed(tup5)
-print(result, [result])
-output = [data for data in result]
-print(output) # [1, 67, 12, 8, 2, 7, 3]
+result = tuple(reversed(tup5))
+print(result)
+# print(next(result))
+# print(next(result))
+# print(tuple(result))
+# print(result, [result])
+# output = [data for data in result]
+# print(output) # [1, 67, 12, 8, 2, 7, 3]
 # for data in result:
 #     print(data)
 
+"""
 # Get Max, Min and sum from tuple values
 tup6 = (55, 66, 77, 33, 223, 266)
 print("Max value:", max(tup6)) # Max value: 266
@@ -68,6 +73,12 @@ print(tup7*3) # (4, 7, 2, 66, 2, 4, 7, 2, 66, 2, 4, 7, 2, 66, 2)
 
 list1 = [5, 7, 8]
 print(list1*3) # [5, 7, 8, 5, 7, 8, 5, 7, 8]
+
+"""
+values = (5, 8, 3, 9, 22, 12)
+result = (x**2 for x in values)
+print(result)
+print(list(result)) # [25, 64, 9, 81, 484, 144]
 
 
 
