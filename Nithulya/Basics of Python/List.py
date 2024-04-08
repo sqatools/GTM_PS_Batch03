@@ -264,3 +264,6 @@
 # result = [(i, j) for i in list1 for j in list2]
 # print("Result:", result)       # Result: [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c')]
 
+
+
+

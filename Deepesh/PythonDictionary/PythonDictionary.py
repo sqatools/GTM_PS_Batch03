@@ -116,19 +116,7 @@ print("dict c:", dict_c)
 # {'Name': 'Rahul', 'Age': 30, 'Address': 'Mumbai', 'Country': 'India', 'email': 'rahul@gmail.com'}
 
 ###############
-# setdefault method: This method set a default value for the new key and return the value.
-# and if key available then it will return the value from dictionary.
-
-print("_"*50)
-dict_d = {'Name': 'Rahul', 'Age': 30, 'Address': 'Mumbai', 'Country': 'India', 'email': 'rahul@gmail.com', 'phone': 765765756}
-
-result = dict_d.setdefault("Name", "IPL")
-print(result)
-
-result2 = dict_d.setdefault("UserID", "IPL")
-print("result2 :", result2)
-print("dict d:", dict_d)
-
+dict1: {'Name': 'Nihith', 'Age': 7, 'Address': 'Kerala'}
 #################
 print("_"*50)
 # clear method:
@@ -146,7 +134,6 @@ dict_e = {'Name': 'Rahul', 'Age': 30, 'Address': 'Mumbai'}
 
 del dict_e['Address']
 print("dict_e :", dict_e) #  {'Name': 'Rahul', 'Age': 30}
-
 #######################
 print("_"*50)
 # copy method : this method copy data from dict1 to dict2
@@ -167,6 +154,9 @@ dictq['d'] = 300
 
 print("dictp :", dictp) # dictp : {'a': 345, 'b': 678, 'c': 999}
 print("dictq :", dictq) # dictq : {'a': 345, 'b': 678, 'c': 999, 'd': 300}
+
+
+
 
 ############################################
 # program
