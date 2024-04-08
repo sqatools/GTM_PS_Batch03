@@ -200,18 +200,12 @@ print("Hello".istitle())
 print("Hello World".istitle())
 print("hello".istitle())
 print("hello World".istitle())
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 print("Hello123".isalnum())  # It will check whether string contain alphabets and numbers
 print("Hello".isalpha())  # It will check whether string contain only alphabets.
 print("hello".isascii())  # It will check only for ASCII character
 print("hello".isidentifier())  # This method check whether a given string can be a valid variable name.
 print("123456789".isnumeric())  # It will check whether string contain alphabets and numbers
 print("12345 6789".isnumeric())  # It will check whether string contain alphabets and numbers
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 # Changing case #
 # First letter will be upper case and the remaining letter will be lower case
@@ -273,8 +267,6 @@ print('a-b-c-d-e'.replace('-', ','))
 print("Welcome to Hyderabad".replace("Welcome", "Hi"))
 print("Welcome to Hyderabad".replace("Hyderabad", "India"))
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 # strip method: This method remove all the trailing space from given string
 str3 = " Python Programming "
 print(str3)
@@ -362,13 +354,3 @@ for i in range(len(str2) - 1):
         counter = 1
 
 print("most repeated char :", most_r_char, ":", most_r_count)
-=======
-
-
-
->>>>>>> Stashed changes
-=======
-
-
-
->>>>>>> Stashed changes
