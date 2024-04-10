@@ -158,12 +158,14 @@
 #22). Python Program to get a list of words which has vowels in the given string.
 #Input: “www Student ppp are qqqq learning Python vvv”
 #Output : [‘Student’, ‘are’, ‘learning’, ‘Python’]
-str1= 'www Student ppp are qqqq learning Python vvv'
-str1=str1.split()
-str2=[]
-for i in str1:
-    for j in i:
-        if ((j == 'a' or j == 'A') or (j == 'e' or j == 'E') or (j == 'i' or j == 'I') or (j == 'o' or j == 'O')):
-            str2.append(i)
-            break
-print(str2)                            # ['Student', 'are', 'learning', 'Python']
+# str1= 'www Student ppp are qqqq learning Python vvv'
+# str1=str1.split()
+# str2=[]
+# for i in str1:
+#     for j in i:
+#         if ((j == 'a' or j == 'A') or (j == 'e' or j == 'E') or (j == 'i' or j == 'I') or (j == 'o' or j == 'O')):
+#             str2.append(i)
+#             break
+# print(str2)                            # ['Student', 'are', 'learning', 'Python']
+
+
