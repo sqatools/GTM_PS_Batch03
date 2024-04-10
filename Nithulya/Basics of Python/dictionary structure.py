@@ -61,13 +61,13 @@
 
 
 #2.
-# studPhone='1111111111'
-# for key,value in school.items():
-#     if isinstance(value,dict):
-#         for k1,v1 in value.items():
-#             for v2 in v1:
-#                 if v2['phone']==studPhone:
-#                     print(v2['email'])
+studPhone='1111111111'
+for key,value in school.items():
+    if isinstance(value,dict):
+        for k1,v1 in value.items():
+            for v2 in v1:
+                if v2['phone']==studPhone:
+                    print(v2['email'])
 
 
 #2.
