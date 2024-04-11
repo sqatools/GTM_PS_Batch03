@@ -13,10 +13,12 @@ for word in word_list:
     if word_len < s_len: # 5 < 5, 4< 5, 4< 4, 8 < 4, 2< 4, 3< 2, 8< 2, 6< 2
         s_len = word_len # 5, 4, 2
         s_word = word # Hello, Very, We
-
-
 print("smallest length :", s_len)
 print("smallest word :", s_word)
+
+
+
+
 
 print("_"*50)
 # Program: write a python code to find the most simutaneously repeated characters.
