@@ -54,5 +54,18 @@ def multiplication(a, b):
 def division(a, b):
     print("Division:", a / b)
 
-def user_input():
-    
+
+calc = int(input("Enter 1. Addition, 2. Subtraction 3. Multiplication 4. Division:"))
+a = int(input("Enter A Value:"))
+b = int(input("Enter B value:"))
+
+if calc == 1:
+    addition(a, b)
+elif calc == 2:
+    subtraction(a, b)
+elif calc == 3:
+    multiplication(a, b)
+elif calc == 4:
+    division(a, b)
+else:
+    print('Invalid input')
