@@ -46,7 +46,10 @@ for i in range(len(list1)-1):
 print(tuple(list2)) # (2, 6, 12)
 
 # 17). Python tuple program to join tuples if the initial elements of the sub-tuple are the same.
-t1 = [(3,6,7),(7,8,4),(7,3),(3,0,5)]
+t1 = ((3,6,7),(7,8,4),(7,3),(3,0,5))
+l1(tuple(t1))
+
+
 #Output:[(3,6,7,0,5),(7,8,4,3)]
 
 # 18). Python tuple program to convert a list into a tuple and multiply each element by 2.

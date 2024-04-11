@@ -1,5 +1,3 @@
-import sys
-
 # 11). Python Dictionary program to sort a dictionary using keys.
 dict_a = {'d' : 21, 'b' : 53,  'a': 13, 'c': 41}
 for val in sorted(dict_a):
@@ -7,6 +5,9 @@ for val in sorted(dict_a):
 
 # 12). Python Dictionary program to sort a dictionary in python using values.
 dict_b = {'d' : 14, 'b' : 52,  'a': 13, 'c': 1 }
+
+
+print(dict_b)
 
 
 
@@ -42,6 +43,7 @@ print("Sum of value :", s)
 
 
 # 17). Python program to get the size of a dictionary in python.
+import sys
 dict_i = {'x' : 23, 'y' : 10 , 'z' : 7}
 print(sys.getsizeof(dict_i),"bytes")
 
