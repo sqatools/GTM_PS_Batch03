@@ -34,6 +34,3 @@ def cal():
     elif option == 4 and num2 == 0:
         print("Division by zero is not defined")
     cal()
-
-
-cal()
