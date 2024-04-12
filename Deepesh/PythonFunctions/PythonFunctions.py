@@ -153,3 +153,74 @@ add, mul, sub = multi_ops(100, 50)
 print("addition :", add)
 print("multiplicaiton :", mul)
 print("subtraction :", sub)
+
+# list1 = [5, 6, 7, 8]
+#
+# max(list)
+
+################# Function documentation ##########
+def factorials(num1):
+    """
+    This function will get the factorials of any given number and return it
+    :param num1: this is required input number
+    :return: int
+    """
+    fact = 1
+    for i in range(num1, 0, -1):
+        fact = fact*i
+
+    return fact
+
+print(factorials(5))
+
+print(factorials.__doc__)
+"""
+This function will get the factorials of any given number and return it
+    :param num1: this is required input number
+    :return: int
+
+"""
+help(factorials)
+
+"""
+Help on function factorials in module __main__:
+
+factorials(num1)
+    This function will get the factorials of any given number and return it
+    :param num1: this is required input number
+    :return: int
+
+"""
+
+print("_"*50)
+################### Function recursion ###########
+
+temp = 1
+def fun1():
+    global temp
+    print(temp)
+    temp = temp+ 1
+    if temp == 10:
+        exit()
+    fun1()
+
+# RecursionError: maximum recursion depth exceeded
+#fun1()
+
+
+# get factorials of all the numbers between 1 to 10
+
+print("_"*50)
+def fact_value(n):
+    fact = 1
+    for i in range(n, 0, -1):
+        fact = fact*i
+
+    print(f"fact of {n}:", fact)
+    n = n - 1
+    if n == 0:
+        exit()
+    fact_value(n)
+
+
+fact_value(10)
