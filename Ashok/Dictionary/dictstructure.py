@@ -61,6 +61,7 @@ st_name = "raju"
 # iterate over schools keys and values
 for key, value in school.items():
     # checking the student value in dict form
+    # The isinstance() function returns True if the specified object is of the specified type, otherwise False.
     if isinstance(value, dict):
         # iterate over student values
         for k1, v1 in value.items():
