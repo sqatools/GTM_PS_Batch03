@@ -16,10 +16,10 @@
 #     print(i,end=' ') #65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81
 
 #3.
-# for i in range(97,123):
-#     if i ==111:
-#         break
-#     print(chr(i),end=' ')    # a b c d e f g h i j k l m n
+for i in range(97,123):
+    if i ==111:
+        break
+    print(chr(i),end=' ')    # a b c d e f g h i j k l m n
 
 
 # Continue :

@@ -82,6 +82,6 @@ while True:
         valued=value1/value2
         print("Division : ",valued)
     else:
-        print("Please choose correct choice, it is invalid")
+        print("Please  correct choice, it is invalid")
 
 
