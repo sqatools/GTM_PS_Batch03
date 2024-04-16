@@ -84,7 +84,7 @@ def read_number_of_bytes(filename, byte_count):
 read_number_of_bytes("demo1.txt", 30)
 
 
-# 2. Read n number of line with readline method. #
+# 2. readline(): This method reads a single line from the file each time it is called #
 def read_number_of_lines(filename, lines_count):
     with open(filename, "r") as file_obj4:
         for i in range(lines_count):
@@ -95,7 +95,7 @@ def read_number_of_lines(filename, lines_count):
 read_number_of_lines("demo1.txt", 5)
 
 
-# 3. read list of lines with help of readlines #
+# 3. readlines(): this method read all the lines but in list format. #
 def read_list_of_lines(filename):
     with open(filename, "r") as file:
         lines_data = file.readlines()

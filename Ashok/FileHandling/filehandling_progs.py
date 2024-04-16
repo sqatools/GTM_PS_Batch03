@@ -25,16 +25,28 @@ def combine_two_files(file1, file2, file3):
 
 combine_two_files("read_file1.txt", "read_file2.txt", "append_file3.txt")
 
+
 # Homework :
 # 1. write a python program Replace file content JAVA with PYTHON.
 # 2. write a python program to get all the email id from given file.
 # 3. Write a python program to get all the phone number from given file.
 
 # Python program to replace text in a file
-s = input("Enter text to replace the existing contents:")
-m = input("Enter text to replace the existing contents:")
-f = open("file.txt", "r+")  # r+ mode opens the file in read and write mode
-f.replace(s)
-f.write(m)
-f.close()
-print("Text successfully replaced")
+with open('file1.txt', 'r') as f1:
+    with open('file2.txt', 'w') as f2:
+        for line in f1:
+            f2.write(line.replace('Java', 'python'))
+
+
+with open('file3.txt', 'r') as f3:
+    for line in f3:
+        line.find("@")
+        print(line)
+
+
+
+
+
+
+
+
