@@ -1,0 +1,10 @@
+a.Speed of Development.
+b.Extensive support libraries.
+c.Open source and large active community base.
+d.Versatile, easy to read, learn, and write.
+e.User-friendly data structures.
+f.High-level language.
+g.Dynamically typed language.
+h.Object-Oriented and Procedural programming language.
+i.Portable and interactive.
+j.Ideal for prototypes.

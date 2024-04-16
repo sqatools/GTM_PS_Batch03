@@ -7,16 +7,16 @@
 # addNumber()
 
 #2). Python function program to print the input string 10 times.
-# def inString():
-#     str1=input("Enter the string : ")
-#     return str1*10
-# print(inString())
+def inString():
+    str1=input("Enter the string : ")
+    return str1*10
+print(inString())
 
 #(OR)
-# def inString(str1):
-#     print(str1*10)
-# str2=input("Enter the string : ")
-# inString(str2)
+def inString(str1):
+    print(str1*10)
+str2=input("Enter the string : ")
+inString(str2)
 
 
 #3). Python function program to print a table of a given number.
