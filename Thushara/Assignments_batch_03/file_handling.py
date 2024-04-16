@@ -13,7 +13,7 @@ with open("file_replace.txt", "r") as f:
         print(line)
 
 with open ("file_replace.txt", "r") as f1:
-    with open("file_replace1.txt", "w") as f2:
+    with open("file_replace1.txt", "a") as f2:
         data = f1.readlines()
         for line in data:
             line = line.replace("JAVA", "Python")
@@ -36,7 +36,7 @@ with open ("profile.txt", "r")as f2:
     print(data)
     for line in data:
         for word in line.split():
-            if word.isnumeric():
+            if word.isnumeric() and len(word) == 10:
                 num_lst.append(word)
     print("List of phone numbers")
     print("-"*50)
