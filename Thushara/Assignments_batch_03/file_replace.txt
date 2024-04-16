@@ -1,0 +1,2 @@
+JAVA is one of the most popular programming languages in software development. 
+JAVA is an interpreted, object-oriented,and high-level programming language with dynamic semantics. 
