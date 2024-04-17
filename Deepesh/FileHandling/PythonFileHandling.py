@@ -106,9 +106,9 @@ def print_specific_number_line_from_end_of_file(filename, num_line):
 
 # tell() method : This method will tell you the current cursor position.
 # seek method :  This method will help to set the cursor poition with respect to
-# 1. Begining of file
-# 2. End of file
-# 3. current position of cursor
+# 1. Begining of file : seek(30, 0)
+# 2. End of file : seek(-30, 2)
+# 3. current position of cursor : (30, 1)
 
 def set_different_cursor_position(filename):
     with open(filename, "rb") as file:
@@ -155,7 +155,35 @@ def combine_two_files(file1, file2, file3):
 
 combine_two_files("read_file1.txt", "read_file2.txt", "append_file3.txt")
 # Home work :
-#1. write a python program Replace file content JAVA with PYTHON.
+# 1. write a python program Replace file content JAVA with PYTHON.
+# 2. write a python program to get all the email id from given file.
+# 3. Write a python program to get all the phone number from given file.
+
 #2. write a python program to get all the email id from given file.
-#3. Write a python program to get all the phone number from given file.
+
+def get_email_id(filename):
+    email_list = []
+    phone_numbers = []
+    with open(filename, "r") as file:
+        data = file.read()
+
+    word_list = data.split()
+    for word in word_list:
+        if '@' in word:
+            email_list.append(word)
+        if len(word) == 10 and word.isnumeric():
+            phone_numbers.append(word)
+
+    print(email_list, phone_numbers)
+    return email_list, phone_numbers
+
+print("_"*50)
+emails, phones = get_email_id("read_data.txt")
+
+for email in emails:
+    print(email)
+print("_"*50)
+for num in phones:
+    print(num)
+
 
