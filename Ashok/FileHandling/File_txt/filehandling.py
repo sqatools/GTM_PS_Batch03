@@ -25,7 +25,7 @@ def read_file(filename):
     file_reading.close()
 
 
-read_file("C:\\PythonAutomation\\GTM_PS_Batch03\\Ashok\\FileHandling\\demo1.txt")
+read_file("C:\\PythonAutomation\\GTM_PS_Batch03\\Ashok\\FileHandling\\File_txt\\filehandling.py")
 
 
 def write_append_file1(filename, content):
