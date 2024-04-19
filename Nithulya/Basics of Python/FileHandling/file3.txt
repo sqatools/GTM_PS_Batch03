@@ -1,0 +1,25 @@
+1.Java:
+a.Speed of Development.
+2.Java is a popular programming language. It was nith@gmail.com created by Guido van Rossum, and released in 1991.
+b.Extensive support libraries.
+3.It is used 1234567891 for:
+c.Open source and large active community base.
+4.web development (server-side),
+d.Versatile, easy to read, learn, and write.
+5.software suresh@gmail.com development,
+e.User-friendly data structures.
+6.mathematics,
+f.High-level language.
+7.system scripting.
+g.Dynamically typed language.
+8.What can Python do?
+h.Object-Oriented and Procedural programming language.
+9.Java can be used on a server to create web applications.
+i.Portable and interactive.
+10.Java can be 9992314356 keerthi@gmail.com alongside software to create workflows.
+
+11.Java can connect to database systems. It can also read and modify files.
+
+12.Java can be used to handle big data and perform complex mathematics.
+
+13.Java can be used for rapid prototyping, or for production-ready software development.
