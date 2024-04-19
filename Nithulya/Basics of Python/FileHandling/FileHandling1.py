@@ -178,29 +178,47 @@ append mode(a)
 #     print(char_40)
 
 
-# Write a python program to combine both the files with alternate lines and create new file.
-# def combine_two_files(file1, file2, file3):
+# # Write a python program to combine both the files with alternate lines and create new file.
+# def combine_two_files(file1, file2,file3):
 #     with open(file1, "r") as file1_obj:
 #         file1_list = file1_obj.readlines()
-#
+#         print(file1_list)
 #     with open(file2, "r") as file2_obj:
 #         file2_list = file2_obj.readlines()
-#
-#     file3_list = []
-#     len_list = 0
-#     if len(file1_list) > len(file2_list):
-#         len_list = len(file1_list)
-#     else:
-#         len_list = len(file2_list)
-#
-#     for i in range(len_list):
-#         file3_list.append(file1_list[i])
-#         file3_list.append(file2_list[i])
-#
+#         print(file2_list)
+#         file3_list=[]
+#         len_list=0
+#         if len(file1_list) > len(file2_list):
+#             len_list=len(file1_list)
+#         else:
+#             len_list=len(file2_list)
+#         for i in range(len_list):
+#             file3_list.append(file1_list[i])
+#             file3_list.append(file2_list[i])
+#         print(file3_list)
 #     with open(file3, "a") as file3_obj:
 #         for line in file3_list:
 #             file3_obj.write(line)
-# combine_two_files("file1.txt", "file2.txt", "file3.txt")
+# combine_two_files("file1.txt","file2.txt","file3.txt")
+# def combine_two_files(file1, file2, file3):
+#     with open(file1, "r") as file1_obj:
+#         file1_list = file1_obj.readlines()
+#     with open(file2, "r") as file2_obj:
+#         file2_list = file2_obj.readlines()
+#         file3_list = []
+#         len_list = 0
+#         if len(file1_list) > len(file2_list):
+#             len_list = len(file1_list)
+#         else:
+#             len_list = len(file2_list)
+#             for i in range(len_list):
+#                 file3_list.append(file1_list[i])
+#                 file3_list.append(file2_list[i])
+#                 print(file3_list)
+#     with open(file3, "a") as file3_obj:
+#         for line in file3_list:
+#             file3_obj.write(line)
+#combine_two_files("file1.txt", "file2.txt", "file3.txt")
 
 
 #1. write a python program Replace file content JAVA with PYTHON.
