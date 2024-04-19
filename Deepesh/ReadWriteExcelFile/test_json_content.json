@@ -1,8 +1,1 @@
-{
-  "Name" : "Rahul",
-  "Email" : "rahul@gmail.com",
-  "Phone" : "89890778979",
-  "Address" : "Mumbai Boriwali",
-  "URL" : "https://www.google.co.in",
-  "Browser" : "Chrome"
-}
+{"Name": "Rahul", "Email": "rahul@gmail.com", "Phone": "89890778979", "Address": "Mumbai Boriwali", "URL": "https://www.google.co.in", "Browser": "Chrome", "ip": "10.22.33.44"}

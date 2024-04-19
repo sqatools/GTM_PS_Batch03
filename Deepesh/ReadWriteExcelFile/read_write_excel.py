@@ -16,9 +16,19 @@ def read_excel_file_with_sheetname(filename, sheet_name, cell_name):
     print(cell.value)
 
 
-read_excel_file_with_sheetname("test_data.xlsx", sheet_name="Sheet2", cell_name="A1")
-read_excel_file_with_sheetname("test_data.xlsx", sheet_name="Sheet2", cell_name="B2")
+#read_excel_file_with_sheetname("test_data.xlsx", sheet_name="Sheet2", cell_name="A1")
+#read_excel_file_with_sheetname("test_data.xlsx", sheet_name="Sheet2", cell_name="B2")
 
-print("_"*50)
-for i in range(1, 5):
-    read_excel_file_with_sheetname("test_data.xlsx", sheet_name="Sheet2", cell_name=f"A{i}")
+# print("_"*50)
+# for i in range(1, 5):
+#     read_excel_file_with_sheetname("test_data.xlsx", sheet_name="Sheet2", cell_name=f"A{i}")
+
+def write_content_to_excel(filename, sheetname, cell_name, cell_value):
+    wb = openpyxl.load_workbook(filename)
+    sheet_obj = wb[sheetname]
+    cell = sheet_obj[cell_name]
+    cell.value = cell_value
+    wb.save(filename)
+
+#write_content_to_excel("test_data.xlsx", "Sheet1", "A1", "USA")
+write_content_to_excel("test_data.xlsx", "Sheet1", "C11", "=SUM(C1:C9)")
