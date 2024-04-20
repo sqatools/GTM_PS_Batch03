@@ -32,12 +32,36 @@ import openpyxl
 #     read_excel_file_with_sheetname("SqlData.xlsx", sheet_name="Sheet1", cell_name=f"B{i}")
 
 #4.
-def read_excel_file_with_sheetname(filename, sheet_name, cell_name):
-    wb=openpyxl.load_workbook(filename)
-    sheet=wb[sheet_name]
-    cell=sheet[cell_name]
-    print(cell.value)
+# def read_excel_file_with_sheetname(filename, sheet_name, cell_name):
+#     wb=openpyxl.load_workbook(filename)
+#     sheet=wb[sheet_name]
+#     cell=sheet[cell_name]
+#     print(cell.value)
+#
+# for i in range(1, 11):         # We will get whole data that particular cell(B{i}) and matching value of cell(C{i})
+#     read_excel_file_with_sheetname("SqlData.xlsx", sheet_name="Sheet1", cell_name=f"B{i}")
+#     read_excel_file_with_sheetname("SqlData.xlsx", sheet_name="Sheet1", cell_name=f"C{i}")
+#
 
-for i in range(1, 11):         # We will get whole data that particular cell(B{i}) and matching value of cell(C{i})
-    read_excel_file_with_sheetname("SqlData.xlsx", sheet_name="Sheet1", cell_name=f"B{i}")
-    read_excel_file_with_sheetname("SqlData.xlsx", sheet_name="Sheet1", cell_name=f"C{i}")
+
+#5.Write_content_to_file_without_overwrite :
+# def write_excel_file_with_sheetname(filename, sheet_name, cell_name,cell_value):
+#     wb = openpyxl.load_workbook(filename)
+#     sheet_obj = wb[sheet_name]
+#     cell = sheet_obj[cell_name]
+#     cell.value = cell_value
+#     wb.save(filename)
+# write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='A11',cell_value='6234')
+# write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='B11',cell_value='NISHA LESLY')
+
+#6.Do calculation on Excel file:
+def write_excel_file_with_sheetname(filename, sheet_name, cell_name,cell_value):
+    wb = openpyxl.load_workbook(filename)
+    sheet_obj = wb[sheet_name]
+    cell = sheet_obj[cell_name]
+    cell.value = cell_value
+    wb.save(filename)
+write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='A12',cell_value='=SUM(A2:A11)')
+write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='B11',cell_value='NISHA JOBY')
+
+
