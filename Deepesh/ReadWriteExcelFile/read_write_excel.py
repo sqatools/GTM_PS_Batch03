@@ -32,4 +32,10 @@ def write_content_to_file_without_overwrite(filename, sheet_name, cell_name, cel
     wb.save(filename)
 
 #write_content_to_file_without_overwrite("test_data.xlsx", "Sheet1", "B1", "India")
-write_content_to_file_without_overwrite("test_data.xlsx", "Sheet1", "C11", "=SUM(C1:C9)")
+#write_content_to_file_without_overwrite("test_data.xlsx", "Sheet1", "C11", "=SUM(C1:C9)")
+
+import random
+for i in range(10):
+    rand_num =random.randint(1000, 2000)
+    char = chr(65+i)
+    write_content_to_file_without_overwrite("test_data.xlsx", "Sheet1", f"{char}12", rand_num)
