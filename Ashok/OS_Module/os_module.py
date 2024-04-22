@@ -6,6 +6,7 @@ The os module has the following set of methods and constants
 """
 
 import os
+import random
 import shutil
 import time
 
@@ -57,6 +58,9 @@ print(os.path.relpath(r"C:\PythonAutomation\PyAuto\Child1\newfile.txt"))
 print(os.path.abspath(r"..\..\..\PyAuto\Child1\newfile.txt"))
 # o/p: C:\PythonAutomation\PyAuto\Child1\newfile.txt
 
+# os.path.getsize() - This will provide the file size
+print(os.path.getsize(r"C:\PythonAutomation\PyAuto\Child1\newfile.txt"))
+
 # OS Module #
 
 # os.getlogin() - Provides the current user
@@ -90,7 +94,7 @@ print(os.listdir(r"C:\PythonAutomation\GTM_PS_Batch03\Ashok"))
 """
 The Shutil module allows you to do high-level operations on a file, such as copy, create, and remote
 operations. It falls within the umbrella of Python's basic utility modules. This module aids in the
-automation of the copying and deleting of files and folders
+automation of the copying and deleting of files and folders.
 """
 
 # Remove non-empty directory #
@@ -102,4 +106,57 @@ tar_location = r"C:\PythonAutomation\PyAuto2\Folder3"
 shutil.copy(src_location, tar_location)
 # note: It will not copy the empty files.
 
+# get values from environment variable #
+print(os.getenv("NUMBER_OF_PROCESSORS"))
+print(os.getenv("PROCESSOR_ARCHITECTURE"))
 
+# get CPU count #
+print(os.cpu_count())
+
+# Run windows command #
+print(os.system("control"))  # open control panel of windows
+
+print(os.system("appwiz.cpl"))  # open program feature
+
+print(os.system("dir C:\\PythonAutomation"))  # get all file folder data
+
+# Check file permission #
+permission = os.access(r"C:\PythonAutomation\PyAuto\Child1\newfile.txt", os.X_OK)
+print("File permission :", permission)
+
+"""
+mode	Required.
+os.F_OK: Checks if the path exists.
+os.R_OK: Checks if the path is readable.
+os.W_OK: Checks if the path is writable.
+os.X_OK: Checks if the path is executable.
+"""
+
+# Generate random string in python #
+output = os.urandom(100)
+print("random string :", output)
+
+# Generate random integer #
+# return any random in given values
+result = random.randint(1000, 1200)   # 1013
+print(result)
+
+# return any random value in given range along with difference value as like range method.
+val = random.randrange(2, 10, 2)
+print("val  :", val, type(val))
+
+# it will provide random floating number 0 to 1
+val2 = random.random()
+print(val2)          # 0.35347856816623346
+
+# generate random binary numbers #
+bin = ''
+for i in range(10):
+    val = random.randint(0, 1)
+    bin = bin + str(val)
+
+print(bin)
+
+###############################
+number = random.getrandbits(10)
+print(number, format(number, "0b"))
