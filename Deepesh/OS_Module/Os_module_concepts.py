@@ -1,5 +1,6 @@
 import os
 import shutil
+import random
 
 # get current working directory path
 
@@ -71,4 +72,90 @@ src_location = r"E:\Filesdata\file1.txt"
 tar_location = r"E:\Filesdata\Tavet\file1_batch2_copy.txt"
 shutil.copy(src_location, tar_location)
 
+############# Get value from environment variable ###################
+
+val = os.getenv("Browser2")
+print("value :", val)
+
+path = os.getenv("path")
+print("path value :", path)
+
+chrome_path = os.getenv("CHROME_PATH")
+print("chrmepath :", chrome_path)
+
+############ Get size of file ###############
+
+filesize = os.path.getsize(r"E:\Filesdata\Tavet\file_copies.txt")
+print("File size :", filesize)
+# File size : 118549760
+
+########## Get CPU count ##############
+
+cpu_count = os.cpu_count()
+print("cpu count of system :", cpu_count)
+# cpu count of system : 8
+
+################# get mtime of the file ############
+
+mtime = os.path.getmtime(r"E:\Filesdata\Tavet\file_copies.txt")
+print("mtime :", mtime)# 1713753877.4982724
+
+########### Run windows command ##########
+# os.system("control") # open control panel of windows
+
+# os.system("appwiz.cpl") # open program feature
+
+# os.system("dir E:\Filesdata")  # get all file folder data
+
+# execute the python file using os module.
+# os.system("python E:\\Trainings\\GTM_PS_Batch03_8March2024\\GTM_PS_Batch03\\Deepesh\\ReadWriteExcelFile\\read_json_file.py")
+
+######### Check file permission ############
+permission = os.access(r"E:\Filesdata\Tavet\file_copies.txt", os.X_OK)
+print("File permission :", permission)
+"""
+mode	Required.
+os.F_OK: Checks if the path exists.
+os.R_OK: Checks if the path is readable.
+os.W_OK: Checks if the path is writable.
+os.X_OK: Checks if the path is executable.
+"""
+
+#################### Generate random string in python ############
+
+output = os.urandom(100)
+print("random string :", output)  #$ \xd4\x9a\x86[\xac\x8bG-
+
+
+#################### Generate random integer ##############
+print("_"*40)
+# return any random in given values
+result = random.randint(1000, 2000)   # 1902
+print(result)
+
+# return any random value in given range along with difference value as like range method.
+val = random.randrange(2, 10, 2)
+print("val  :", val, type(val))
+
+# it will provide random floating number 0 to 1
+val2 = random.random()
+print(val2) #0.35347856816623346
+
+
+print("_"*40)
+
+# generate random binary numbers
+bin = ''
+
+for i in range(10):
+    val = random.randint(0, 1)
+    bin = bin + str(val)
+
+print(bin)
+
+
+###############################
+print("_"*50)
+number = random.getrandbits(10)
+print(number, format(number, "0b"))
 
