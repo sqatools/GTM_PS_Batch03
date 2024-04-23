@@ -55,13 +55,38 @@ import openpyxl
 # write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='B11',cell_value='NISHA LESLY')
 
 #6.Do calculation on Excel file:
-def write_excel_file_with_sheetname(filename, sheet_name, cell_name,cell_value):
-    wb = openpyxl.load_workbook(filename)
-    sheet_obj = wb[sheet_name]
-    cell = sheet_obj[cell_name]
-    cell.value = cell_value
-    wb.save(filename)
-write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='A12',cell_value='=SUM(A2:A11)')
-write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='B11',cell_value='NISHA JOBY')
+# def write_excel_file_with_sheetname(filename, sheet_name, cell_name,cell_value):
+#     wb = openpyxl.load_workbook(filename)
+#     sheet_obj = wb[sheet_name]
+#     cell = sheet_obj[cell_name]
+#     cell.value = cell_value
+#     wb.save(filename)
+# write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='A12',cell_value='=SUM(A2:A11)')
+# write_excel_file_with_sheetname('SqlData.xlsx', sheet_name="Sheet1", cell_name='B11',cell_value='NISHA JOBY')
 
 
+#7.
+# def write_excel_file_with_sheetname(filename, sheet_name, rowNum,colNum,list1):
+#     wb = openpyxl.load_workbook(filename)
+#     sheet_obj = wb[sheet_name]
+#     for row in list1:
+#         cell = sheet_obj.cell(rowNum, colNum)
+#         cell.value = row
+#         rowNum=rowNum+1
+#     wb.save(filename)
+# list1=['ANU','MEERA','MANU','SNEHA','VIPIN']
+# write_excel_file_with_sheetname("SqlData.xlsx", "Sheet1",12, 2, list1)
+
+
+#8.
+# import random
+# def write_excel_file_with_sheetname(filename, sheet_name, cell_value,cell_name):
+#     wb = openpyxl.load_workbook(filename)
+#     sheet_obj = wb[sheet_name]
+#     cell = sheet_obj[cell_name]
+#     cell.value = cell_value
+#     wb.save(filename)
+# for i in range(10):
+#     rand_num =random.randint(1000, 2000)
+#     char = chr(65+i)
+#     write_excel_file_with_sheetname("SqlData.xlsx", "Sheet1", f"{char}12", rand_num)
