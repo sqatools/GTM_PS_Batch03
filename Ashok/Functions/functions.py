@@ -208,7 +208,7 @@ def fun1():
         exit()
     fun1()
 
+
 # RecursionError: maximum recursion depth exceeded
 # fun1()
 
-# Pending topics: function as parameter, function as object, decorator, generator, lambda functions
