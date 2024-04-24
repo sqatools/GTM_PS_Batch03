@@ -5,5 +5,8 @@ print("Hello US, India")
 print("Hello Australia")
 print("Hello England, London")
 print("Hello India, US")
+<<<<<<< HEAD
 
+=======
+>>>>>>> e6276c8 (changes in file1)
 
