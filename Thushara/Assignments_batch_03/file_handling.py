@@ -1,4 +1,3 @@
-# Home work :
 # 1. write a python program Replace file content JAVA with PYTHON.
 # 2. write a python program to get all the email id from given file.
 # 3. Write a python program to get all the phone number from given file.
@@ -11,7 +10,7 @@ with open("file_replace.txt", "r") as f:
     data1 = f.readlines()
     for line in data1:
         print(line)
-
+print("-"*50)
 with open ("file_replace.txt", "r") as f1:
     with open("file_replace1.txt", "a") as f2:
         data = f1.readlines()
