@@ -493,8 +493,136 @@ print(tuple(l))
 
 
 # 60). Python tuple program to extract tuples that are symmetrical with others from a list of tuples.
+l = [('a', 'b'), ('d', 'e'), ('b', 'a')]
+print("Original list of tuples: ", l)
+
+symmetric_tuples = []
+
+for tup in l:
+    if (tup[1], tup[0]) in l:
+        symmetric_tuples.append(tup)
+
+print("Tuples that are symmetric: ", symmetric_tuples)
 
 
+
+# 62). Python tuple program to remove nested elements from a tuple.
+text = ( 's', 'q', 'a', ('t', 'o', 'o', 'l', 's'), 'i', 's', 'b', 'e', 's', 't' )
+l =[]
+for ele in text:
+    if type(ele) !=tuple:
+        l.append(ele)
+        out = tuple(l)
+print(out)
+
+
+
+# 63). Python tuple program to sort a tuple by the maximum value of a tuple.
+text = [ (1, 5, 7), (3, 4, 2), (4, 9, 0) ]
+
+a = sorted(text,key = lambda x : max(x), reverse = True)
+print(a)
+
+
+# 64). Python tuple program to sort a list of tuples by the minimum value of a tuple.
+text = [ (1, 5, 7), (3, 4, 2), (4, 9, 0) ]
+
+a = sorted(text,key = lambda x : min(x))
+print(a)
+
+
+# 65). Python tuple program to concatenate two tuples.
+tup1 = ('s','q','a')
+tup2 = ('t','o','o','l')
+print(tup1+tup2)
+
+
+
+# 66). Python tuple program to order tuples by external list.
+a=[('very',8),('i',6),('am',5),('happy',0)]
+list1=['i','am','very','happy']
+output1=[]
+for i in list1:
+    for j in a:
+        for k in j:
+            if k ==i:
+                output1.append(j)
+print(output1)
+
+
+
+# 67). Python tuple program to find common elements between two lists of tuples.
+A=[(1,5),(4,8),(3,9)]
+B=[(9,3),(5,6),(5,1),(0,4)]
+c =[]
+for ele in A:
+    for word in B:
+        if sorted(ele) == sorted(word):
+            c.append(ele)
+print(c)
+
+
+# 68). Python tuple program to convert a binary tuple to an integer.
+tup = (1, 1,0,0)
+print("Original tuple is:", tup)
+
+binary_string = ""
+for val in tup:
+    binary_string += format(val,'b')
+print(binary_string)
+decimal_number = int(binary_string, 2)
+
+print("Decimal number:", decimal_number)
+
+
+# 69). Python tuple program to count the total number of unique tuples.
+tup = [ (8, 9), (4, 7), (3, 6), (8, 9) ]
+count = 0
+l1 = []
+for val in tup:
+    if val not in l1:
+        count+=1
+        l1.append(val)
+print(l1)
+print(count)
+
+
+
+# 70). Python tuple program to calculate the average of the elements in the tuple.
+tup = tuple(input("Enter your tuple : ").split(","))
+output = 0
+length = len(tup)
+for num in tup:
+    output += int(num)
+    avg = output/length
+print(avg)
+
+
+# 71). Python tuple program to swap tuples.
+A=(7,4,9)
+B=(3,)
+C=()
+C=A
+A=B
+B=C
+print(A)
+print(B)
+
+
+
+# 72). Python tuple program to check the type of the input and return True
+# if the type is a tuple and False if it is not a tuple.
+A=( 7, 4, 9, 2, 0 )
+if type(A)==tuple:
+    print(True)
+else:
+    print(False)
+
+
+
+# 73). Python tuple program to find the last element of a tuple using negative indexing.
+A=('p','y','t','h','o','n')
+print("The the element of tuple is : ",A[-1])
 
 
 
