@@ -11,7 +11,7 @@ list2 = [45, 78, 32, 21, 24]
 fun2 = list(filter(lambda x:x%3==0, list2))
 print(fun2) #[45, 78, 21, 24]
 
-from functools import reduce
+from functools import  reduce
 
 lst3 = [1, 2, 3, 4]
 result = reduce(lambda x,y : x*y , lst3)

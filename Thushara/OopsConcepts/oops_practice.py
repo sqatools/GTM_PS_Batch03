@@ -1,6 +1,8 @@
 class human(object):
+    #class attribute
     attr1 ="human"
 
+    # creating constructor
     def __init__(self, name,Id):
         self.name = name
         self.Id = Id
@@ -30,4 +32,17 @@ obj2 = human("Arjun",45)
 obj2.hello()
 obj1.greeting()
 
+print(type(obj1))
 
+""""
+OUTPUT
+My name is Rajuu
+My ID is 23
+I'm a human being!
+My name is Arjun
+My ID is 45
+I'm a human being!
+Hi, Rajuu! Welcome to Python Learning! 
+<class '__main__.human'>
+
+"""
