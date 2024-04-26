@@ -40,3 +40,38 @@ if __name__=='__main__':
     dog1.pet()
 
 
+# 9). Python class with Single Inheritance.
+class Birds:
+    def characteristics(self):
+        print("All birds have feathers and lay eggs.")
+
+class FlightlessBirds(Birds):
+    def flightless(self):
+        print("Ostriches , kiwi, Cassowaries are some of the birds that do not fly.")
+
+bird = FlightlessBirds()
+bird.characteristics() #All birds have feathers and lay eggs.
+bird.flightless()#Ostriches , kiwi, Cassowaries are some of the birds that do not fly.
+
+
+# 10). Python Class with Multiple Inheritance.
+
+class Person:
+    def personal_details(self, name, email,phone):
+        print("Name: ", name, "Email :", email, "Phone :",phone)
+
+class Company:
+    def company_details(self, company_name):
+        print("Company :",company_name)
+
+class Employee(Person,Company):
+    def emplyee_details(self,salary,id,post):
+        print("Salary :", salary , "Id :", id, "Post :",post)
+
+emp1 = Employee()
+
+emp1.personal_details("Hari", "hari@gmail.com",56745343) #Name:  Hari Email : hari@gmail.com Phone : 56745343
+emp1.company_details("SouthMiddle")  #Company : SouthMiddle
+emp1.emplyee_details(50000,67 ,"Teacher")  #Salary : 50000 Id : 67 Post : Teacher
+
+
