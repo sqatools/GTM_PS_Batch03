@@ -4,9 +4,9 @@ Multi Level Inheritance : class A -> class B -> class C
 Multiple Inheritance : Class A -> Class B, Class C -> Class B
 Hierarchical Inheritance : Class A -> Class B , Class A -> Class C
 """
-son_obj = None
+# Hierarchical Inheritance
 class father:
-    def __init__(self, fname, fbusiness, fhouse="4 BHK"):
+    def __init__(self, fname, fbusiness, fhouse):
         self.fname = fname
         self.fbusiness = fbusiness
         self.fhouse = fhouse
@@ -24,7 +24,8 @@ class father:
         self.show_father_name()
         self.show_father_business()
         self.show_father_father_house()
-class Son(father):
+
+class Son1(father):
 
     def __init__(self, s_name, s_education, fname, fbusiness, fhouse):
         super().__init__(fname, fbusiness, fhouse)
@@ -40,19 +41,44 @@ class Son(father):
     def show_son_details(self):
         self.show_son_name()
         self.show_son_education()
+
     def show_family_details(self):
         self.show_father_details()
+        print("_"*50)
         self.show_son_details()
+        print("_"*50)
 
-# obj = Son("Mohit", "Btech", "Raghavan", "Construction", "Bangalow")
-# obj.show_family_details()
-# print(obj.__module__)
-# print(__name__)
+class Son2(father):
 
-# if __name__ == '__main__':
-#     obj = Son("Mohit", "Btech", "Raghavan", "Construction", "Bangalow")
-#     obj.show_family_details()
-#     print(obj.__module__)
-#     print(__name__)
+    def __init__(self, s_name, s_education, fname, fbusiness, fhouse):
+        super().__init__(fname, fbusiness, fhouse)
+        self.son_name = s_name
+        self.son_education = s_education
 
-obj_1 = Son("Mohit", "Btech", "Raghavan", "Construction", "Bangalow")
+    def show_son_name(self):
+        print("son name :", self.son_name)
+
+    def show_son_education(self):
+        print("son education :", self.son_education)
+
+    def show_son_details(self):
+        self.show_son_name()
+        self.show_son_education()
+
+    def show_family_details(self):
+        self.show_father_details()
+        print("_"*50)
+        self.show_son_details()
+        print("_"*50)
+
+
+
+if __name__ == '__main__':
+    obj1 = Son1("Mohit", "Btech", "Raghavan", "Construction", "Bangalow")
+    obj1.show_family_details()
+    print("_"*40)
+    obj2 = Son2("Roshan", "BA", "Raghavan", "Construction", "Bangalow")
+    obj2.show_family_details()
+
+
+

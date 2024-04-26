@@ -4,9 +4,19 @@ Multi Level Inheritance : class A -> class B -> class C
 Multiple Inheritance : Class A -> Class B, Class C -> Class B
 Hierarchical Inheritance : Class A -> Class B , Class A -> Class C
 """
-son_obj = None
+# Multiple Inheritance
+class Mother:
+    def __init__(self, m_name, m_business):
+        self.m_name = m_name
+        self.m_business = m_business
+
+    def show_mother_details(self):
+        print("Mother Name :", self.m_name)
+        print("Mother Business:", self.m_business)
+
+
 class father:
-    def __init__(self, fname, fbusiness, fhouse="4 BHK"):
+    def __init__(self, fname, fbusiness, fhouse):
         self.fname = fname
         self.fbusiness = fbusiness
         self.fhouse = fhouse
@@ -24,12 +34,16 @@ class father:
         self.show_father_name()
         self.show_father_business()
         self.show_father_father_house()
-class Son(father):
 
-    def __init__(self, s_name, s_education, fname, fbusiness, fhouse):
+
+# MRO : Method Resolution Order
+class Son(father, Mother):
+
+    def __init__(self, s_name, s_education, fname, fbusiness, fhouse, m_name, m_business):
         super().__init__(fname, fbusiness, fhouse)
         self.son_name = s_name
         self.son_education = s_education
+        self.m = Mother(m_name, m_business)
 
     def show_son_name(self):
         print("son name :", self.son_name)
@@ -40,19 +54,16 @@ class Son(father):
     def show_son_details(self):
         self.show_son_name()
         self.show_son_education()
+
     def show_family_details(self):
-        self.show_father_details()
         self.show_son_details()
+        self.show_father_details()
+        self.m.show_mother_details()
 
-# obj = Son("Mohit", "Btech", "Raghavan", "Construction", "Bangalow")
-# obj.show_family_details()
-# print(obj.__module__)
-# print(__name__)
 
-# if __name__ == '__main__':
-#     obj = Son("Mohit", "Btech", "Raghavan", "Construction", "Bangalow")
-#     obj.show_family_details()
-#     print(obj.__module__)
-#     print(__name__)
 
-obj_1 = Son("Mohit", "Btech", "Raghavan", "Construction", "Bangalow")
+if __name__ == '__main__':
+    obj = Son("Mohit", "Btech", "Raghavan", "Construction", "Bangalow", "Rohini", "Fashion")
+    obj.show_family_details()
+
+
