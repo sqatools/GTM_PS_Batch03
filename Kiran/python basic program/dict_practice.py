@@ -218,3 +218,89 @@ for i in dict1:
 print(dict2)
 
 
+
+# 23). Python Dictionary program to find the product of all items in the dictionary.
+d ={ 'a' : 2, 'b' : 4, 'c' : 5}
+output = 1
+for key,val in d.items():
+    output*=val
+print(output)
+
+
+
+#  24). Python Dictionary program to remove a key from the dictionary.
+d ={'a':2,'b':4,'c':5 }
+d.pop('c')
+print(d)
+
+
+
+# 25). Python Dictionary program to map two lists into a dictionary.
+a = [ 'name', 'sport', 'rank', 'age']
+b = ['Virat', 'cricket', 1,  32]
+d ={}
+for val,ele in zip(a,b):
+    d[val]=ele
+print(d)
+
+
+# 26). Python Dictionary program to find maximum and minimum values in a dictionary.
+a = { 'a' : 10, 'b' : 44 , 'c' : 60, 'd' : 25}
+l =[]
+for val in a.values():
+    l.append(val)
+l.sort()
+print(max(l))
+print(min(l))
+
+
+
+# 27). Python Dictionary program to group the same items into a dictionary value.
+input1 =[1,3,4,4,2,5,3,1,5,5,2,]
+a = sorted(input1)
+d ={}
+for val in a:
+    if val in d:
+        d[val].append(val)
+    else:
+        d[val]=[val]
+print(d)
+
+
+# 28). Python Dictionary program to replace words in a string using a dictionary.
+string = 'learning python at sqa-tools'
+Dict = {'at':'is','sqa-tools':'fun'}
+
+for key, value in Dict.items():
+    string = string.replace(key, value)
+
+print(string)
+
+
+# 29). Python Dictionary program to remove a word from the string if it is a key in a dictionary.
+String = 'sqatools is best for learning python'
+Dict = {'best':2,'learning':6}
+
+str2 = ""
+for word in String.split(" "):
+    if word not in Dict:
+        str2 += word + " "
+
+print(str2)
+
+
+# 30). Python Dictionary program to remove duplicate values from dictionary values.
+dict1 = {'marks1':[23,28,23,69],'marks2':[ 25, 14, 25]}
+
+for key,val in dict1.items():
+    for ele in val:
+        if ele in val:
+            val.remove(ele)
+
+print(dict1)
+
+
+
+#
+
+
