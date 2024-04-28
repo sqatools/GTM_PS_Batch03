@@ -37,7 +37,7 @@ class father:
 
 
 # MRO : Method Resolution Order
-class Son(father, Mother):
+class Son(father,Mother):
 
     def __init__(self, s_name, s_education, fname, fbusiness, fhouse, m_name, m_business):
         super().__init__(fname, fbusiness, fhouse)
