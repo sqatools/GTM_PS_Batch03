@@ -10,6 +10,7 @@ class Mother:
     def __init__(self,mName,mBusiness):
         self.mName = mName
         self.mBusiness = mBusiness
+
     def motherDetails(self):
         print("Mother Name :", self.mName)
         print("Mother Business:", self.mBusiness)
@@ -43,5 +44,6 @@ class Son(Father,Mother):
 
 obj1 = Son('Nihith','BTec','Midhun','Developer','Single Home','Nivya','Engineer')
 obj1.familyDetails()
+#obj1.motherDetails()
 
 

@@ -14,6 +14,9 @@ class Mother:
         print("Mother Name :", self.m_name)
         print("Mother Business:", self.m_business)
 
+    def greeting(self):
+        print("Hello my son how are you?")
+
 
 class father:
     def __init__(self, fname, fbusiness, fhouse):
@@ -43,10 +46,13 @@ class Son(father,Mother):
         super().__init__(fname, fbusiness, fhouse)
         self.son_name = s_name
         self.son_education = s_education
-        self.m = Mother(m_name, m_business)
+        #self.m = Mother(m_name, m_business)
+        self.m_name = m_name
+        self.m_business = m_business
 
     def show_son_name(self):
         print("son name :", self.son_name)
+
 
     def show_son_education(self):
         print("son education :", self.son_education)
@@ -54,6 +60,7 @@ class Son(father,Mother):
     def show_son_details(self):
         self.show_son_name()
         self.show_son_education()
+        self.greeting()
 
     def show_family_details(self):
         self.show_son_details()
