@@ -1,4 +1,4 @@
-########################## Lambda   (lambda arguments : expressions) ##############################
+########################## Lambda -Anonymous Function,(lambda arguments : expressions) ##############################
 #1).
 # func1 = lambda x : x+1
 # print('Result : ',func1(6))          # Result :  7
