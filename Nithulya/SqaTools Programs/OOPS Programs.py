@@ -233,14 +233,175 @@ import math
 
 #26). Create a Python class called Circle with attributes radius.
 #Include methods to calculate the area and circumference of the circle.
-class Circle:
-    value = 3.14
-    def __init__(self,radius):
-        self.radius = radius
-    def area(self):
-        print('Area of Circle : ',Circle.value *((self.radius)**2))          #(OR) math.pi *((self.radius)**2)
-    def circumference(self):
-        print('Circumference of Circle : ', 2*(Circle.value * self.radius))   #(OR) 2*(math.pi * self.radius)
-obj1= Circle(6)
-obj1.area()
-obj1.circumference()
+# class Circle:
+#     value = 3.14
+#     def __init__(self,radius):
+#         self.radius = radius
+#     def area(self):
+#         print('Area of Circle : ',Circle.value *((self.radius)**2))          #(OR) math.pi *((self.radius)**2)
+#     def circumference(self):
+#         print('Circumference of Circle : ', 2*(Circle.value * self.radius))   #(OR) 2*(math.pi * self.radius)
+# obj1= Circle(6)
+# obj1.area()
+# obj1.circumference()
+
+#27). Create a  Python class called Person with attributes name and age. Include a method to print the person’s name and age.
+# class Person:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+#     def Details(self):
+#         print(f"My name is '{self.name}' and my age is '{self.age}'.")
+# obj1 = Person('Vijay',45)
+# obj1.Details()
+
+
+# 28). Create a  Python class called Student that inherits from the Person class.Add attributes student_id and grades.
+# Include a method to print the student’s name, age, and student ID.
+# class Person:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+#     def personDetails(self):
+#         print(f"My name is '{self.name}' and my age is '{self.age}'.")
+# class Student(Person):
+#     def __init__(self,id,grades,name,age):
+#         super().__init__(name,age)
+#         self.id = id
+#         self.grades = grades
+#     def studentDetails(self):
+#         print(f"My ID is '{self.id}'. My grades are {self.grades}")
+#     def Details(self):
+#         self.personDetails()
+#         self.studentDetails()
+# obj1 = Student('A36','[A+,B+,A,A+]','Midhun',15)
+# obj1.Details()
+
+#29). Create a Python class called Cat that inherits from the Animal class.
+#Add attributes breed and weight. Include a method to print the cat’s name, color, breed, and weight.
+# class Animal:
+#     def __init__(self,name,color):
+#         self.name = name
+#         self.color = color
+#     def animalDetails(self):
+#         print(f"Cat name is '{self.name}' and color is '{self.color}'.")
+# class Cat(Animal):
+#     def __init__(self,breed,weight,name,color):
+#         super().__init__(name,color)
+#         self.breed = breed
+#         self.weight = weight
+#     def catDetails(self):
+#         print(f"Breed name is '{self.breed}'. Weight is '{self.weight} pounds'.")
+#     def Details(self):
+#         self.animalDetails()
+#         self.catDetails()
+# obj1 = Cat(' Felis catus','7-12','Birman','White')
+# obj1.Details()
+
+#30). Create a Python class called BankAccount with attributes account_number and balance. Include methods to deposit
+# and withdraw money from the account.
+# class BankAccount:
+#     def __init__(self,acNumber,balance):
+#         self.acNumber = acNumber
+#         self.balance = balance
+#     def deposit(self, amount):
+#             self.balance = self.balance+amount
+#             print(f"Deposit of '{amount}', is successful. New balance is '{self.balance}'.")
+#     def withdraw(self, wamount):
+#         if self.balance >= wamount:
+#             self.balance = self.balance - wamount
+#             print(f"Withdrawal of '{wamount}' is successful. New balance is '{self.balance}'.")
+#         else:
+#             print(f"Withdrawal of '{wamount}' is denied. Insufficient funds.")
+#
+# obj1 = BankAccount('Aw23034567',3000)
+# obj1.deposit(4000)
+# obj1.withdraw(10000)
+
+#31). Create a  Python class called SavingsAccount that inherits from the BankAccount class. Add attributes
+# interest_rate and minimum_balance. Include a method to calculate the interest on the account.
+# class BankAccount:
+#     def __init__(self, acNumber,balance):
+#         self.acNumber = acNumber
+#         self.balance = balance
+#     def deposit(self, amount):
+#         self.balance = self.balance + amount
+#         print(f"Deposit of '{amount}', is successful. New balance is '{self.balance}'.")
+#     def withdraw(self, wamount):
+#         if self.balance >= wamount:
+#             self.balance = self.balance - wamount
+#             print(f"Withdrawal of '{wamount}' is successful. New balance is '{self.balance}'.")
+#         else:
+#             print(f"Withdrawal of '{wamount}' is denied. Insufficient funds.")
+# class SavingsAccount(BankAccount):
+#     def __init__(self,intRate,minBalance,acNumber,balance):
+#         super().__init__(acNumber,balance)
+#         self.intRate = intRate
+#         self.minBalance = minBalance
+#     def calcInterest(self):
+#         interest = self.balance * (self.intRate / 100)
+#         print("Your Interest is ",interest)
+#     def withdraw2(self, wamount1):
+#         if self.balance - wamount1 >= self.minBalance:
+#             print(f"Withdrawal of '{wamount1}' is successful.")
+#         else:
+#             print(f"Withdrawal of '{wamount1}' is denied. Insufficient funds.")
+#
+# obj1 = SavingsAccount(2.5, 500, 'Aw23034567', 1000)
+# obj1.deposit(200)
+# obj1.calcInterest()
+# obj1.withdraw2(800)
+
+#32). Create a  Python class called CheckingAccount that inherits from the BankAccount class. Add attributes transaction_limit
+# and transaction_fee.Include a method to check if a transaction is within the limit and deduct the fee if necessary.
+# class BankAccount:
+#     def __init__(self, acNumber,balance):
+#         self.acNumber = acNumber
+#         self.balance = balance
+#     def deposit(self, amount):
+#         self.balance = self.balance + amount
+#         print(f"Deposit of '{amount}', is successful. New balance is '{self.balance}'.")
+#     def withdraw(self, amount):
+#         if self.balance >= amount:
+#             self.balance = self.balance - amount
+#             print(f"Withdrawal of '{amount}' is successful. New balance is '{self.balance}'.")
+#         else:
+#             print(f"Withdrawal of '{amount}' is denied. Insufficient funds.")
+# class CheckingAccount(BankAccount):
+#     def __init__(self,transLimit, transFee,acNumber,balance):
+#         super().__init__(acNumber,balance)
+#         self.transLimit = transLimit
+#         self.transFee = transFee
+#     def checkTraLimit(self, amount):
+#         if amount <= self.transLimit:
+#             print(f"Withdrawal of '{amount}' is within a transaction limit. New balance is '{self.balance}'.")
+#         else:
+#             print(f"Withdrawal of '{amount}' exceeds transaction limit.Transaction fee will be deducted.")
+#     def withdraw2(self, amount):
+#         self.checkTraLimit(amount)
+#         if self.balance >= amount + self.transFee:
+#             print(f"Withdrawal of '{amount}' is successful. New balance is '{self.balance}'.")
+#         else:
+#             print(f"Withdrawal of '{amount}' is denied. Insufficient funds.")
+#
+# obj1 = CheckingAccount(2, 10, 'Aw23034567', 500)
+# obj1.withdraw2(400)
+# obj1.withdraw2(600)
+
+
+#33). Create a Python class called Car with attributes make, model, and year.
+#Include a method to print the car’s make, model, and year.
+# class Car:
+#     def __init__(self, make, model, year):
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#
+#     def print_details(self):
+#         print("Make:", self.make)
+#         print("Model:", self.model)
+#         print("Year:", self.year)
+#
+# # Create an object of the Car class
+# car = Car("BMW", "M5", 2023)
+# car.print_details()
