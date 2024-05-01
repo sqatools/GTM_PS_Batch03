@@ -5,6 +5,7 @@
 # File1.Division(50,10)                 # Division :  5
 
 #2).  Importing perticular function from File1:
+# import File1
 # from File1 import Division
 # Division(100,5)              # Division :  20
 # File1.Addition(6,4)                      # Error : Did not import this function here.
@@ -17,6 +18,7 @@
 # f1.Division(50,10)                 # Division :  5
 
 #4).Importing perticular function from File1 and give name to that function:
+import File1
 # from File1 import Division as D1      # Division as D1 : It is for easy to call.
 # D1(100,5)              # Division :  20
 # File1.Addition(6,4)              # Error : Did not import this function here.

@@ -14,19 +14,24 @@ Datahiding : In python data hiding is achived by defining the variable and metho
 class Car:
     def __init__(self, carName, carComp, carPrice):
         self.carName = carName
-        self._carCompany = carComp
+        self._carComp = carComp
         self.__carPrice = carPrice
 
     def carName(self):
         print("Car Name :", self.carName)
     def _carCompany(self):
-        print("Car Company :", self._carCompany)
+        print("Car Company :", self._carComp)
     def __carPrice(self):
         print("Car Price :", self.__carPrice)
 
 if __name__ == "__main__":
-    obj = Car('Harier', 'TATA', '25L')
+    obj1 = Car('Harier', 'TATA', '25L')
+    obj1._carCompany()
+    obj1._Car__carPrice()
+    
 
-    obj._carCompany()
-    obj._Car.__carPrice()
-    print(dir(obj))
+
+
+
+
+
