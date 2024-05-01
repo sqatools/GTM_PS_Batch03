@@ -1,6 +1,3 @@
-"""
-pip install selenium
-"""
 import time
 
 from selenium import webdriver
@@ -16,4 +13,3 @@ driver.find_element(By.NAME, "btnK").click()
 
 time.sleep(10)
 driver.close()
-

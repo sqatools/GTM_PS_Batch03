@@ -44,6 +44,6 @@ class Son(Father,Mother):
 
 obj1 = Son('Nihith','BTec','Midhun','Developer','Single Home','Nivya','Engineer')
 obj1.familyDetails()
-#obj1.motherDetails()
+obj1.motherDetails()
 
 

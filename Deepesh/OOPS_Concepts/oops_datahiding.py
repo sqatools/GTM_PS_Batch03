@@ -34,5 +34,3 @@ if __name__ == "__main__":
     obj._Car__show_car_price()
     print(dir(obj))
 
-
-list.append()
