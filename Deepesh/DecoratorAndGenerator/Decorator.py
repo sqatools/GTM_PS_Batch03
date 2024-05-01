@@ -17,7 +17,7 @@ def greeting():
     print("Welcome to Python Programming")
 
 
-#greeting()
+greeting()
 
 
 def math_decorator(func):
