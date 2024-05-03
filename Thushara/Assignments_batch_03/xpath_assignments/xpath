@@ -1,0 +1,17 @@
+SQATools
+
+//div[@class="inside-header grid-container"]
+python projects =//img[@class="attachment-medium size-medium wp-image-12333"]
+python file handling= //img[@class="attachment-medium size-medium wp-image-564"]
+
+TutorialsPoint
+
+search --> //input[@aria-label="Search"]
+nodeJS --> //a[@title="Node.js Tutorial"]
+
+Booking.com
+
+search--> //input[@class="eb46370fe1"]
+flights--> //a[@id="flights"]
+accommodations --> //a[@id="accommodations"]
+
