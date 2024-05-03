@@ -15,14 +15,14 @@ class Car:
     def __init__(self, carName, carComp, carPrice):
         self.carName = carName
         self._carComp = carComp
-        self.__carPrice = carPrice
+        self.__carPrice1 = carPrice
 
     def carName(self):
         print("Car Name :", self.carName)
     def _carCompany(self):
         print("Car Company :", self._carComp)
     def __carPrice(self):
-        print("Car Price :", self.__carPrice)
+        print("Car Price :", self.__carPrice1)
 
 if __name__ == "__main__":
     obj1 = Car('Harier', 'TATA', '25L')
