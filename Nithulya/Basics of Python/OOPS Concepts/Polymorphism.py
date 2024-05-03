@@ -32,6 +32,20 @@ operator overloading :
 # obj1.findSum(2,3,4)   # Result1 =  9
 # obj1.findSum(2,4)        # Result1 =  6
 
+#c).
+class A:
+    def add(self,*args):
+        if args:
+            sum = type(args[0])()
+            print(sum)
+            for i in args:
+                sum = sum+i
+            return sum
+obj1 =A()
+print(obj1.add('a'))
+# print(obj1.add(1,2,3))
+# print(obj1.add('a','b'))
+# print(obj1.add('a','b','c'))
 
 ###################### Method Overriding ######################################################
 # class A:
