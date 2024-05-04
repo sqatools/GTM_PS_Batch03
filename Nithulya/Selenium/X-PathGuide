@@ -28,3 +28,15 @@ Basic XPath Methods
                  //tagname[contains(@attribute, 'attribute value')]
                  //button[contains(@id, 'login')]
                  //*[contains(@id, 'loginb')]
+
+
+############## Advance XPath Methods ##############
+# https://automationbysqatools.blogspot.com/2021/05/dummy-website.html
+
+1) Following method: This method helps to identify all the element coming after the
+              reference element on web page. it goes from top to bottom.
+
+              //tagname[@attrib='value']//following::tar_tagname[@attrib='value']
+              //h2[text()='Billing Details']//following::input[@id='billing_email']
+              //h1[contains(text(), 'Booking Website')]//following::input[@id='male']
+
