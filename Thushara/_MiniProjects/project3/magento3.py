@@ -83,8 +83,6 @@ time.sleep(6)
 check_out=driver.find_element(By.XPATH,"//button[@id='top-cart-btn-checkout']")
 check_out.click()
 
-##################### Shipping Address #################
-
 email = driver.find_element(By.XPATH,"//fieldset[@id='customer-email-fieldset']//input[@class='input-text'and @id='customer-email']")
 email.send_keys("demo@gmail.com")
 
@@ -133,9 +131,7 @@ shipping_method.click()
 
 next=driver.find_element(By.XPATH,"//span[text()='Next']")
 next.click()
-time.sleep(5)
-
-################ PLACING ORDER ###############
+time.sleep(3)
 
 place_order = driver.find_element(By.XPATH,"//button[@title='Place Order']")
 place_order.click()
