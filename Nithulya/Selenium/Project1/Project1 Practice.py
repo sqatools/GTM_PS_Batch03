@@ -8,8 +8,9 @@
 # driver.get('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 # driver.find_element(By.XPATH,'//input[@placeholder="Username"]').send_keys("Admin")
 # driver.find_element(By.XPATH,'//input[@placeholder="Password"]').send_keys("admin123")
-# driver.find_element(By.XPATH, "//button[text()=' Login ']").click()
+# driver.find_element(By.XPATH, "//button[text()='Login']").click()
 # time.sleep(5)
+
 
 #2).
 from selenium import webdriver

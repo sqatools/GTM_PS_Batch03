@@ -102,23 +102,23 @@ XPath is used to navigate through elements and attributes in DOM. (DOM - Documen
 #                  //*[contains(@id, 'loginb')]
 
 ############### Advanced XPath Methods #########################################################################
-"""Following method: 
-            This method helps to identify all the element coming after the reference element on web page. 
-            it goes from top to bottom.
-            //tagname[@attrib='value']//following::tar_tagname[@attrib='value']
-              //h1[contains(text(), 'Booking Website')]//following::input[@id='male']
-              //h1[contains(text(),'Booking Website')]
-"""
 import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.implicitly_wait(10)
 
 driver.get("https://automationbysqatools.blogspot.com/2021/05/dummy-website.html")
-# driver.find_element(By.XPATH,"//h2[text()='Billing Details']//following::input[@id='billing_email']")
-driver.find_element(By.XPATH,"//h2[text()='Billing Details']//following::input[@id='billing_email']")
+driver.find_element(By.XPATH,"(//input[@id='firstname'])[1])").send_keys('Nivya')
+driver.find_element(By.XPATH,"(//input[@id='firstname'])[2])").send_keys('Nadesh')
+
+cities = ['Mumbai','Pune','Hyderabad','Delhi']
+for city in cities:
+    element = driver.find_element(By.XPATH,f"//td[text()='{city}']//parent::tr//input")
+    element.click()
 
 time.sleep(10)
 driver.close()
