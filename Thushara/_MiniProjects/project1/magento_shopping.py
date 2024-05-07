@@ -26,6 +26,41 @@ def add_to_cart():
     add_to_cart = driver.find_element(By.XPATH,"//button[@type='submit' and @id='product-addtocart-button']")
     add_to_cart.click()
     time.sleep(2)
+
+def women_top_size(size):
+    if size == 'xs':
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-166']").click()
+    elif size=='s':
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-167']").click()
+    elif size=='m':
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-168']").click()
+    elif size=='l':
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-169']").click()
+    elif size =='xl':
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-170']").click()
+    else:
+        print("Wrong choice")
+
+def women_top_color(color):
+    if color== 'white':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-59']").click()
+    elif color == 'black':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-49']").click()
+    elif color == 'blue':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-50']").click()
+    elif color =='purple':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-57']").click()
+    elif color =='yellow':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-60']").click()
+    elif color =='orange':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-56']").click()
+    elif color =='red':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-58']").click()
+    else:
+        print("Color not available")
+
+
+
 def mailing_address():
     email = driver.find_element(By.XPATH,"//fieldset[@id='customer-email-fieldset']//input[@class='input-text'and @id='customer-email']")
     email.send_keys("demo@gmail.com")
@@ -84,10 +119,8 @@ jacket = driver.find_element(By.XPATH,"//a[text()='Jackets']")
 jacket.click()
 select = driver.find_element(By.XPATH,"//a[contains(text(), 'Juno Jacket ')]")
 select.click()
-size = driver.find_element(By.XPATH,"//div[@id='option-label-size-143-item-169']")
-size.click()
-color = driver.find_element(By.XPATH,"//div[@id='option-label-color-93-item-57']")
-color.click()
+women_top_size('m')
+women_top_color('blue')
 
 
 add_to_cart()
