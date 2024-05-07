@@ -22,12 +22,16 @@ def options(opt):
     else:
         print("Wrong choice")
 
-def add_to_cart():
-    add_to_cart = driver.find_element(By.XPATH,"//button[@type='submit' and @id='product-addtocart-button']")
-    add_to_cart.click()
-    time.sleep(2)
+def items(xpath):
+    driver.find_element(By.XPATH,xpath).click()
 
-def women_top_size(size):
+def select_item(xpath):
+    driver.find_element(By.XPATH,xpath).click()
+
+
+
+
+def top_size(size):
     if size == 'xs':
         driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-166']").click()
     elif size=='s':
@@ -41,11 +45,33 @@ def women_top_size(size):
     else:
         print("Wrong choice")
 
-def women_top_color(color):
+def bottom_size(size):
+    if size == 28:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-171']").click()
+    elif size == 29:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-172']").click()
+    elif size == 30:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-173']").click()
+
+    elif size == 31:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-174']").click()
+    elif size == 32:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-175']").click()
+    elif size == 33:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-176']").click()
+    elif size == 34:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-177']").click()
+    elif size == 36:
+        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-178']").click()
+
+
+def color(color):
     if color== 'white':
         driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-59']").click()
     elif color == 'black':
         driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-49']").click()
+    elif color == 'grey':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-52']").click()
     elif color == 'blue':
         driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-50']").click()
     elif color =='purple':
@@ -56,8 +82,18 @@ def women_top_color(color):
         driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-56']").click()
     elif color =='red':
         driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-58']").click()
+    elif color == 'brown':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-51']").click()
+    elif color == 'green':
+        driver.find_element(By.XPATH, "//div[@id='option-label-color-93-item-53']").click()
     else:
         print("Color not available")
+
+
+def add_to_cart():
+    add_to_cart = driver.find_element(By.XPATH,"//button[@type='submit' and @id='product-addtocart-button']")
+    add_to_cart.click()
+    time.sleep(2)
 
 
 
@@ -115,47 +151,38 @@ def place_order():
     place_order.click()
 
 options('women')
-jacket = driver.find_element(By.XPATH,"//a[text()='Jackets']")
-jacket.click()
-select = driver.find_element(By.XPATH,"//a[contains(text(), 'Juno Jacket ')]")
-select.click()
-women_top_size('m')
-women_top_color('blue')
-
-
+items("//a[text()='Jackets']")
+select_item("//a[contains(text(), 'Juno Jacket ')]")
+top_size('m')
+color('blue')
 add_to_cart()
+
 options('women')
+items("//a[contains(text(),'Tees')]")
+select_item("//a[contains(text(),'Gwyn Endurance Tee')]")
+top_size('m')
+color('yellow')
+add_to_cart()
 
 
-pants = driver.find_element(By.XPATH,"//a[text()='Pants']")
-pants.click()
-select1 = driver.find_element(By.XPATH,"//strong[@class='product name product-item-name']//parent::a[@href='https://magento.softwaretestingboard.com/ida-workout-parachute-pant.html']")
-select1.click()
-size1 = driver.find_element(By.XPATH,"//div[@id='option-label-size-143-item-172']")
-size1.click()
-color1 = driver.find_element(By.XPATH,"//div[@id='option-label-color-93-item-49']")
-color1.click()
+options('women')
+items("//a[text()='Pants']")
+select_item("//strong[@class='product name product-item-name']//parent::a[@href='https://magento.softwaretestingboard.com/ida-workout-parachute-pant.html']")
+bottom_size(29)
+color('black')
 add_to_cart()
 
 options('men')
-hoodies_and_sweatshirts = driver.find_element(By.XPATH,"//a[text()='Hoodies & Sweatshirts']")
-hoodies_and_sweatshirts.click()
-
-select1 = driver.find_element(By.XPATH,"//*[contains(text(),'Ajax Full-Zip Sweatshirt')]")
-select1.click()
-color1 = driver.find_element(By.XPATH,"//div[@class='swatch-option color' and @id='option-label-color-93-item-53']")
-color1.click()
-size1 = driver.find_element(By.XPATH,"//div[@class='swatch-option text' and @id='option-label-size-143-item-170']")
-size1.click()
+items("//a[text()='Hoodies & Sweatshirts']")
+select_item("//*[contains(text(),'Ajax Full-Zip Sweatshirt')]")
+color('blue')
+top_size('xl')
 add_to_cart()
 
 options('gear')
-bags = driver.find_element(By.XPATH,"//div[@class='block filter']//following::a[text()='Bags'][2]")
-bags.click()
-bag_select= driver.find_element(By.XPATH,"//img[@alt='Fusion Backpack']")
-bag_select.click()
+items("//div[@class='block filter']//following::a[text()='Bags'][2]")
+select_item("//img[@alt='Fusion Backpack']")
 add_to_cart()
-time.sleep(2)
 
 
 options('training')
