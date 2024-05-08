@@ -7,6 +7,7 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 
 driver.get("https://magento.softwaretestingboard.com/")
+item_list=[]
 
 def options(opt):
     if opt == 'new':
@@ -154,6 +155,19 @@ def place_order():
     place_order = driver.find_element(By.XPATH,"//button[@title='Place Order']")
     place_order.click()
 
+def order_summary():
+    summary = driver.find_elements(By.XPATH, "//div[@class='opc-block-summary']")
+    with open("summary.txt", 'w') as f:
+        for i in range(len(summary)):
+            f.write(summary[i].text)
+
+def print_order_summary():
+    summary = driver.find_elements(By.XPATH, "//div[@class='opc-block-summary']")
+    for i in range(len(summary)):
+        print(summary[i].text)
+
+
+
 options('women')
 items("//a[text()='Jackets']")
 select_item("//a[contains(text(), 'Juno Jacket ')]")
@@ -202,6 +216,7 @@ options('sale')
 
 click_cart()
 
+
 time.sleep(6)
 
 check_out()
@@ -218,6 +233,8 @@ time.sleep(10)
 
 ################ PLACING ORDER ###############
 place_order()
+order_summary()
+print_order_summary()
 
 
 time.sleep(6)

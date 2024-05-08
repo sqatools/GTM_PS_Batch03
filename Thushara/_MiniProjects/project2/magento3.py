@@ -7,7 +7,7 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 
 driver.get("https://magento.softwaretestingboard.com/")
-
+list = []
 def options(opt):
     if opt == 'new':
         driver.find_element(By.XPATH,"//a[@class='level-top ui-corner-all' and  @id='ui-id-3' ]").click()
