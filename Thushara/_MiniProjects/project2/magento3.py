@@ -7,20 +7,12 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 
 driver.get("https://magento.softwaretestingboard.com/")
-list = []
+item_list=[]
+
 def options(opt):
-    if opt == 'new':
-        driver.find_element(By.XPATH,"//a[@class='level-top ui-corner-all' and  @id='ui-id-3' ]").click()
-    elif opt=='women':
-        driver.find_element(By.XPATH,"//a[@class='level-top ui-corner-all' and  @id='ui-id-4' ]").click()
-    elif opt == 'men':
-        driver.find_element(By.XPATH, "//a[@class='level-top ui-corner-all' and  @id='ui-id-5' ]").click()
-    elif opt=='gear':
-         driver.find_element(By.XPATH, "//a[@class='level-top ui-corner-all' and  @id='ui-id-6' ]").click()
-    elif opt =='training':
-        driver.find_element(By.XPATH,"//a[@class='level-top ui-corner-all' and  @id='ui-id-7' ]").click()
-    else:
-        print("Wrong choice")
+    """" 3-new arrival 4-women 5-men 6- gear 7-training 8 sale"""
+    driver.find_element(By.XPATH,f"//a[@class='level-top ui-corner-all' and  @id='ui-id-{opt}' ]").click()
+
 
 def items(xpath):
     driver.find_element(By.XPATH,xpath).click()
@@ -31,19 +23,9 @@ def select_item(xpath):
 
 
 
-def top_size(size):
-    if size == 'xs':
-        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-166']").click()
-    elif size=='s':
-        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-167']").click()
-    elif size=='m':
-        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-168']").click()
-    elif size=='l':
-        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-169']").click()
-    elif size =='xl':
-        driver.find_element(By.XPATH, "//div[@id='option-label-size-143-item-170']").click()
-    else:
-        print("Wrong choice")
+def top_size(size_code):
+    """ xs=166 s=167 m=168 l= 169 xl=170"""
+    driver.find_element(By.XPATH, f"//div[@id='option-label-size-143-item-{size_code}']").click()
 
 def bottom_size(size):
     if size == 28:
@@ -103,25 +85,25 @@ def mailing_address():
 
 
     first_name = driver.find_element(By.XPATH,"//input[@name='firstname']")
-    first_name.send_keys("Abcd")
+    first_name.send_keys("Rickey")
 
     last_name = driver.find_element(By.XPATH,"//input[@name='lastname']")
-    last_name.send_keys("Efghi")
+    last_name.send_keys("Marten")
 
     company = driver.find_element(By.XPATH,"//input[@name='company']")
-    company.send_keys("ABC")
+    company.send_keys("ABC Technologies")
 
     address1 = driver.find_element(By.XPATH,"//input[@name='street[0]']")
     address1.send_keys("23455")
 
     address2 = driver.find_element(By.XPATH,"//input[@name='street[1]']")
-    address2.send_keys("Demo street")
+    address2.send_keys("Park view Ave")
 
     address3 = driver.find_element(By.XPATH,"//input[@name='street[2]']")
-    address3.send_keys("Demo")
+    address3.send_keys("Alice Rd")
 
     city = driver.find_element(By.XPATH,"//input[@name='city']")
-    city.send_keys("Abcde")
+    city.send_keys("Clive")
 
     select_province = driver.find_element(By.XPATH,"//select[@name='region_id']")
     select_province.click()
@@ -154,53 +136,88 @@ def place_order():
     place_order = driver.find_element(By.XPATH,"//button[@title='Place Order']")
     place_order.click()
 
-options('women')
+def order_summary():
+    summary = driver.find_elements(By.XPATH, "//div[@class='opc-block-summary']")
+    with open("summary.txt", 'w') as f:
+        for i in range(len(summary)):
+            f.write(summary[i].text)
+
+
+
+
+def print_order_summary():
+    print("Order Summary")
+    print("------------------")
+    summary = driver.find_elements(By.XPATH, "//div[@class='opc-block-summary']")
+    for i in range(len(summary)):
+        print(summary[i].text)
+
+
+
+
+def billing_address():
+    address = driver.find_elements(By.XPATH, "//div[@class='billing-address-details']")
+    with open("billing_address.txt", 'w') as f:
+        for i in range(len(address)):
+            f.write(address[i].text)
+
+
+def print_billing_address():
+    print("Billing Address")
+    print("____________________")
+    address = driver.find_elements(By.XPATH, "//div[@class='billing-address-details']")
+    for i in range(len(address)):
+                print(address[i].text)
+
+
+options(4)
 items("//a[text()='Jackets']")
 select_item("//a[contains(text(), 'Juno Jacket ')]")
-top_size('m')
+top_size(168)
 color('blue')
 add_to_cart()
 
-options('women')
+options(4)
 items("//a[contains(text(),'Tees')]")
 select_item("//a[contains(text(),'Gwyn Endurance Tee')]")
-top_size('m')
+top_size(167)
 color('yellow')
 add_to_cart()
 
 
-options('women')
+options(4)
 items("//a[text()='Pants']")
 select_item("//strong[@class='product name product-item-name']//parent::a[@href='https://magento.softwaretestingboard.com/ida-workout-parachute-pant.html']")
 bottom_size(29)
 color('black')
 add_to_cart()
 
-options('men')
+options(5)
 items("//a[text()='Hoodies & Sweatshirts']")
 select_item("//*[contains(text(),'Ajax Full-Zip Sweatshirt')]")
 color('blue')
-top_size('xl')
+top_size(169)
 add_to_cart()
 
-options('men')
+options(5)
 items("//a[contains(text(),'Tanks')]")
 select_item("//a[contains(text(),'Sparta Gym')]")
 color('green')
-top_size('xl')
+top_size(169)
 add_to_cart()
 
 
-options('gear')
+options(6)
 items("//div[@class='block filter']//following::a[text()='Bags'][2]")
 select_item("//img[@alt='Fusion Backpack']")
 add_to_cart()
 
 
-options('training')
-options('sale')
+options(7)
+options(8)
 
 click_cart()
+
 
 time.sleep(6)
 
@@ -218,6 +235,10 @@ time.sleep(10)
 
 ################ PLACING ORDER ###############
 place_order()
+order_summary()
+print_order_summary()
+billing_address()
+print_billing_address()
 
 
 time.sleep(6)
