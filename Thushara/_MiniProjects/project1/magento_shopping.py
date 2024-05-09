@@ -104,25 +104,25 @@ def mailing_address():
 
 
     first_name = driver.find_element(By.XPATH,"//input[@name='firstname']")
-    first_name.send_keys("Abcd")
+    first_name.send_keys("Rickey")
 
     last_name = driver.find_element(By.XPATH,"//input[@name='lastname']")
-    last_name.send_keys("Efghi")
+    last_name.send_keys("Marten")
 
     company = driver.find_element(By.XPATH,"//input[@name='company']")
-    company.send_keys("ABC")
+    company.send_keys("ABC Technologies")
 
     address1 = driver.find_element(By.XPATH,"//input[@name='street[0]']")
     address1.send_keys("23455")
 
     address2 = driver.find_element(By.XPATH,"//input[@name='street[1]']")
-    address2.send_keys("Demo street")
+    address2.send_keys("Park view Ave")
 
     address3 = driver.find_element(By.XPATH,"//input[@name='street[2]']")
-    address3.send_keys("Demo")
+    address3.send_keys("Alice Rd")
 
     city = driver.find_element(By.XPATH,"//input[@name='city']")
-    city.send_keys("Abcde")
+    city.send_keys("Clive")
 
     select_province = driver.find_element(By.XPATH,"//select[@name='region_id']")
     select_province.click()
@@ -161,11 +161,32 @@ def order_summary():
         for i in range(len(summary)):
             f.write(summary[i].text)
 
+
+
+
 def print_order_summary():
+    print("Order Summary")
+    print("------------------")
     summary = driver.find_elements(By.XPATH, "//div[@class='opc-block-summary']")
     for i in range(len(summary)):
         print(summary[i].text)
 
+
+
+
+def billing_address():
+    address = driver.find_elements(By.XPATH, "//div[@class='billing-address-details']")
+    with open("billing_address.txt", 'w') as f:
+        for i in range(len(address)):
+            f.write(address[i].text)
+
+
+def print_billing_address():
+    print("Billing Address")
+    print("____________________")
+    address = driver.find_elements(By.XPATH, "//div[@class='billing-address-details']")
+    for i in range(len(address)):
+                print(address[i].text)
 
 
 options('women')
@@ -235,6 +256,8 @@ time.sleep(10)
 place_order()
 order_summary()
 print_order_summary()
+billing_address()
+print_billing_address()
 
 
 time.sleep(6)
