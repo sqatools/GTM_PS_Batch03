@@ -223,18 +223,18 @@ append mode(a)
 
 #1. write a python program Replace file content JAVA with PYTHON.
 
-# def replaceString(file1,file2):
-#     with open(file1, "r") as file1_obj:
-#         file1_list = file1_obj.readlines()
-#         print(file1_list)
-#         str=' '
-#         for i in file1_list:
-#             str=str+i.replace('Java','Python')
-#         print(str)
-#     with open(file2, "a") as file2_obj:
-#         for line in str:
-#             file2_obj.write(line)
-# replaceString("file1.txt","file4.txt")
+def replaceString(file1,file2):
+    with open(file1, "r") as file1_obj:
+        file1_list = file1_obj.readlines()
+        print(file1_list)
+        str=' '
+        for i in file1_list:
+            str=str+i.replace('Java','Python')
+        print(str)
+    with open(file2, "a") as file2_obj:
+        for line in str:
+            file2_obj.write(line)
+replaceString("file1.txt","file4.txt")
 
 
 #2. write a python program to get all the email id from given file.

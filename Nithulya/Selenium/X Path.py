@@ -122,3 +122,5 @@ for city in cities:
 
 time.sleep(10)
 driver.close()
+
+# //td[text()='Mumbai']//parent::tr//input
