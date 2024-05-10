@@ -7,7 +7,7 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 driver.implicitly_wait(10)
 
-driver.get("https://www.google.co.in")
+driver.get("https://www.google.com")
 driver.find_element(By.NAME, "q").send_keys("Python Selenium")
 driver.find_element(By.NAME, "btnK").click()
 
