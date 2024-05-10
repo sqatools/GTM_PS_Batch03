@@ -7,6 +7,8 @@ for i in range(10):
     print("email :", fk.email())
     print("username :", fk.user_name())
     print("password :", fk.password())
+    print("Company :", fk.company())
+    print("Address :", fk.address())
     print("_"*40)
 
 print(dir(fk))

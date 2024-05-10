@@ -1,0 +1,128 @@
+Xpath
+———————
+
+1) Absolute xpath:
+        In absolute xpath user has to use the entire DOM structure to find elements.
+
+2)Relative xpath:
+
+		//tagname[@attribute =‘value’]
+
+
+Basic xpath methods:
+———————————
+1. Text Method
+
+		//tagname[text() = ‘text value’]
+
+2)Contains Method:
+		//tagname[contains(@attribue, ‘attribute value’)]
+
+		//*[contains(@attribute, ‘attribute value’)]
+
+		//tagname[contains(text(), ‘partial value’)]
+
+		//*[contains(text(), ‘partial value’)]
+
+3)Indexing with multiple match
+
+		(//tagname[@attribute, ‘attribute value’])[index]
+
+		(//tagname[text()= ‘partial value’])[index]
+
+		(//tagname[contains(@attribute, ‘attribute value’)])[index]??????????????
+
+		(//tagname[contains(text(), ‘partial value’)])[index]?????????????
+
+
+(Note)
+
+
+4)Identify elements with parent reference :
+
+
+		//div[@align='left']/ul/li[3]
+                   //ul)[2]/li[3]
+                   //div[@id='passContainer']/input
+
+
+
+5)AND & OR Method:
+
+		//tagename[@attribue1=‘attribute1 value’ and @attribute2 = ‘attribute2 value’]
+
+		//tagname[@attribue=‘attribute value’ and text()=‘text value’]
+
+		//tagname[text()=‘text value’ and @attribute = ‘attribute value’]
+
+		//tagname[text()=‘text value1’ and text()=‘text value2’
+
+note
+
+		//tagname[contains(@attribute, ‘attribute value’) and contains(@attribute,’attribute value’)] ?????????
+
+		//tagname[contains(text(),’partial value’) and @attribue=‘attribute value’] ?????????????????
+
+		//tagname[text()=‘text value’ and contains(@attribute, ‘attribute value’)] ????????
+
+
+OR
+———-
+		//tagname[@attribute1 = ‘attribute1 value’ or @attribute2 =‘attribute2 value’]
+
+		//tagname[text()=‘textvalue’. or @attribute=‘attribute value’]
+
+note
+———
+		//tagname[contains(text(), ’partial text’) or contains(@attribute, ‘attribute value’)]??????
+
+Advanced XPath Methods
+————————————————-
+1)Following Methods:
+
+		//tagname[@attribute = ‘attribute value’]//following::target_tagname[@attribute=‘attribute value’]
+
+		//targetname[text()=‘text value’]//following::target_tagname[contains(@attribute, ‘attribute value’)]
+
+		//targetname[contains(text(), ‘partial text’)]//following::target_tagname[contains(@attribute,’attribute value’)]
+
+
+2)Following sibling method:
+—————————————-
+		//tagname[@attribute = ‘attribute value’]//following-sibling::target_tagname[@attribute = ‘attribute value’]
+
+		//tagname[text()=‘text value’]//following-sibling::target_tagname[contains(text(), ‘partial value’)]
+
+		//targetname[@attribute= ‘attribute value’]//following_sibling::target_tagname[contains(@attribute = ‘attribute value’]
+
+
+note
+
+		//div[@align = ‘left’]//li[2]//following-sibling::li
+
+		//table[@id= ‘cities’]//tr[4]//following_sibling::tr[1]
+
+3)preceding:
+————————
+		//tagname[@attribute = ‘attribute value’]//preceding::target_tagname[@attribute, ‘attribute value’]
+
+4)Preceding-sibling:
+
+		//tagname[@attribue = ‘attribute value’]//preceding-sibling ::target_tagname[@attribute = ‘attribute value’]
+
+
+5)parent
+		//tagname[@attribute= ‘attribute value’]//parent::target_tagname[@attribute = ‘attribute value’]
+
+6)ancestors
+
+
+		//tagname[@attribute = ‘attribute value’]//ancestors::target_tagname [@attribute= ‘attribute value’]
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-1. Absolute xpath: in absolute xpath user has to entire dom structure to find out the element
+1. Absolute xpath: in absolute xpath user has to check entire dom structure to find out the element
              /html/body/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div[6]/input[1]
 
 2. Relative xpath: In relative xpath user has to jump specific element as per their attribute.
@@ -16,8 +16,7 @@
             //button[@data-testid='royal_login_button']
             //a[@data-testid="open-registration-form-button"]
 
-Basic XPath Methods
-
+Basic XPath Methods:
 1) Text Method :  //tagname[text()= 'text value']
                  //div[text()="The password that you've entered is incorrect. "]
                  //h2[text()='Facebook helps you connect and share with the people in your life.']
@@ -34,6 +33,7 @@ Basic XPath Methods
 3) Indexing with multiple match.
                   (//input[@id='firstname'])[1]
                   (//input[@id='firstname'])[2]
+
 
 4) Indentify element with parent reference:
                    //div[@align='left']/ul/li[3]
@@ -91,7 +91,3 @@ Basic XPath Methods
 6) Ancestor : This method helps to identify the any grandparent or great grand parent element with
               the help of child element.
               //tagname[@attrib='value']//ancestor::tar_tagname[@attrib='value']
-
-
-
-

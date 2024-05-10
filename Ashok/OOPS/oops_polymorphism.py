@@ -61,6 +61,9 @@ class Addition:
 # obj1.findSum(2, 3)     # TypeError: Addition.findSum() missing 1 required positional argument: 'c'
 # obj1.findSum(2, 3, 4)  # It will execute successfully as it is having 3 params and latest method is having 3 args.
 
+# Another example to achieve method overloading
+
+
 # We can achieve the above problem using below conditions.
 class Addition1:
 
