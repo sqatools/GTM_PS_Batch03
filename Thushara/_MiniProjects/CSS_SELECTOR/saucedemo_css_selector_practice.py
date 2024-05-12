@@ -2,8 +2,14 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver import ChromeOptions, Chrome
 
-driver =webdriver.Chrome()
+opt=webdriver.ChromeOptions()
+opt.add_experimental_option('detach',True)
+
+
+
+driver =webdriver.Chrome(options=opt)
 driver.maximize_window()
 driver.implicitly_wait(10)
 
@@ -46,7 +52,7 @@ def address():
     last_name=driver.find_element(By.CSS_SELECTOR, "div>div>input#last-name").send_keys("Anu")
     zip_code=driver.find_element(By.CSS_SELECTOR, "div.form_group>input#postal-code").send_keys("2345")
     continue_checkout=driver.find_element(By.CSS_SELECTOR, "div>input#continue").click()
-    time.sleep(5)
+    time.sleep(6)
 
 def logout():
     driver.find_element(By.CSS_SELECTOR,"div>nav>a#logout_sidebar_link").click()
@@ -127,5 +133,5 @@ finish()
 
 
 time.sleep(2)
-driver.close()
+#driver.close()
 
