@@ -62,6 +62,46 @@ def click_item(selector):
     driver.find_element(By.CSS_SELECTOR,selector).click()
     add_to_cart()
 
+def print_summary_info():
+    print("Summary")
+    print("___________________")
+    summary=driver.find_elements(By.CSS_SELECTOR,"div[data-test^='header-']+div#checkout_summary_container>div>div+div.summary_info")
+    for i in range (len(summary)):
+        print(summary[i].text)
+
+def summary_info():
+    print("Summary")
+    print("___________________")
+    summary=driver.find_elements(By.CSS_SELECTOR,"div.summary_info")
+    with open('summary_info','w') as file:
+        for i in range(len(summary)):
+            file.write(summary[i].text)
+
+
+def finish():
+    driver.find_element(By.CSS_SELECTOR,"div.summary_info>div>button#cancel+button[name='finish']").click()
+
+def cancel_payment():
+    driver.find_element(By.CSS_SELECTOR,"")
+
+def print_cart_list():
+    print("List Of Items in The Cart")
+    print("________________________")
+    cartlist =driver.find_elements(By.CSS_SELECTOR,"div>div[data-test^='header-']+div[data-test$='-container']>div>div.cart_list")
+    for i in  range(len(cartlist)):
+        print(cartlist[i].text)
+
+def cart_list():
+    print("List Of Items in The Cart")
+    print("________________________")
+    cartlist =driver.find_elements(By.CSS_SELECTOR,"div.cart_list")
+    with open("list_of_items_in_the_cart",'w') as f:
+        for i in  range(len(cartlist)):
+            f.write(cartlist[i].text)
+
+
+
+
 
 
 
@@ -79,6 +119,11 @@ cart()
 
 checkout()
 address()
+print_cart_list()
+print_summary_info()
+cart_list()
+summary_info()
+finish()
 
 
 time.sleep(2)
