@@ -11,7 +11,8 @@ item_list=[]
 
 def options(opt):
     """" 3-new arrival 4-women 5-men 6- gear 7-training 8 sale"""
-    driver.find_element(By.XPATH,f"//a[@class='level-top ui-corner-all' and  @id='ui-id-{opt}' ]").click()
+    driver.find_element(By.XPATH, f"//a[@class='level-top ui-corner-all' and  @id='ui-id-{opt}' ]").click()
+
 
 
 def items(xpath):
