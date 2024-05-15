@@ -73,45 +73,51 @@ selectCart=driver.find_element(By.XPATH,"//a[@class='action showcart'and @href='
 time.sleep(3)
 selectCheckout=driver.find_element(By.XPATH,"//button[@id='top-cart-btn-checkout']").click()
 time.sleep(2)
+def getAddressDetails():
+    driver.find_element(By.XPATH,"//input[@id='customer-email' and @class='input-text']").send_keys("boydkimberly@example.com")
+    time.sleep(1)
+    driver.find_element(By.XPATH,"//input[@type='text' and @name='firstname']").send_keys("Sarah")
+    time.sleep(1)
+    driver.find_element(By.XPATH,"//input[@type='text' and @name='lastname']").send_keys("Khan")
+    time.sleep(1)
+    driver.find_element(By.XPATH,"//input[@type='text' and @name='company']").send_keys("Johnson, Kennedy and Garcia")
+    time.sleep(1)
+    driver.find_element(By.XPATH,"//input[@type='text' and @name='street[0]']").send_keys("Unit 9212 Box 7443")
+    time.sleep(1)
+    driver.find_element(By.XPATH,"//input[@type='text' and @name='city']").send_keys("Salt Lake City")
+    time.sleep(1)
+    driver.find_element(By.XPATH,"//option[@data-title='Utah']").click()
+    time.sleep(2)
+    driver.find_element(By.XPATH,"//input[@name='postcode']").send_keys('84148')
+    time.sleep(2)
+    driver.find_element(By.XPATH,"//input[@name='telephone']").send_keys('5156611089')
+    time.sleep(3)
+    selectShipping=driver.find_element(By.XPATH,"//td[@id='label_method_bestway_tablerate']")
+    selectShipping.click()
+    time.sleep(2)
+    selectNext=driver.find_element(By.XPATH,'''//span[@data-bind="i18n: 'Next'"]''')
+    selectNext.click()
+    time.sleep(4)
+def summaryReport():
+    selectSummary=driver.find_element(By.XPATH,"//div[@class='opc-block-summary']").text
+    with open('project2Summary.txt','w') as file1Obj:
+        for i in selectSummary:
+            file1Obj.write(i)
+def summaryRead():
+    with open ('project2Summary.txt','r') as file2Obj:
+        file2=file2Obj.read()
+        str = ' '
+        for i in file2:
+            str += i
+    print(str)
+    time.sleep(2)
+def selectButton():
+    selectOrder=driver.find_element(By.XPATH,"//button[@title='Place Order']")
+    selectOrder.click()
+    time.sleep(6)
 
-selectEmail1=driver.find_element(By.XPATH,"//input[@id='customer-email' and @class='input-text']").send_keys("boydkimberly@example.com")
-time.sleep(1)
-selectFirstName=driver.find_element(By.XPATH,"//input[@type='text' and @name='firstname']").send_keys("Sarah")
-time.sleep(1)
-selectLastName=driver.find_element(By.XPATH,"//input[@type='text' and @name='lastname']").send_keys("Khan")
-time.sleep(1)
-selectCompany=driver.find_element(By.XPATH,"//input[@type='text' and @name='company']").send_keys("Johnson, Kennedy and Garcia")
-time.sleep(1)
-selectAddress1=driver.find_element(By.XPATH,"//input[@type='text' and @name='street[0]']").send_keys("Unit 9212 Box 7443")
-time.sleep(1)
-selectCity=driver.find_element(By.XPATH,"//input[@type='text' and @name='city']").send_keys("Salt Lake City")
-time.sleep(1)
-selectProvince=driver.find_element(By.XPATH,"//option[@data-title='Utah']").click()
-time.sleep(2)
-selectPostal=driver.find_element(By.XPATH,"//input[@name='postcode']").send_keys('84148')
-time.sleep(2)
-selectPostal=driver.find_element(By.XPATH,"//input[@name='telephone']").send_keys('5156611089')
-time.sleep(3)
-selectShipping=driver.find_element(By.XPATH,"//td[@id='label_method_bestway_tablerate']")
-selectShipping.click()
-time.sleep(2)
-selectNext=driver.find_element(By.XPATH,'''//span[@data-bind="i18n: 'Next'"]''')
-selectNext.click()
-time.sleep(4)
-selectSummary=driver.find_element(By.XPATH,"//div[@class='opc-block-summary']").text
-with open('project2Summary.txt','w') as file1Obj:
-    for i in selectSummary:
-        file1Obj.write(i)
-with open ('project2Summary.txt','r') as file2Obj:
-    file2=file2Obj.read()
-    str = ' '
-    for i in file2:
-        str += i
-print(str)
-time.sleep(2)
-
-selectOrder=driver.find_element(By.XPATH,"//button[@title='Place Order']")
-selectOrder.click()
-
-time.sleep(6)
+getAddressDetails()
+summaryReport()
+summaryRead()
+selectButton()
 driver.close()
