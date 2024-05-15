@@ -11,6 +11,7 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 
 driver.get("https://collegedunia.com/engineering/indore-colleges")
+
 list_of_colleges = driver.find_elements(By.XPATH,"//tbody[@class='jsx-4033392124 jsx-1933831621']//div/a[@href and @title]")
 print("####",len(list_of_colleges))
 count=1
