@@ -136,8 +136,9 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 driver.implicitly_wait(10)
 driver.get("https://www.irctc.co.in/nget/train-search")
-driver.find_element(By.XPATH," //label[text()='INDIAN RAILWAYS']")
-driver.find_element(By.XPATH,"  //h2[text()='Have you not found the right one?']")
+ab=driver.find_element(By.XPATH," //label[text()='INDIAN RAILWAYS']")
+cd=driver.find_element(By.XPATH,"  //h2[text()='Have you not found the right one?']")
+print(ab,cd)
 time.sleep(10)
 driver.close()
 
@@ -206,10 +207,9 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 driver.get("https://www.irctc.co.in/nget/train-search")
 abc=driver.find_element(By.XPATH,"//div[@class='iconsection']/ul/li[2]")
-
+abc.click()
 time.sleep(10)
 driver.close()
-
 
 import time
 from selenium import webdriver
@@ -219,7 +219,7 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 driver.get("https://www.irctc.co.in/nget/train-search")
 abc=driver.find_element(By.XPATH,"//span[@class='ng-tns-c57-8 ui-autocomplete ui-widget']/input")
-
+abc.send_keys("mumbai")
 time.sleep(10)
 driver.close()
 

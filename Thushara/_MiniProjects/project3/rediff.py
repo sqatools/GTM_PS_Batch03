@@ -14,17 +14,13 @@ forex.click()
 
 
 def currency_rate():
-    currency=driver.find_elements(By.XPATH,"//div[@id='leftcontainer']//div/table//tr")
-    with open("currency_rate.txt",'a') as f:
+    currency=driver.find_elements(By.XPATH,"//div[@id='leftcontainer']//div/table")
+    with open("currency_rate.txt",'w') as f:
             for i in range(len(currency)):
                 f.write(currency[i].text)
-                print(currency[i].text)
-                f.write("\n")
-                f.write("_"*50)
-                f.write("\n")
 
 def print_currency_rate():
-    currency = driver.find_elements(By.XPATH, "//div[@id='leftcontainer']//div/table//tr")
+    currency = driver.find_elements(By.XPATH, "//div[@id='leftcontainer']//div/table")
     for i in range(len(currency)):
         print(currency[i].text)
 
@@ -50,8 +46,7 @@ def currency_converter(amt,c1,c2=1):
 
 
 currency_rate()
-#print_currency_rate()
-print("_"*50)
+print_currency_rate()
 currency_converter(50,13,10)
 
 
