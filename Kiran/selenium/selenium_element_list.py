@@ -25,6 +25,5 @@ def multibrowser(browser):
 
     driver.close()
 
-
-
 multibrowser('firefox')
+
