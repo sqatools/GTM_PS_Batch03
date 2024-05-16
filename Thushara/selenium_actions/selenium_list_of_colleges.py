@@ -19,7 +19,8 @@ def multibrowser(browser):
 
     driver.get("https://collegedunia.com/engineering/indore-colleges")
 
-    element_list = driver.find_elements(By.XPATH, "//table[contains(@class, 'listing-table')]//tr//td[2]//div[contains(@class, 'clg-column')]/a")
+    element_list = driver.find_elements(By.XPATH, "")
+    #"//table[contains(@class, 'listing-table')]//tr//td[2]//div[contains(@class, 'clg-column')]/a
     print(element_list)
     count = 1
     for element in element_list:

@@ -106,3 +106,33 @@ def combine(file1,file2,file3):
         for line in file3_list:
             file3_obj.write(line)
 combine('file1', 'file2','file3')
+
+
+# 1). Python Program How to read a file in reading mode.
+def read_file(filename):
+    file = open(filename, "r")
+    data = file.read()
+    file.close()
+    print(data)
+read_file("writefile")
+
+
+# 2). Python file program to overwrite the existing file content.
+def write_file(filename, content):
+    file = open(filename, "w")
+    file.write(content)
+    file.close()
+write_file("writefile", "This is new file added to the content menu")
+
+
+# 3).  Python file program to append data to an existing file.
+def append_file(filename, content):
+    file = open(filename, "a")
+    file.write(content)
+    file.close()
+append_file("writefile", "\n This is appended to the new file")
+
+
+ #
+
+
