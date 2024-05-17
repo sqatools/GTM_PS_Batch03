@@ -13,6 +13,15 @@ driver.implicitly_wait(30)
 driver.maximize_window()
 
 driver.get("https://automationbysqatools.blogspot.com/2021/05/dummy-website.html")
+driver.find_element(By.XPATH, "//input[@name='firstname'][1]").send_keys("Mumbai")
+driver.find_element(By.XPATH, "//input[@name='firstname'][2]").send_keys("Pune")
 
-driver.find_element(By.XPATH,"//input[@value='radio_123']").click()
+from_city_element = driver.find_element(By.ID, "female")
+from_city_element.send_keys("female")
+
+
+time.sleep(10)
+driver.close()
+
+
 

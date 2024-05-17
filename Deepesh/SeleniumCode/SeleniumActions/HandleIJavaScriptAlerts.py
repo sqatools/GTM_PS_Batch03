@@ -33,7 +33,7 @@ print(msg.text)
 """
 
 
-# Prompt Box
+#Prompt Box
 driver.find_element(By.ID, "promptbtn").click()
 time.sleep(5)
 alert_obj = Alert(driver)
