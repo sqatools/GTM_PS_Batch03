@@ -7,6 +7,11 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 
 driver.get("https://magento.softwaretestingboard.com/")
+
+
+def select(x):
+    driver.find_element(By.XPATH, x).click()
+
 whats_new = driver.find_element(By.XPATH,"//a[@class='level-top ui-corner-all' and  @id='ui-id-3' ]")
 whats_new.click()
 women = driver.find_element(By.XPATH,"//a[@class='level-top ui-corner-all' and  @id='ui-id-4' ]")
@@ -16,7 +21,6 @@ jacket.click()
 
 select = driver.find_element(By.XPATH,"//a[@href='https://magento.softwaretestingboard.com/olivia-1-4-zip-light-jacket.html']")
 select.click()
-
 size = driver.find_element(By.XPATH,"//div[@id='option-label-size-143-item-168']")
 size.click()
 
@@ -32,8 +36,8 @@ men.click()
 hoodies_and_sweatshirts = driver.find_element(By.XPATH,"//a[text()='Hoodies & Sweatshirts']")
 hoodies_and_sweatshirts.click()
 
-select1 = driver.find_element(By.XPATH,"//a[@class='product-item-link' and @href='https://magento.softwaretestingboard.com/ajax-full-zip-sweatshirt.html']")
-select1.click()
+
+select("//a[@class='product-item-link' and @href='https://magento.softwaretestingboard.com/ajax-full-zip-sweatshirt.html']")
 color1 = driver.find_element(By.XPATH,"//div[@class='swatch-option color' and @id='option-label-color-93-item-53']")
 color1.click()
 size1 = driver.find_element(By.XPATH,"//div[@class='swatch-option text' and @id='option-label-size-143-item-170']")
