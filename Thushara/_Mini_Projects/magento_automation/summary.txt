@@ -1,8 +1,15 @@
 Order Summary
-Cart Subtotal $458.00
-Discount -$91.60
+Cart Subtotal $229.00
+Discount -$45.80
 Shipping
 Best Way - Table Rate
 $0.00
-Order Total $366.40
-8 Items in Cart
+Order Total $183.20
+4 Items in CartOrder Summary
+Cart Subtotal $229.00
+Discount -$45.80
+Shipping
+Best Way - Table Rate
+$0.00
+Order Total $183.20
+4 Items in Cart

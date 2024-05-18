@@ -150,7 +150,7 @@ def place_order():
 
 def order_summary():
     summary = driver.find_elements(By.XPATH, "//div[@class='opc-block-summary']")
-    with open("summary.txt", 'w') as f:
+    with open("summary.txt", 'a') as f:
         for i in range(len(summary)):
             f.write(summary[i].text)
 
@@ -164,29 +164,21 @@ def print_order_summary():
     for i in range(len(summary)):
         print(summary[i].text)
 
-#//div[@class='shipping-address-item selected-item']
-
-def print_member_billing_address():
-    address=driver.find_element(By.XPATH,"//div[@class='shipping-address-item selected-item']")
-    print(address.text)
-
-def member_billing_address():
-    address=driver.find_element(By.XPATH,"//div[@class='shipping-address-item selected-item']")
-    with open("member_billing_address.txt", 'w') as f:
-        f.write(address.text)
-def guest_billing_address():
-    address = driver.find_elements(By.XPATH, "//div[@class='billing-address-details']")
-    with open("billing_address.txt", 'w') as f:
-        for i in range(len(address)):
-            f.write(address[i].text)
 
 
-def print_guest_billing_address():
+def print_billing_address():
     print("Billing Address")
     print("____________________")
-    address = driver.find_elements(By.XPATH, "//div[@class='billing-address-details']")
-    for i in range(len(address)):
-                print(address[i].text)
+    address=driver.find_element(By.XPATH,"//div[@class='billing-address-details']")
+    print(address.text)
+
+def billing_address():
+    address=driver.find_element(By.XPATH,"//div[@class='billing-address-details']")
+    with open("member_billing_address.txt", 'a') as f:
+        f.write(address.text)
+
+
+
 
 login()
 options(4)
@@ -258,11 +250,9 @@ time.sleep(10)
 place_order()
 order_summary()
 print_order_summary()
-#guest_billing_address()
-member_billing_address()
+billing_address()
 driver.save_screenshot(f"{timestamp}summary.png")
-#print_guest_billing_address()
-print_member_billing_address()
+print_billing_address()
 #driver.save_screenshot(f"{timestamp}screenshot.png")
 
 
