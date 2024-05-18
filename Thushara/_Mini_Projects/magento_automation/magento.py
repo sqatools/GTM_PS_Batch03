@@ -62,6 +62,10 @@ def color(color_no):
     #black=49 blue=50 brown=51 grey=52 green=53 orange = 56 purple=57 red=58 white=59 yellow=60
         driver.find_element(By.XPATH, f"//div[@id='option-label-color-93-item-{color_no}']").click()
 
+def quantity(number):
+    qty=driver.find_element(By.XPATH,"//input[@id='qty']")
+    qty.clear()
+    qty.send_keys(number)
 
 def add_to_cart():
     add_to_cart = driver.find_element(By.XPATH,"//button[@type='submit' and @id='product-addtocart-button']")
@@ -193,6 +197,7 @@ items("//a[contains(text(),'Tees')]")
 select_item("//a[contains(text(),'Gwyn Endurance Tee')]")
 top_size(167)
 color(60)
+quantity(2)
 add_to_cart()
 
 """
