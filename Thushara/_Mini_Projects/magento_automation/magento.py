@@ -4,9 +4,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.select import Select
+from selenium.webdriver import ActionChains
 from time_stamp import timestamp
 from credentials import email,pass_word
 from guest_address import address1,address2
+member = True
 t1=time.time()
 def select_browser(browser):
     if browser.lower() == 'chrome':
@@ -23,7 +25,9 @@ driver = select_browser('chrome')
 
 driver.maximize_window()
 driver.implicitly_wait(10)
+
 wait = WebDriverWait(driver,10,2)
+actions=ActionChains(driver)
 
 driver.get("https://magento.softwaretestingboard.com/")
 
@@ -38,6 +42,7 @@ def login():
         wait.until(ec.element_to_be_clickable((By.XPATH,"//div[@class='primary']/button[@id='send2' and @type ='submit' and @name ='send']/span"))).click()
     except Exception as e:
         print(e)
+
 def options(opt):
     """" 3-new arrival 4-women 5-men 6- gear 7-training 8 sale"""
     driver.find_element(By.XPATH, f"//a[@class='level-top ui-corner-all' and  @id='ui-id-{opt}' ]").click()
@@ -131,9 +136,7 @@ def guest_mailing_address(address):
     select_province = driver.find_element(By.XPATH,"//select[@name='region_id']")
     drp=Select(select_province)
     drp.select_by_visible_text(address[8])
-    #select_province.click()
-    #select_province.send_keys("l")
-    #select_province.click()
+
 
     zip=driver.find_element(By.XPATH,"//input[@name='postcode']")
     zip.send_keys(address[9])
@@ -191,8 +194,12 @@ def billing_address():
 
 
 
+if member == True:
+    login()
 
-#login()
+
+
+
 options(4)
 items("//a[text()='Jackets']")
 select_item("//a[contains(text(), 'Juno Jacket ')]")
@@ -241,6 +248,8 @@ options(7)
 options(8)
 
 click_cart()
+
+
 #driver.save_screenshot(f"{timestamp}cart.png")
 
 
@@ -249,7 +258,12 @@ time.sleep(6)
 check_out()
 
 ##################### Shipping Address #############
-guest_mailing_address(address1)
+if member== False:
+    guest_mailing_address(address1)
+
+
+
+#guest_mailing_address(address1)
 
 
 
@@ -266,6 +280,8 @@ print_order_summary()
 billing_address()
 driver.save_screenshot(f"{timestamp}summary.png")
 print_billing_address()
+
+
 #driver.save_screenshot(f"{timestamp}screenshot.png")
 
 
