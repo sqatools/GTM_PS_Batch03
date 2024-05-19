@@ -6,30 +6,33 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.select import Select
 from time_stamp import timestamp
 from credentials import email,pass_word
+from guest_address import address1,address2
 t1=time.time()
 def select_browser(browser):
-    if browser.lower()=='chrome':
-        driver1=webdriver.Chrome()
-    elif browser.lower()=='firefox':
-        driver1=webdriver.Firefox()
-    elif browser.lower()=='edge':
+    if browser.lower() == 'chrome':
+        opts = webdriver.ChromeOptions()
+        opts.add_experimental_option('detach',True)
+        driver1 = webdriver.Chrome(options=opts)
+    elif browser.lower() == 'firefox':
+        driver1 = webdriver.Firefox()
+    elif browser.lower() == 'edge':
         driver1=webdriver.Edge()
     return driver1
 
-driver =select_browser('chrome')
+driver = select_browser('chrome')
 
 driver.maximize_window()
 driver.implicitly_wait(10)
-wait= WebDriverWait(driver,10,2)
+wait = WebDriverWait(driver,10,2)
 
 driver.get("https://magento.softwaretestingboard.com/")
 
 
 def login():
     driver.find_element(By.XPATH,"//ul[@class='header links']//following::li[@data-label='or']/a[contains(text(),'Sign In')][1]").click()
-    email_id=driver.find_element(By.CSS_SELECTOR,"input#email")
+    email_id = driver.find_element(By.CSS_SELECTOR,"input#email")
     email_id.send_keys(email)
-    password=driver.find_element(By.XPATH,"//input[@id='pass' and @name='login[password]']")
+    password = driver.find_element(By.XPATH,"//input[@id='pass' and @name='login[password]']")
     password.send_keys(pass_word)
     try:
         wait.until(ec.element_to_be_clickable((By.XPATH,"//div[@class='primary']/button[@id='send2' and @type ='submit' and @name ='send']/span"))).click()
@@ -98,43 +101,44 @@ def member_mailing_address():
     phone = driver.find_element(By.XPATH, "//input[@name='telephone']")
     phone.send_keys("56_879_890")
 
-def guest_mailing_address():
-    email = driver.find_element(By.XPATH,
-                                    "//fieldset[@id='customer-email-fieldset']//input[@class='input-text'and @id='customer-email']")
-    email.send_keys("rickey@gmail.com")
 
-    first_name = driver.find_element(By.XPATH, "//input[@name='firstname']")
-    first_name.send_keys("Rickey")
+def guest_mailing_address(address):
+    email = driver.find_element(By.XPATH,"//fieldset[@id='customer-email-fieldset']//input[@class='input-text'and @id='customer-email']")
+    email.send_keys(address[0])
 
-    last_name = driver.find_element(By.XPATH, "//input[@name='lastname']")
-    last_name.send_keys("Martens")
 
-    company = driver.find_element(By.XPATH, "//input[@name='company']")
-    company.send_keys("ABC Technologies")
+    first_name = driver.find_element(By.XPATH,"//input[@name='firstname']")
+    first_name.send_keys(address[1])
 
-    address1 = driver.find_element(By.XPATH, "//input[@name='street[0]']")
-    address1.send_keys("23455")
+    last_name = driver.find_element(By.XPATH,"//input[@name='lastname']")
+    last_name.send_keys(address[2])
 
-    address2 = driver.find_element(By.XPATH, "//input[@name='street[1]']")
-    address2.send_keys("Park view Ave")
+    company = driver.find_element(By.XPATH,"//input[@name='company']")
+    company.send_keys(address[3])
 
-    address3 = driver.find_element(By.XPATH, "//input[@name='street[2]']")
-    address3.send_keys("Alice Rd")
+    address1 = driver.find_element(By.XPATH,"//input[@name='street[0]']")
+    address1.send_keys(address[4])
 
-    city = driver.find_element(By.XPATH, "//input[@name='city']")
-    city.send_keys("Clive")
-    ################select class--------------dropdown
-    select_province = driver.find_element(By.XPATH, "//select[@name='region_id']")
+    address2 = driver.find_element(By.XPATH,"//input[@name='street[1]']")
+    address2.send_keys(address[5])
+
+    address3 = driver.find_element(By.XPATH,"//input[@name='street[2]']")
+    address3.send_keys(address[6])
+
+    city = driver.find_element(By.XPATH,"//input[@name='city']")
+    city.send_keys(address[7])
+
+    select_province = driver.find_element(By.XPATH,"//select[@name='region_id']")
     drp=Select(select_province)
-    drp.select_by_visible_text('Louisiana')
+    drp.select_by_visible_text(address[8])
+    #select_province.click()
+    #select_province.send_keys("l")
+    #select_province.click()
 
-
-    zip = driver.find_element(By.XPATH, "//input[@name='postcode']")
-    zip.send_keys("70081")
-
-
-    phone = driver.find_element(By.XPATH,"//input[@name='telephone']")
-    phone.send_keys("56_879_890")
+    zip=driver.find_element(By.XPATH,"//input[@name='postcode']")
+    zip.send_keys(address[9])
+    phone = driver.find_element(By.XPATH, "//input[@name='telephone']")
+    phone.send_keys(address[10])
 
 def click_cart():
     try:
@@ -143,7 +147,10 @@ def click_cart():
     except Exception as e:
         print(e)
 def check_out():
-    driver.find_element(By.XPATH, "//button[@id='top-cart-btn-checkout']").click()
+    try:
+        driver.find_element(By.XPATH, "//button[@id='top-cart-btn-checkout']").click()
+    except Exception as e:
+        print(e)
 
 def shipping_method(xpath):
     shipping_method = driver.find_element(By.XPATH, xpath)
@@ -153,10 +160,11 @@ def place_order():
     place_order.click()
 
 def order_summary():
-    summary = driver.find_elements(By.XPATH, "//div[@class='opc-block-summary']")
-    with open("summary.txt", 'a') as f:
-        for i in range(len(summary)):
-            f.write(summary[i].text)
+    summary = driver.find_element(By.XPATH, "//div[@class='opc-block-summary']")
+    with open("summary.txt", 'w') as f:
+        f.write("Order Summary")
+        f.write("_________________")
+        f.write(summary.text)
 
 
 
@@ -178,13 +186,13 @@ def print_billing_address():
 
 def billing_address():
     address=driver.find_element(By.XPATH,"//div[@class='billing-address-details']")
-    with open("member_billing_address.txt", 'a') as f:
+    with open("billing_address.txt", 'w') as f:
         f.write(address.text)
 
 
 
 
-login()
+#login()
 options(4)
 items("//a[text()='Jackets']")
 select_item("//a[contains(text(), 'Juno Jacket ')]")
@@ -241,7 +249,7 @@ time.sleep(6)
 check_out()
 
 ##################### Shipping Address #############
-#guest_mailing_address()
+guest_mailing_address(address1)
 
 
 
@@ -264,4 +272,4 @@ print_billing_address()
 time.sleep(6)
 t2= time.time()
 print("Total execution time :",t2-t1)
-driver.close()
+#driver.close()
