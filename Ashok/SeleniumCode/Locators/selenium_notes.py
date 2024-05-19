@@ -36,8 +36,15 @@ XPath -
     ▪ Absolute XPath
     ▪ Relative XPath
 
+Xpath methods -
+    ▪ and
+    ▪ or
+    ▪ contains()
+    ▪ starts-with()
+    ▪ text()
+
 HTML Structure:
----------------
+---------------ss
 <input type="text" class="inputtext _55r1 _6luy" name="email" id="email" data-testid="royal_email"
 placeholder="Email address or phone number" autofocus="1" aria-label="Email address or phone number">
 
@@ -248,6 +255,8 @@ XPath with AND:
 driver.find_element(By.XPATH,"//input[@name='name' and @placeholder='FullName*']").send_keys("abc")
 
 XPath with contains():
+  1. contains function will have two parameters
+  2. Ex: will use for dynamic elements(button name can be Start/Stop)
 ----------------------
 <a class="nav-link" href="https://accounts.lambdatest.com/register" onclick=onStartTesting()" 
 xpathtest="1" style xpath="1">...</a>
@@ -256,6 +265,8 @@ driver.find_element(By.XPATH,"//a[contains(text(), 'Testing')]")
 driver.find_element(By.XPATH,"//a[contains(@id, ‘value’)]")
 
 XPath with starts-with():
+  1. starts-with function will have two parameters
+  2. Ex: will use for dynamic elements(button name can be Start/Stop)
 -------------------------
 <a class="nav-link" href="https://accounts.lambdatest.com/register" onclick=onStartTesting()" 
 xpathtest="1" style xpath="1">...</a>
@@ -278,5 +289,11 @@ from the current node context.
 
 ▪ These methods are mainly used when the web element is not identified with the help of ID,
 name, class name, link text, CSS selector and XPath, etc. locators.
+
+###############################################################################################
+
+Webdriver commands:
+-------------------
+
 
 """
