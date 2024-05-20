@@ -74,15 +74,21 @@ def drag_and_drop_element():
 
 
 #drag_and_drop_element()
+import pyautogui
 
+print(dir(pyautogui))
 def context_click_operation():
     driver.get("https://www.globalsqa.com/demo-site/draganddrop/")
     home_element = driver.find_element(By.XPATH, "//div[@class='menu-custom-main-menu-container']//a[text()='Home']")
-    action.context_click(home_element).send_keys(Keys.ARROW_DOWN).send_keys(Keys.ARROW_DOWN).send_keys(Keys.ARROW_DOWN)
+    action.context_click(home_element)
     action.perform()
+    time.sleep(2)
+    for i in range(6):
+        pyautogui.press('down')
+        time.sleep(1)
 
-    time.sleep(5)
-
+    pyautogui.press('enter')
+    time.sleep(10)
 
 context_click_operation()
 
