@@ -100,11 +100,11 @@ def getAddressDetails():
     time.sleep(4)
 def summaryReport():
     selectSummary=driver.find_element(By.XPATH,"//div[@class='opc-block-summary']").text
-    with open('project2Summary.txt','w') as file1Obj:
+    with open('Assignment2Summary.txt','w') as file1Obj:
         for i in selectSummary:
             file1Obj.write(i)
 def summaryRead():
-    with open ('project2Summary.txt','r') as file2Obj:
+    with open ('Assignment2Summary.txt','r') as file2Obj:
         file2=file2Obj.read()
         str = ' '
         for i in file2:
