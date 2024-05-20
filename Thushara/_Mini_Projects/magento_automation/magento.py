@@ -197,7 +197,17 @@ def billing_address():
 if member == True:
     login()
 
+####################   MOUSE ACTIONS  ################
 
+
+women = driver.find_element(By.XPATH,"//a[@id='ui-id-4']")
+
+tops = driver.find_element(By.CSS_SELECTOR,"a#ui-id-9")
+bottoms = driver.find_element(By.CSS_SELECTOR,"a#ui-id-10")
+#pants= driver.find_element(By.CSS_SELECTOR,"a#ui-id-15")
+shorts=driver.find_element(By.CSS_SELECTOR,"a#ui-id-16")
+actions.move_to_element(women).move_to_element(tops).move_to_element(bottoms).move_to_element(shorts).click().perform()
+time.sleep(5)
 
 
 options(4)
@@ -272,6 +282,7 @@ shipping_method("//td[@id='label_method_bestway_tablerate']")
 next = driver.find_element(By.XPATH,"//span[text()='Next']")
 next.click()
 time.sleep(10)
+
 
 ################ PLACING ORDER ###############
 place_order()
