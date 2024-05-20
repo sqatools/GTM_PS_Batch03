@@ -10,6 +10,8 @@ from credentials import email,pass_word
 from guest_address import address1,address2
 member = True
 t1=time.time()
+
+
 def select_browser(browser):
     if browser.lower() == 'chrome':
         opts = webdriver.ChromeOptions()
@@ -43,42 +45,46 @@ def login():
     except Exception as e:
         print(e)
 
+
 def options(opt):
     """" 3-new arrival 4-women 5-men 6- gear 7-training 8 sale"""
     driver.find_element(By.XPATH, f"//a[@class='level-top ui-corner-all' and  @id='ui-id-{opt}' ]").click()
 
 
-
 def items(xpath):
-    driver.find_element(By.XPATH,xpath).click()
+    driver.find_element(By.XPATH , xpath).click()
+
 
 def select_item(xpath):
     driver.find_element(By.XPATH,xpath).click()
-
-
 
 
 def top_size(size_code):
     """ xs=166 s=167 m=168 l= 169 xl=170"""
     driver.find_element(By.XPATH, f"//div[@id='option-label-size-143-item-{size_code}']").click()
 
+
 def bottom_size(size_no):
-    #28=171,29=172,30=173,31=174,32=175,33=176,34=177,36=178:
-        driver.find_element(By.XPATH, f"//div[@id='option-label-size-143-item-{size_no}']").click()
+    # 28=171,29=172,30=173,31=174,32=175,33=176,34=177,36=178:
+    driver.find_element(By.XPATH, f"//div[@id='option-label-size-143-item-{size_no}']").click()
+
 
 def color(color_no):
-    #black=49 blue=50 brown=51 grey=52 green=53 orange = 56 purple=57 red=58 white=59 yellow=60
-        driver.find_element(By.XPATH, f"//div[@id='option-label-color-93-item-{color_no}']").click()
+    # black=49 blue=50 brown=51 grey=52 green=53 orange = 56 purple=57 red=58 white=59 yellow=60
+    driver.find_element(By.XPATH, f"//div[@id='option-label-color-93-item-{color_no}']").click()
+
 
 def quantity(number):
     qty=driver.find_element(By.XPATH,"//input[@id='qty']")
     qty.clear()
     qty.send_keys(number)
 
+
 def add_to_cart():
     add_to_cart = driver.find_element(By.XPATH,"//button[@type='submit' and @id='product-addtocart-button']")
     add_to_cart.click()
     time.sleep(2)
+
 
 def member_mailing_address():
     company = driver.find_element(By.XPATH, "//input[@name='company']")
@@ -95,7 +101,7 @@ def member_mailing_address():
 
     city = driver.find_element(By.XPATH, "//input[@name='city']")
     city.send_keys("Clive")
-    ################select class--------------dropdown
+    # ###############select class--------------dropdown
     select_province = driver.find_element(By.XPATH, "//select[@name='region_id']")
     drp = Select(select_province)
     drp.select_by_visible_text('Louisiana')
@@ -134,14 +140,15 @@ def guest_mailing_address(address):
     city.send_keys(address[7])
 
     select_province = driver.find_element(By.XPATH,"//select[@name='region_id']")
-    drp=Select(select_province)
+    drp = Select(select_province)
     drp.select_by_visible_text(address[8])
 
 
-    zip=driver.find_element(By.XPATH,"//input[@name='postcode']")
+    zip = driver.find_element(By.XPATH,"//input[@name='postcode']")
     zip.send_keys(address[9])
     phone = driver.find_element(By.XPATH, "//input[@name='telephone']")
     phone.send_keys(address[10])
+
 
 def click_cart():
     try:
@@ -149,18 +156,24 @@ def click_cart():
         cart.click()
     except Exception as e:
         print(e)
+
+
 def check_out():
     try:
         driver.find_element(By.XPATH, "//button[@id='top-cart-btn-checkout']").click()
     except Exception as e:
         print(e)
 
+
 def shipping_method(xpath):
     shipping_method = driver.find_element(By.XPATH, xpath)
     shipping_method.click()
+
+
 def place_order():
     place_order = driver.find_element(By.XPATH,"//button[@title='Place Order']")
     place_order.click()
+
 
 def order_summary():
     summary = driver.find_element(By.XPATH, "//div[@class='opc-block-summary']")
@@ -168,8 +181,6 @@ def order_summary():
         f.write("Order Summary")
         f.write("_________________")
         f.write(summary.text)
-
-
 
 
 def print_order_summary():
@@ -180,12 +191,12 @@ def print_order_summary():
         print(summary[i].text)
 
 
-
 def print_billing_address():
     print("Billing Address")
     print("____________________")
     address=driver.find_element(By.XPATH,"//div[@class='billing-address-details']")
     print(address.text)
+
 
 def billing_address():
     address=driver.find_element(By.XPATH,"//div[@class='billing-address-details']")
@@ -193,18 +204,17 @@ def billing_address():
         f.write(address.text)
 
 
-
 if member == True:
     login()
 
-####################   MOUSE ACTIONS  ################
+# ###################   MOUSE ACTIONS  ################
 
 
 women = driver.find_element(By.XPATH,"//a[@id='ui-id-4']")
 
 tops = driver.find_element(By.CSS_SELECTOR,"a#ui-id-9")
 bottoms = driver.find_element(By.CSS_SELECTOR,"a#ui-id-10")
-#pants= driver.find_element(By.CSS_SELECTOR,"a#ui-id-15")
+# pants= driver.find_element(By.CSS_SELECTOR,"a#ui-id-15")
 shorts=driver.find_element(By.CSS_SELECTOR,"a#ui-id-16")
 actions.move_to_element(women).move_to_element(tops).move_to_element(bottoms).move_to_element(shorts).click().perform()
 time.sleep(5)
@@ -267,13 +277,13 @@ time.sleep(6)
 
 check_out()
 
-##################### Shipping Address #############
+# #################### Shipping Address #############
 if member== False:
     guest_mailing_address(address1)
 
 
 
-#guest_mailing_address(address1)
+# guest_mailing_address(address1)
 
 
 
@@ -284,7 +294,7 @@ next.click()
 time.sleep(10)
 
 
-################ PLACING ORDER ###############
+# ############### PLACING ORDER ###############
 place_order()
 order_summary()
 print_order_summary()
@@ -293,10 +303,10 @@ driver.save_screenshot(f"{timestamp}summary.png")
 print_billing_address()
 
 
-#driver.save_screenshot(f"{timestamp}screenshot.png")
+# driver.save_screenshot(f"{timestamp}screenshot.png")
 
 
 time.sleep(6)
 t2= time.time()
 print("Total execution time :",t2-t1)
-#driver.close()
+# driver.close()
