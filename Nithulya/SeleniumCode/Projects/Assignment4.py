@@ -59,8 +59,14 @@ def addBillingDetails():
     time.sleep(2)
 
 def addVisitedCities():
-    driver.find_element(By.XPATH, "//tr[@bgcolor='lightgrey'][4]//parent::td//child::input[@type='checkbox']").click()
-    time.sleep(2)
+    for box in range(2,9):
+        if box%2 !=0:
+            box1=driver.find_element(By.XPATH, f"//tr[{box}]//parent::td//child::input[@type='checkbox']")
+            box1.click()
+        else:
+            pass
+        time.sleep(1)
+
 
 
 getTicket()
@@ -70,3 +76,5 @@ addTravelDetails()
 addDelivaryOption()
 addBillingDetails()
 addVisitedCities()
+
+driver.close()
