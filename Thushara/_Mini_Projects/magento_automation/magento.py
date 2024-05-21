@@ -35,13 +35,15 @@ driver.get("https://magento.softwaretestingboard.com/")
 
 
 def login():
-    driver.find_element(By.XPATH,"//ul[@class='header links']//following::li[@data-label='or']/a[contains(text(),'Sign In')][1]").click()
+    driver.find_element(By.XPATH,"//ul[@class='header links']//following::li[@data-label='or']"
+                                 "/a[contains(text(),'Sign In')][1]").click()
     email_id = driver.find_element(By.CSS_SELECTOR,"input#email")
     email_id.send_keys(email)
     password = driver.find_element(By.XPATH,"//input[@id='pass' and @name='login[password]']")
     password.send_keys(pass_word)
     try:
-        wait.until(ec.element_to_be_clickable((By.XPATH,"//div[@class='primary']/button[@id='send2' and @type ='submit' and @name ='send']/span"))).click()
+        wait.until(ec.element_to_be_clickable((By.XPATH,"//div[@class='primary']/button[@id='send2'"
+                                                        " and @type ='submit' and @name ='send']/span"))).click()
     except Exception as e:
         print(e)
 
@@ -114,37 +116,38 @@ def member_mailing_address():
 
 
 def guest_mailing_address(address):
-    email = driver.find_element(By.XPATH,"//fieldset[@id='customer-email-fieldset']//input[@class='input-text'and @id='customer-email']")
+    email = driver.find_element(By.XPATH,"//fieldset[@id='customer-email-fieldset']"
+                                         "//input[@class='input-text'and @id='customer-email']")
     email.send_keys(address[0])
 
 
-    first_name = driver.find_element(By.XPATH,"//input[@name='firstname']")
+    first_name = driver.find_element(By.XPATH , "//input[@name='firstname']")
     first_name.send_keys(address[1])
 
-    last_name = driver.find_element(By.XPATH,"//input[@name='lastname']")
+    last_name = driver.find_element(By.XPATH, "//input[@name='lastname']")
     last_name.send_keys(address[2])
 
-    company = driver.find_element(By.XPATH,"//input[@name='company']")
+    company = driver.find_element(By.XPATH, "//input[@name='company']")
     company.send_keys(address[3])
 
-    address1 = driver.find_element(By.XPATH,"//input[@name='street[0]']")
+    address1 = driver.find_element(By.XPATH, "//input[@name='street[0]']")
     address1.send_keys(address[4])
 
-    address2 = driver.find_element(By.XPATH,"//input[@name='street[1]']")
+    address2 = driver.find_element(By.XPATH, "//input[@name='street[1]']")
     address2.send_keys(address[5])
 
-    address3 = driver.find_element(By.XPATH,"//input[@name='street[2]']")
+    address3 = driver.find_element(By.XPATH, "//input[@name='street[2]']")
     address3.send_keys(address[6])
 
-    city = driver.find_element(By.XPATH,"//input[@name='city']")
+    city = driver.find_element(By.XPATH, "//input[@name='city']")
     city.send_keys(address[7])
 
-    select_province = driver.find_element(By.XPATH,"//select[@name='region_id']")
+    select_province = driver.find_element(By.XPATH, "//select[@name='region_id']")
     drp = Select(select_province)
     drp.select_by_visible_text(address[8])
 
 
-    zip = driver.find_element(By.XPATH,"//input[@name='postcode']")
+    zip = driver.find_element(By.XPATH, "//input[@name='postcode']")
     zip.send_keys(address[9])
     phone = driver.find_element(By.XPATH, "//input[@name='telephone']")
     phone.send_keys(address[10])
@@ -152,7 +155,8 @@ def guest_mailing_address(address):
 
 def click_cart():
     try:
-        cart = wait.until(ec.element_to_be_clickable(driver.find_element(By.XPATH, "//a[@class='action showcart']")))
+        cart = wait.until(ec.element_to_be_clickable(driver.find_element(By.XPATH,
+                                                                         "//a[@class='action showcart']")))
         cart.click()
     except Exception as e:
         print(e)
@@ -238,7 +242,8 @@ add_to_cart()
 """
 options(4)
 items("//a[text()='Pants']")
-select_item("//strong[@class='product name product-item-name']//parent::a[@href='https://magento.softwaretestingboard.com/ida-workout-parachute-pant.html']")
+select_item("//strong[@class='product name product-item-name']
+//parent::a[@href='https://magento.softwaretestingboard.com/ida-workout-parachute-pant.html']")
 bottom_size(172)
 color(49)
 add_to_cart()
