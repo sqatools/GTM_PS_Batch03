@@ -1,0 +1,4 @@
+# pytest command to execute the test cases with marker
+python -m pytest -v -s -m smoke .\test\
+
+
