@@ -294,6 +294,9 @@ name, class name, link text, CSS selector and XPath, etc. locators.
 
 Webdriver commands:
 -------------------
-
-
+1) Application commands
+2) Conditional commands
+3) Browser commands
+4) Navigational commands
+5) wait commands
 """
