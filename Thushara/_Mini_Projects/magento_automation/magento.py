@@ -16,25 +16,26 @@ def select_browser(browser):
     if browser.lower() == 'chrome':
         opts = webdriver.ChromeOptions()
         opts.add_experimental_option('detach',True)
-        driver1 = webdriver.Chrome(options=opts)
+        driver = webdriver.Chrome(options=opts)
     elif browser.lower() == 'firefox':
-        driver1 = webdriver.Firefox()
+        driver = webdriver.Firefox()
     elif browser.lower() == 'edge':
-        driver1=webdriver.Edge()
-    return driver1
+        driver=webdriver.Edge()
+    return driver
 
 driver = select_browser('chrome')
 
 driver.maximize_window()
 driver.implicitly_wait(10)
-
-wait = WebDriverWait(driver,10,2)
+wait = WebDriverWait(driver, 10, 2)
 actions=ActionChains(driver)
 
 driver.get("https://magento.softwaretestingboard.com/")
 
 
 def login():
+    wait = WebDriverWait(driver,10,2)
+
     driver.find_element(By.XPATH,"//ul[@class='header links']//following::li[@data-label='or']"
                                  "/a[contains(text(),'Sign In')][1]").click()
     email_id = driver.find_element(By.CSS_SELECTOR,"input#email")
