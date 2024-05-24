@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="3" time="0.172" timestamp="2024-05-22T18:07:26.512707" hostname="DESKTOP-UBS68V2"><testcase classname="test_samplefile" name="test_sample1" time="0.092"><failure message="AssertionError: a is not equal to b&#10;assert 5 == 6">def test_sample1():
+        a = 5
+        b = 6
+&gt;       assert a == b,"a is not equal to b"   # if test is passed, the message will not display
+E       AssertionError: a is not equal to b
+E       assert 5 == 6
+
+test_samplefile.py:4: AssertionError</failure></testcase><testcase classname="test_samplefile" name="test_sample2" time="0.000" /><testcase classname="test_samplefile" name="test_sample3" time="0.001"><failure message="AssertionError: Nivya is not equal to Bhavadas&#10;assert False&#10; +  where False = &lt;method-wrapper '__eq__' of str object at 0x00000180FF631D70&gt;('Bhavadas')&#10; +    where &lt;method-wrapper '__eq__' of str object at 0x00000180FF631D70&gt; = 'Nivya'.__eq__">def test_sample3():
+        a = 'Nivya'
+        b = 'Bhavadas'
+&gt;       assert a.__eq__(b),"Nivya is not equal to Bhavadas"
+E       AssertionError: Nivya is not equal to Bhavadas
+E       assert False
+E        +  where False = &lt;method-wrapper '__eq__' of str object at 0x00000180FF631D70&gt;('Bhavadas')
+E        +    where &lt;method-wrapper '__eq__' of str object at 0x00000180FF631D70&gt; = 'Nivya'.__eq__
+
+test_samplefile.py:12: AssertionError</failure></testcase></testsuite></testsuites>
