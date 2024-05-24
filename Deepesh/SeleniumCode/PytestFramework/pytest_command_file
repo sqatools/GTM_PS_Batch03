@@ -1,4 +1,24 @@
 # pytest command to execute the test cases with marker
 python -m pytest -v -s -m smoke .\test\
 
+# command to generate HTML report
+package name : pytest-html
+python -m pytest -v .\test\test_parametrize_values.py --html=report.html
+
+# generate graphical report
+package name : pytest-html-reporter
+python -m pytest -v .\test\test_parametrize_values.py --html-report=logs/report.html
+
+# execute the test cases parallely :
+package name : pytest-xdist
+python -m pytest -v -n auto .\test\test_multiple_cases_parallely.py
+
+#remaining
+
+1. test cases dependency
+2. test cases logging
+3. pytest.ini file
+4. pytest test class
+5. Pytest custom command line option
+6. Design framework with POM (Page Object Model)
 
