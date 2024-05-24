@@ -36,8 +36,8 @@ def select_laptops_and_notebooks():
     actions.move_to_element(laptops_notebooks).move_to_element(mac).move_to_element(windows).move_to_element(show_all).click().perform()
 
 
-
 select_laptops_and_notebooks()
+
 macbook=driver.find_element(By.XPATH,"//img[@alt='MacBook']")
 driver.execute_script("arguments[0].click();",macbook)
 #macbook.click()
@@ -89,6 +89,9 @@ def js_executor():
 
     URL = driver.execute_script("window.document.URL")
     print("URL :",URL)
+
+
+
 
 
 js_executor()

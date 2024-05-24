@@ -1,0 +1,58 @@
+1. PyTest is a popular testing framework in python. In Java, we use TestNG or JUnit.
+2. Developers will use it for unit testing and Testers use it for Automation testing.
+3. There are certain features in automation..
+
+1) Fixtures
+2) Parallel testing
+3) Skip the tests
+4) Group tests
+5) Batch testing
+6) Parameterization
+7) Reports
+etc...
+
+Pre-requisite: Install pytest package in pycharm
+
+Project-->Test suite--> Test cases--> Test steps
+Project--->Directory-->Modules(.py)-->Class-->Test Methods
+
+Naming Conventions
+-------------
+1) File names should start with test_ or ending with _test , as in test_example.py or example_test.py
+2) Class name should start with “Test”, as in TestExample
+3) Test method names should start with “test”, ex: test_example(), it will not accept ending with _test ex:method_test()
+
+Execution:
+----------
+pytest -v -s day26-pytest\test_1.py
+
+
+Single module
+------------
+pytest -v -s day26-pytest\modules\test_Login.py
+
+All the modules in a directory/package
+----------------------
+pytest -v -s day26-pytest\modules
+
+Run Specific Test Method from a Module
+-----------------------------
+pytest -v -s day26-pytest\modules\test_Login.py::TestLogin::test_LoginByEmail
+
+Run Tess with markers:
+----------------------
+ pytest -vs -m regression .\modules\test_Login.py
+ pytest -vs -m regression
+ pytest -vs -m "smoke or regression"
+
+
+
+Fixture scope:
+
+session scope = session level fixture has wider scope which will initiate with session of automation execution
+package scope = package level fixture will execute for each of the folder which contains module files.
+module scope = module level fixture will execute once for each module file
+class scope = class level fixture will execute for specific class only.
+function scope = function level fixture will execute for each of the test function in the file.
+
+
