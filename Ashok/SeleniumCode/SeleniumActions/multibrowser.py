@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 def multibrowser(browser):
     if browser.lower() == 'chrome':
         options = webdriver.ChromeOptions()
-        options.add_experimental_option('detach', True)
+        options.add_experimental_option("detach", True)
         driver = webdriver.Chrome(options=options)
     elif browser.lower() == 'firefox':
         driver = webdriver.Firefox()
@@ -16,9 +16,11 @@ def multibrowser(browser):
 
     driver.maximize_window()
     driver.implicitly_wait(10)
+
     driver.get("https://automationbysqatools.blogspot.com/2021/05/dummy-website.html")
+
     driver.find_element(By.CSS_SELECTOR, "#fromcity").send_keys("Mumbai")
-    driver.find_element(By.CSS_SELECTOR, "div>input#destcity").send_keys("Cochin")
+    driver.find_element(By.CSS_SELECTOR, "div>input#destcity").send_keys("Kochin")
     time.sleep(5)
     driver.close()
 
