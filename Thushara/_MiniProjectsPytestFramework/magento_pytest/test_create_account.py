@@ -49,7 +49,7 @@ class TestCreateAccount:
 
 
     def random_email(self):
-        num = random.randint(10,90)
+        num = random.randint(10,900)
         num =str(num)
         return 'alayalatta'+ num +'@gmail.com'
 
