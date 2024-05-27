@@ -56,6 +56,8 @@ Basic XPath Methods
 1) Following method: This method helps to identify all the element coming after the
               reference element on web page. it goes from top to bottom.
 #//h1[@align="center"]//following::input[@value="radio_123"]
+# //h2[text()="Passenger Details"]//following::input[@name="firstname"]
+
               //tagname[@attrib='value']//following::tar_tagname[@attrib='value']
               //h2[text()='Billing Details']//following::input[@id='billing_email']
               //h1[contains(text(), 'Booking Website')]//following::input[@id='male']
