@@ -1,20 +1,32 @@
 """
 Frames/Iframes
 --------------
-switch_to_frame()   # selenium3
+An iframe(short for inline frame) is a html element that allows you to embed another html document with in
+current document.
 
-#selenium4
-switch_to.frame(name of the frame)
-switch_to.frame(id of the frame)
-switch_to.frame(webelement)
-switch_to.frame(0)
+There are 4 flavours in iframe:
+--------------------------------
+switch_to_frame()   # selenium3 - This is the command used
 
-switch_to.default_content()
+#selenium4 - Upgraded like below
+-------------
+switch_to.frame(name of the frame) - Using name of the element
+switch_to.frame(id of the frame) - Using id of the element
+switch_to.frame(webelement)  - If we don't have id and name we can store the xpath in variable(web element)
+                            and need to pass it here
+switch_to.frame(0)   - this will work for only one frame.
+
+switch_to.default_content()  - This command will use to come out from iframe.
+
+Overall, while switching between frames we need to come out from one frame and jump to other frame.
+
+inner/nested frames:
+-------------------
+Here, switch to default_content is not required between inner frames.
+driver.switch_to.parent_frame() - if you are in inner frame want to move to outer frame we can use this
+                                  command.
 
 frame or iframe or form  - HTML tags of Iframes
-
-inner frames
-
 """
 
 import time
