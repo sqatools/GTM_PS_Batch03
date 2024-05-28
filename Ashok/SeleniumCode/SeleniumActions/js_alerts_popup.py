@@ -12,7 +12,7 @@ alerts as it is written in JavaScript.
    ii) To bypass the authentication we need to follow below steps.
 
     URL: http://the-internet.herokuapp.com/basic_auth
-    syntax: http://username:password@test.com
+    syntax: http://username:password@url.com
     Example: http://admin:admin@the-internet.herokuapp.com/basic_auth
 
 To work with alerts we need to use "switch_to.alert" which is available in webdriver
@@ -22,7 +22,9 @@ myalert.text    - Prints the alert/pop up text message
 myalert.accept()  - close alert window by using OK button
 myalert.dismiss()  - close alert window by using Cancel button
 
-
+5. Notifications pop-ups - Sometimes browser will show pop up for location with Allow and  Block pop-ups
+We cannot interact/inject(bypass) these pop up. To avoid these we need to use ChromeOptions.
+we need to add argument as "--disable_notification
 
 """
 import time
@@ -73,11 +75,13 @@ driver.maximize_window()
 # prompt_box.dismiss()
 
 ######## Using Authentication pop up ###########
-driver.get("http://the-internet.herokuapp.com/basic_auth")
-# providing UN and PWD
-driver.get("http://admin:admin@the-internet.herokuapp.com/basic_auth")
+# driver.get("http://the-internet.herokuapp.com/basic_auth")
+# # providing UN and PWD
+# driver.get("http://admin:admin@the-internet.herokuapp.com/basic_auth")
 
 
-
+########### Notification pop ups ###########################
+driver.get("https://whatmylocation.com/")
+driver.maximize_window()
 
 
