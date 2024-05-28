@@ -35,6 +35,10 @@ python -m pytest -v  .\test\test_smoke_class.py::TestSmokeCases::test_a1
 6. Design framework with POM (Page Object Model)
 7. Custom commandline option.
 8. Pytest config files
+   pytest.ini,
+   tox.ini,
+   pyproject.toml : package version maintain
+   and setup.cfg :
 
 
 ##############
