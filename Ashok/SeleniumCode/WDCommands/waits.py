@@ -18,6 +18,14 @@ Note: time.sleep() is a python related code and this is not a wait commands.Actu
 
 Implicit wait:
 -------------
+i) Implicit wait in Selenium is a setting that allows the WebDriver to wait for a certain amount of time for an element
+to appear on the page before throwing an exception.
+ii) This wait is applied globally to all elements that the WebDriver interacts with, meaning it will be in effect for
+the entire duration of the WebDriver's instance.
+iii) When an implicit wait is set, Selenium will wait for the specified amount of time for the element to become
+available in the DOM. If the element is found before the timeout expires, Selenium will proceed with the next steps
+in the test script. If the element is not found within the specified time, a NoSuchElementException will be raised
+
 Adv:
 -----
 i) Single statement
@@ -30,9 +38,17 @@ i) If the element is not available within the time mentioned , still there is a 
 
 Explicit Wait:
 -------------
-Explicit wait is condition based wait statement. The explicit wait is used to wait for specific conditions
+i) Explicit wait is condition based wait statement. The explicit wait is used to wait for specific conditions
 (or) the maximum time exceeded before throwing "Element not visible exception"
+ii) We need to import WebDriverWait class first and need to declare the explicit wait
+ii) Later need to import "Expected conditions" module.
+iv) Explicit wait is not for global it has to write at line level.
+
+Syntax:
+-------
+mywait = WebDriverWait(driver, timeout=12, poll_frequency=2, ignored_exceptions=[Exception])
 """
+
 ############## Implicit Wait ##############
 from selenium import webdriver
 from selenium.common import NoSuchElementException, ElementNotVisibleException, ElementNotSelectableException
@@ -45,23 +61,42 @@ opt.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(options=opt)
 driver.maximize_window()
-# driver.implicitly_wait(10)
-# driver.get("https://www.google.com/")
-# search_box = driver.find_element(By.NAME, "q")
-# search_box.send_keys("Selenium")
-# search_box.submit()
+# driver.implicitly_wait(11)
+# driver.get("https://www.hyrtutorials.com/p/waits-demo.html")
+# driver.find_element(By.ID, "btn1").click()
+# # Below element will load after 5 seconds. If implicit wait is less than 5, it will throw error.
+# driver.find_element(By.ID, "txt1").send_keys("abc")
+# driver.find_element(By.ID, "btn2").click()
+# # Below element will load after 10 seconds. If implicit wait is less than 10, it will throw error.
+# driver.find_element(By.ID, "txt2").send_keys("def")
 
 ################ Explicit Wait #####################
-mywait = WebDriverWait(driver, timeout=10)  # explicit wait declaration
-mywait1 = WebDriverWait(driver, timeout=10, poll_frequency=2, ignored_exceptions=[
-                                           NoSuchElementException,
-                                           ElementNotVisibleException,
-                                           ElementNotSelectableException,
-                                           Exception])
+# 1. Explicit wait with basic syntax
+# driver.get("https://www.hyrtutorials.com/p/waits-demo.html")
+# driver.find_element(By.ID, "btn1").click()
+#
+# mywait = WebDriverWait(driver, timeout=11)
+#
+# text_box1 = mywait.until(EC.presence_of_element_located((By.ID, 'txt1')))
+# text_box1.send_keys("abc")
+# text_box2 = mywait.until(EC.element_to_be_clickable((By.ID, 'btn2')))
+# text_box2.click()
+# text_box3 = mywait.until(EC.presence_of_element_located((By.ID, 'txt2')))
+# text_box3.send_keys("def")
 
-driver.get("https://www.google.com/")
-search_box = driver.find_element(By.NAME, "q")
-search_box.send_keys("Selenium")
-search_box.submit()
-search_link = mywait.until(EC.presence_of_element_located((By.XPATH, "//h3[text()='Selenium']")))
-search_link.click()
+# 2. Explicit wait with complete syntax
+
+driver.get("https://www.hyrtutorials.com/p/waits-demo.html")
+driver.find_element(By.ID, "btn1").click()
+
+mywait = WebDriverWait(driver, timeout=12, poll_frequency=2, ignored_exceptions=[NoSuchElementException,
+                                                                                 ElementNotVisibleException,
+                                                                                 ElementNotSelectableException,
+                                                                                 Exception])
+
+text_box1 = mywait.until(EC.presence_of_element_located((By.ID, 'txt1')))
+text_box1.send_keys("abc")
+text_box2 = mywait.until(EC.element_to_be_clickable((By.ID, 'btn2')))
+text_box2.click()
+text_box3 = mywait.until(EC.presence_of_element_located((By.ID, 'txt2')))
+text_box3.send_keys("def")
