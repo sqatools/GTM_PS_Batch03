@@ -11,3 +11,4 @@ class GooglePage(SeleniumCode):
 
     def click_search_button(self):
         self.click_element(search_button_locator)    # Calling the SeleniumCode class method here
+
