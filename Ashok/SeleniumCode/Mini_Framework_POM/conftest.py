@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
-from Test_data import *
+# from Test_data import *
+from Dummy_page_testdata import *
 
 
 @pytest.fixture(scope='class')
