@@ -1,13 +1,13 @@
-from SeleniumBase import SeleniumBase
-from create_account_locators import *
+from base.SeleniumBase import SeleniumBase
+from .create_account_locators import *
 
 class CreateAccount(SeleniumBase):
     def __init__(self, driver):
         super().__init__(driver=driver)
 
-
     def click_create_account(self):
         self.click_element(create_account_locator)
+
 
     def enter_value_to_first_name_field(self, first_name):
         self.enter_value(first_name,first_name_locator)

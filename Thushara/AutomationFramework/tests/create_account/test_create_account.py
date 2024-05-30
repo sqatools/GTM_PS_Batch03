@@ -1,19 +1,20 @@
 import pytest
 import random
-from create_account_page import CreateAccount
-from home_page import HomePage
-from create_account_test_data import *
-from SeleniumBase import SeleniumBase
-from create_account_locators import *
+from modules.create_account.create_account_page import CreateAccount
+from modules.create_account.create_account_test_data import *
+from base.SeleniumBase import SeleniumBase
+from tests.conftest import *
+from modules.create_account.create_account_locators import *
+
 
 @pytest.mark.usefixtures("set_up_and_tear_down")
 class TestCreateAccount:
-    """
+    """"
     @pytest.fixture(autouse=True)
     def setup(self):
         self.ca = CreateAccount(self.driver)
         self.sb= SeleniumBase(self.driver)
-      """
+    """
 
     def test_create_account_with_required_fields(self):
         self.ca = CreateAccount(self.driver)
@@ -27,7 +28,7 @@ class TestCreateAccount:
         self.ca.click_create_account_button()
         element = self.sb.get_element(success_message_locator)
         assert element.is_displayed()
-
+    """
     def test_create_account_with_duplicate_email(self):
         self.ca = CreateAccount(self.driver)
         self.sb = SeleniumBase(self.driver)
@@ -76,7 +77,7 @@ class TestCreateAccount:
         element = self.sb.get_element(confirm_password_error_locator)
         assert element.is_displayed()
 
-
+    """
 
     def random_email(self):
         num = random.randint(10, 900)

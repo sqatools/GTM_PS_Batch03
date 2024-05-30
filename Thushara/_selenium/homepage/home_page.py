@@ -1,4 +1,4 @@
-from SeleniumBase import SeleniumBase
+from base.SeleniumBase import SeleniumBase
 from login_locators import *
 
 class HomePage(SeleniumBase):
