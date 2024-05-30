@@ -1,19 +1,14 @@
 import pytest
 
-from page_module_class import GooglePage
-from test_data import *
-from dummy_site_page_class import DummyBookingPage
+from modules.dummy_booking.dummy_booking_page_class import DummyBookingPage
+from modules.dummy_booking.dummy_booking_test_data import *
+
 
 @pytest.mark.usefixtures("get_driver")
-class TestGoogleSeach:
+class TestDummyBooking:
     @pytest.fixture(autouse=True)
     def setup(self):
-        self.gp = GooglePage(self.driver)
         self.db = DummyBookingPage(self.driver)
-
-    def test_search_on_google(self):
-        self.gp.enter_value_to_search_field(search_value)
-        self.gp.click_search_button()
 
     def test_dummy_booking_website(self):
         self.db.navigate_to_dummy_booking_website()
