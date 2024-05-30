@@ -31,6 +31,7 @@ password.send_keys("Admin@12345")
 login_button = driver.find_element(By.XPATH, "//button[@class=' _acan _acap _acas _aj1- _ap30']")
 login_button.click()
 
+driver.find_element(By.XPATH,"//button[@class='_a9-- _ap36 _a9_1']").click()
 time.sleep(10)
 driver.close()
 
