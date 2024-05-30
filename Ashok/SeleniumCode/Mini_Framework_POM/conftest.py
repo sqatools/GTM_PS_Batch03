@@ -8,5 +8,5 @@ from Dummy_page_testdata import *
 def get_driver(request):
     driver = webdriver.Chrome()
     driver.maximize_window()
-    driver.get(url)  # getting the url from Test_data file
-    request.cls.driver = driver
+    driver.get(url)  # Dummy_page_testdata
+    request.cls.cdriver = driver

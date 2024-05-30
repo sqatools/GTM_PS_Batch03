@@ -1,8 +1,8 @@
 url = "https://automationbysqatools.blogspot.com/2021/05/dummy-website.html"
-firstname = "Ashok"
-lastname = "P"
+firstname = 'Ashok'
+lastname = 'P'
 dob = "05/30/2024"
-additional_passengers = " Add 1 more passenger (100%)  "
+additional_passengers = "Add 1 more passenger (100%)"
 from_city = "Hyderabad"
 destination_city = "Bangalore"
 departure_date = "05/30/2024"
