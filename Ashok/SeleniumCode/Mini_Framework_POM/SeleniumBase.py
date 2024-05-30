@@ -6,9 +6,9 @@ from selenium.webdriver.support import expected_conditions as ec
 
 class SeleniumCode:
     def __init__(self, driver, timeout=20):
-        self.driver1 = driver
+        self.driver = driver
         self.timeout1 = timeout
-        self.wait = WebDriverWait(self.driver1, self.timeout1)
+        self.wait = WebDriverWait(self.driver, self.timeout1)
 
     def get_element(self, locator):
         element = self.wait.until(ec.visibility_of_element_located(locator))
