@@ -1,7 +1,7 @@
 import pytest
 
-from modules.google.google_page_class import GooglePage
-from modules.google.google_test_data import *
+from modules.ui.google.google_page_class import GooglePage
+from modules.ui.google.google_test_data import *
 
 
 @pytest.mark.usefixtures("get_driver")

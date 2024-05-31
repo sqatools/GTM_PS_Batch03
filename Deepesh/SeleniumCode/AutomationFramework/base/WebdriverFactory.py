@@ -4,7 +4,7 @@ class WebdriverFactory:
     def __init__(self, browser):
         self.browser = browser
 
-    def get_driver_instance(self):
+    def get_driver_instance(self, headless=False):
         driver = None
         if self.browser.lower() == 'chrome':
             crm_option = webdriver.ChromeOptions()

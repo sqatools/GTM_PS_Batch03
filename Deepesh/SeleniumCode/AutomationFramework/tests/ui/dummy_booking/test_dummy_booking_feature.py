@@ -1,7 +1,7 @@
 import pytest
 
-from modules.dummy_booking.dummy_booking_page_class import DummyBookingPage
-from modules.dummy_booking.dummy_booking_test_data import *
+from modules.ui.dummy_booking.dummy_booking_page_class import DummyBookingPage
+from modules.ui.dummy_booking.dummy_booking_test_data import *
 
 
 @pytest.mark.usefixtures("get_driver")
