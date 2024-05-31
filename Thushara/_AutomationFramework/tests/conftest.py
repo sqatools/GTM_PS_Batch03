@@ -1,6 +1,5 @@
 
 import pytest
-from selenium import webdriver
 from base.WebdriverFactory import WebdriverFactory
 
 

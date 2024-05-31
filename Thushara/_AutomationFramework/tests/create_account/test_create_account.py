@@ -3,6 +3,7 @@ import random
 from modules.create_account.create_account_page import CreateAccount
 from modules.create_account.create_account_test_data import *
 from tests.conftest import *
+from utilities.random_email import RandomEmail
 
 
 @pytest.mark.usefixtures("set_up_and_tear_down")
@@ -10,20 +11,22 @@ class TestCreateAccount:
     @pytest.fixture(autouse=True)
     def setup(self):
         self.ca = CreateAccount(self.driver)
+        self.re = RandomEmail()
 
-    """
+
     def test_create_account_with_required_fields(self):
+        self.re= RandomEmail()
         self.ca = CreateAccount(self.driver)
         self.ca.click_create_account()
         self.ca.enter_value_to_first_name_field(first_name)
         self.ca.enter_value_to_last_name_field(last_name)
-        self.ca.enter_value_to_email_field(self.random_email())
+        self.ca.enter_value_to_email_field(self.re.random_email())
         self.ca.enter_value_to_password_field(password)
         self.ca.enter_value_to_confirm_password_field(confirm_password)
         self.ca.click_create_account_button()
         element = self.ca.message_displayed()
         assert element.is_displayed()
-    
+    """
     def test_create_account_with_duplicate_email(self):
         self.ca = CreateAccount(self.driver)
         self.ca.click_create_account()
@@ -47,7 +50,7 @@ class TestCreateAccount:
         self.ca.click_create_account_button()
         element = self.ca.confirm_password_error()
         assert element.is_displayed()
-    """
+    
     # @pytest.mark.smoke
     def test_create_account_without_required_fields(self):
         self.ca = CreateAccount(self.driver)
@@ -71,8 +74,6 @@ class TestCreateAccount:
 
 
 
-    def random_email(self):
-        num = random.randint(10, 900)
-        num = str(num)
-        return 'alayalatta' + num + '@gmail.com'
+    
 
+"""

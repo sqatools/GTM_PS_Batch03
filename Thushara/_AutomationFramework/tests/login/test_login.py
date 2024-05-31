@@ -3,6 +3,8 @@ import pytest
 from modules.login.sign_in_page import LoginPage
 from modules.login.login_test_data import *
 from tests.conftest import *
+from utilities.random_email import RandomEmail
+
 
 
 
@@ -13,6 +15,7 @@ class TestLogin:
     @pytest.fixture(autouse=True)
     def setup(self):
         self.lp=LoginPage(self.driver)
+        self.re = RandomEmail()
 
     """
     def test_login_with_valid_credential(self):
@@ -26,9 +29,10 @@ class TestLogin:
         #assert element.text.__contains__(sign_in_displayed_message)
     """
     def test_login_with_invalid_email_valid_password(self):
+        re = RandomEmail()
         lp = LoginPage(self.driver)
         lp.click_sign_in()
-        lp.enter_value_to_email_field(self.random_email())
+        lp.enter_value_to_email_field(self.re.random_email())
         lp.enter_value_to_password_field(valid_password)
         lp.click_sign_in_button()
         element = lp.invalid_email_message()
@@ -56,8 +60,4 @@ class TestLogin:
         element1 = lp.empty_password_field()
         assert element1.is_displayed()
     """
-    def random_email(self):
-        num = random.randint(10,90)
-        num =str(num)
-        return 'thushara'+ num +'@gmail.com'
-    
+
