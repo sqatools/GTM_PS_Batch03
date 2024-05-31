@@ -28,29 +28,37 @@ class CreateAccount(SeleniumBase):
         self.click_element(create_account_submit_button_locator)
 
     def message_displayed(self):
-        self.get_element(success_message_locator)
+        el = self.get_element(success_message_locator)
+        return el
 
     def duplicate_email(self):
-        self.get_element(error_message_duplicate_email_locator)
+        el=self.get_element(error_message_duplicate_email_locator)
+        return el
 
 
     def confirm_password_error(self):
-        self.get_element(error_confirm_password_locator)
+        el = self.get_element(error_confirm_password_locator)
+        return el
 
     def firstname_error(self):
-        self.get_element(firstname_error_locator)
+        el = self.get_element(firstname_error_locator)
+        return el
 
     def lastname_error(self):
-        self.get_element(lastname_error_locator)
+        el = self.get_element(lastname_error_locator)
+        return el
 
     def email_error(self):
-        self.get_element(email_error_locator)
+        el =self.get_element(email_error_locator)
+        return el
 
     def password_error(self):
-        self.get_element(password_error_locator)
+        el = self.get_element(password_error_locator)
+        return el
 
     def confirm_pswd_error(self):
-        self.get_element(confirm_password_error_locator)
+         el = self.get_element(confirm_password_error_locator)
+         return el
 
 
 
