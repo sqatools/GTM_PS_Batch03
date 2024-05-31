@@ -1,8 +1,6 @@
-import random
 import pytest
 from modules.login.sign_in_page import LoginPage
 from modules.login.login_test_data import *
-from tests.conftest import *
 from utilities.random_email import RandomEmail
 
 
