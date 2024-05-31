@@ -9,8 +9,6 @@ class DummyModulePage(SeleniumCode):
     def __init__(self, driver):
         super().__init__(driver=driver)
 
-    def check_radio_button(self):
-        self.click_element(radio_button_locator)
 
     def enter_pd_first_name(self, firstname):
         self.enter_value(firstname, firstname_locator)
@@ -24,8 +22,8 @@ class DummyModulePage(SeleniumCode):
     def choose_pd_gender(self):
         self.click_element(gender_locator)
 
-    def select_number_of_additional_passengers(self, additional_passengers):
-        self.select_dropdown_value(additional_passengers, additional_passengers_locator)
+    def select_number_of_additional_passengers(self):
+        self.click_element(additional_passengers_locator)
 
     def choose_travel_details(self):
         self.click_element(travel_locator)
