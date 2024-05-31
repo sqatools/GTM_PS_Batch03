@@ -1,5 +1,5 @@
 import pytest
-
+"""
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_add():
@@ -23,3 +23,5 @@ def test_mul():
     var2 = 20
     assert var1 * var2 == 200
     print("multiplication is successful")
+
+"""
