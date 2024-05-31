@@ -1,3 +1,4 @@
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -22,28 +23,9 @@ def setup_session():
     yield
     print("\n 1 B session Execution completed \n")
 
-@pytest.fixture(scope='package')
+@pytest.fixture(scope='package', autouse=True)
 def setup_package():
     print(" 2  A package Execution initiated \n")
     yield
     print("\n 2 B package Execution completed \n")
-
-@pytest.fixture(scope="module")
-def get_driver():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get("https://www.google.co.in")
-    driver.implicitly_wait(10)
-    return driver
-
-@pytest.fixture(scope="class")
-def get_selenium_driver(request):
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get("https://www.google.co.in")
-    driver.implicitly_wait(10)
-    request.cls.driver = driver
-
-
-
 
