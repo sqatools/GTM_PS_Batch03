@@ -17,7 +17,6 @@ class TestLogin:
     """
     def test_login_with_valid_credential(self):
         lp = LoginPage(self.driver)
-        sb = SeleniumBase(self.driver)
         lp.click_sign_in()
         lp.enter_value_to_email_field(valid_email)
         lp.enter_value_to_password_field(valid_password)
