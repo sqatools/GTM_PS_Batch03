@@ -3,7 +3,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
+from  selenium import webdriver
+from selenium.webdriver.common.by import By
 
 @pytest.fixture(scope='function', autouse=True)
 def setup():
@@ -28,4 +29,14 @@ def setup_package():
     print(" 2  A package Execution initiated \n")
     yield
     print("\n 2 B package Execution completed \n")
+
+@pytest.fixture(scope='function')
+def get_driver():
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.get("https://www.google.co.in")
+    driver.implicitly_wait(10)
+    return driver
+
+
 
