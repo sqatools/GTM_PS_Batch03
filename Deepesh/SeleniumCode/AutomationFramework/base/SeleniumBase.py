@@ -2,8 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.select import Select
 import logging
-
-log = logging.getLogger(__name__)
+log = logging.getLogger('testLogger')
 
 
 class SeleniumBase:
