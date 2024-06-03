@@ -1,6 +1,8 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.select import Select
+from selenium.webdriver import ActionChains
+
 import logging
 
 log = logging.getLogger(__name__)
@@ -12,6 +14,7 @@ class SeleniumBase:
         self.driver = driver
         self.timeout = timeout
         self.wait = WebDriverWait(self.driver, self.timeout)
+        self.actions = ActionChains(self.driver)
 
     def get_element(self,locator):
         try:
@@ -37,3 +40,13 @@ class SeleniumBase:
 
     def assert_message_displayed(self,locator):
         self.get_element(locator)
+
+    def move_to_third_element(self,l1, l2, l3):
+        self.actions.move_to_element(l1).move_to_element(l2).move_to_element(l3).click().perform()
+
+    """
+    def move_to_third_element(self,l,l1,l2,l3):
+        self.click_element(l)
+        self.actions.move_to_element(l1).move_to_element(l2).move_to_element(l3).click().perform()
+
+    """
