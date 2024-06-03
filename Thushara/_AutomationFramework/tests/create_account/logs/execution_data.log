@@ -5,4 +5,7 @@ INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('css selector', '
 INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('css selector', 'input#password')
 INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('css selector', 'input#password-confirmation')
 INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('css selector', 'button.action.submit.primary')
-INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('css selector', 'div#password-confirmation-error')
+INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('css selector', "div[data-ui-id='message-success']")
+INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('xpath', "//a[@href='https://magento.softwaretestingboard.com/customer/account/create/']")
+INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('xpath', "//a[@href='https://magento.softwaretestingboard.com/customer/account/create/']")
+INFO     base.SeleniumBase:SeleniumBase.py:18 finding element ('xpath', "//a[@href='https://magento.softwaretestingboard.com/customer/account/create/']")

@@ -17,6 +17,10 @@ class LoginPage(SeleniumBase):
     def click_sign_in_button(self,):
         self.click_element(sign_in_button_locator)
 
+    def sign_in_success(self):
+        el = self.get_element(sign_in_success_locator )
+        return el
+
     def invalid_email_message(self):
         element =self.get_element(invalid_email_password_error_message_locator)
         return element

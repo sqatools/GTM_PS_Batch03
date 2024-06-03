@@ -11,7 +11,7 @@ class TestCreateAccount:
         self.ca = CreateAccount(self.driver)
         self.re = RandomEmail()
 
-    """
+
     def test_create_account_with_required_fields(self):
         self.re= RandomEmail()
         self.ca = CreateAccount(self.driver)
@@ -37,7 +37,7 @@ class TestCreateAccount:
         self.ca.click_create_account_button()
         element = self.ca.duplicate_email()
         assert element.is_displayed()
-    """
+
     def test_create_account_with_different_confirmation_password(self):
         self.ca = CreateAccount(self.driver)
         self.ca.click_create_account()
@@ -49,7 +49,7 @@ class TestCreateAccount:
         self.ca.click_create_account_button()
         element = self.ca.confirm_password_error()
         assert element.is_displayed()
-    """
+
     # @pytest.mark.smoke
     def test_create_account_without_required_fields(self):
         self.ca = CreateAccount(self.driver)
@@ -75,4 +75,3 @@ class TestCreateAccount:
 
     
 
-"""
