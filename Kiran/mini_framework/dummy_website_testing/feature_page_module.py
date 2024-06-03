@@ -9,9 +9,10 @@ class DummyModulePage(SeleniumCode):
     def __init__(self, driver):
         super().__init__(driver=driver)
 
-#    def check_radio_button(self):
-#       for ele in radio_button_locator:
-#            self.click_element(ele)
+    def check_radio_button(self):
+      element_list = self.get_element_list(radio_buttons_locator)
+      for element in element_list:
+          element.click()
 
 
     def enter_pd_first_name(self, firstname):
