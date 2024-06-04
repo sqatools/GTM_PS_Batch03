@@ -94,7 +94,7 @@ def patch_method_operation(id):
     print(data)
     assert data['name'] == "Apple MacBook Pro 100"
 
-patch_method_operation("ff8081818fb998eb018fdc425632327d")
+#patch_method_operation("ff8081818fb998eb018fdc425632327d")
 
 def delete_method_operation(id):
     url = f"https://api.restful-api.dev/objects/{id}"
@@ -107,3 +107,27 @@ def delete_method_operation(id):
     print(response.text)
 
 #delete_method_operation("ff8081818fb998eb018fdc425632327d")
+
+
+def get_users():
+
+    url = "https://gorest.co.in/public/v2/users"
+
+    payload = {}
+    headers = {}
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+
+    print(response.text)
+
+
+#get_users()
+
+def get_api_with_auth():
+    url = "https://gorest.co.in/public/v2/users?page=1&per_page=20"
+    access_token = "a6541a8634555f42ce8274740ac1859640bed540ff30a9f96aa90e5513bdfdb7"
+    headers = {'Authorization': f"Bearer {access_token}"}
+    response = requests.request("GET", url, headers=headers)
+    print(response.text)
+
+get_api_with_auth()
