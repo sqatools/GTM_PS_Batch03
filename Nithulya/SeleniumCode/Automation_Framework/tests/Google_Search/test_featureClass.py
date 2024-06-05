@@ -2,7 +2,7 @@ import pytest
 from modules1.searchLogin.pageModuleClass import GoogleSearchP
 from modules1.searchLogin.test_Data import *
 
-@pytest.mark.usefixtures("get_Driver")
+@pytest.mark.usefixtures("get_driver")
 class TestGoogleSearch:
     @pytest.fixture(autouse=True)
     def setup(self):

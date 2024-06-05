@@ -2,7 +2,7 @@ import pytest
 from modules1.Dummy_Booking.dummyPageMClass import DummyBookingPage
 from modules1.Dummy_Booking.test_dummyPageData import *
 
-@pytest.mark.usefixtures("get_Driver")
+@pytest.mark.usefixtures("get_driver")
 class TestDummyBookingWebsite:
 
     @pytest.fixture(autouse=True)
