@@ -1,12 +1,12 @@
 import pytest
-from modules.Dummy_Booking.dummyPageMClass import DummyBookingPage
-from modules.Dummy_Booking.test_dummyPageData import *
+from modules1.Dummy_Booking.dummyPageMClass import DummyBookingPage
+from modules1.Dummy_Booking.test_dummyPageData import *
 
 @pytest.mark.usefixtures("get_Driver")
 class TestDummyBookingWebsite:
 
     @pytest.fixture(autouse=True)
-    def setup(self):
+    def setup(self,):
         self.dp = DummyBookingPage(self.driver)
 
 
