@@ -10,7 +10,7 @@ class TestCreateAccount:
     def setup(self):
         self.ca = CreateAccount(self.driver)
         self.re = RandomEmail()
-    """
+
     def test_create_account_with_required_fields(self):
         self.re = RandomEmail()
         self.ca = CreateAccount(self.driver)
@@ -23,7 +23,7 @@ class TestCreateAccount:
         self.ca.click_create_account_button()
         element = self.ca.message_displayed()
         assert element.is_displayed()
-    """
+
     def test_create_account_with_duplicate_email(self):
         self.ca = CreateAccount(self.driver)
         self.ca.click_create_account()
