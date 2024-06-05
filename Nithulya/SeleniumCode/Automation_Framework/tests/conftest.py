@@ -16,7 +16,7 @@ def configure_logging():
 
 @pytest.fixture(scope="class")
 def get_driver(request, pytestconfig):
-    wf = WebdriverFactory('Chrome')
+    #wf = WebdriverFactory('Chrome')
     browser1 = pytestconfig.getoption("browser")
     headless1 = pytestconfig.getoption("headless")
     wf = WebdriverFactory(browser1)

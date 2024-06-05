@@ -1,5 +1,5 @@
 from base.Base_Google_Search import SeleniumBase1
-from modules.searchLogin.pageLocator import *
+from modules1.searchLogin.pageLocator import *
 
 class GoogleSearchP(SeleniumBase1):
     def __init__(self,driver):

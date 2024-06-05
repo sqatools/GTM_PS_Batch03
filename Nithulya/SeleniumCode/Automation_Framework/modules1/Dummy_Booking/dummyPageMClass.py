@@ -1,6 +1,6 @@
 from base.DummySeleniumBase import SeleniumBase1
-from  modules.Dummy_Booking.dummyPageLocator import *
-from  modules.Dummy_Booking.test_dummyPageData import *
+from  modules1.Dummy_Booking.dummyPageLocator import *
+from  modules1.Dummy_Booking.test_dummyPageData import *
 
 
 class DummyBookingPage(SeleniumBase1):

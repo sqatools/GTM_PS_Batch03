@@ -1,23 +1,22 @@
 import requests
 import json
+
 """
 pip install requests
 """
 def get_method_operation():
 
     url = "https://api.restful-api.dev/objects"
-
     payload = {}
     headers = {}
-
     response = requests.request("GET", url, headers=headers, data=payload)
-
+    # response = requests.get(url, headers=headers, data=payload)
     print(response.status_code)
     print(response.text)
     for data in response.json():
         print(data)
 
-#get_method_operation()
+# get_method_operation()
 
 def post_method_operation():
     url = "https://api.restful-api.dev/objects"
@@ -42,8 +41,7 @@ def post_method_operation():
     print(data)
     assert data['name'] == "Apple MacBook Pro 21" "name is not matching"
 
-
-#post_method_operation()
+# post_method_operation()
 
 
 def put_method_operation(id):
@@ -63,15 +61,13 @@ def put_method_operation(id):
     }
 
     response = requests.request("PUT", url, headers=headers, data=payload)
-    print("response code :", response.status_code)
+    print("Response code :", response.status_code)
     print(response.text)
     data = response.json()
     print(data)
-    assert data['name'] == "Apple MacBook Pro 20"
+    assert data["name"] == "Apple MacBook Pro 20"
 
-
-
-#put_method_operation("ff8081818fb998eb018fdc425632327d")
+# put_method_operation("ff8081818fb998eb018fdc425632327d")
 
 
 def patch_method_operation(id):
@@ -91,7 +87,8 @@ def patch_method_operation(id):
     print(data)
     assert data['name'] == "Apple MacBook Pro 100"
 
-patch_method_operation("ff8081818fb998eb018fdc425632327d")
+# patch_method_operation("ff8081818fb998eb018fdc425632327d")
+
 
 def delete_method_operation(id):
     url = f"https://api.restful-api.dev/objects/{id}"
