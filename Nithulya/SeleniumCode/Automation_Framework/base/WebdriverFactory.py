@@ -19,3 +19,7 @@ class WebdriverFactory:
             driver = webdriver.Edge()
         driver.maximize_window()
         return driver
+'''
+python -m pytest -v --browser=chrome --headless=False .\tests\Google_Search\
+
+'''
