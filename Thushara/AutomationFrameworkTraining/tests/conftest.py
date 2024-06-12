@@ -19,7 +19,10 @@ def get_driver(request, pytestconfig):
     #wf = WebdriverFactory('Chrome')
     browser1 = pytestconfig.getoption("browser")
     headless1 = pytestconfig.getoption("headless")
-    wf = WebdriverFactory(browser1)
+    if browser1:
+        wf = WebdriverFactory(browser1)
+    else:
+        wf = WebdriverFactory()
     if headless1 is not None:
         driver = wf.get_driver_instance(headless1)
     else:
