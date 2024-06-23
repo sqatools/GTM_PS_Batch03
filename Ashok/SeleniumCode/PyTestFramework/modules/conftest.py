@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.fixture(autouse=True, scope="package")                  # decorator
+@pytest.fixture(scope="function", autouse=True)                  # decorator
 def setup():
     print("Launching browser...")  # Executes once before every test method
     yield
