@@ -1,18 +1,18 @@
 """
-Locators:
+SeleniumLocators:
 ---------
 1. We can identify various elements on the webpage using locators.
-2. Locators are addresses that identify a web element uniquely with in the page.
+2. SeleniumLocators are addresses that identify a web element uniquely with in the page.
 
-What are Locators Used For?
+What are SeleniumLocators Used For?
 ---------------------------
-Locators are used to identify and navigate web elements on a webpage. Once an element is found,
-we can perform various actions like clicking, typing, selecting, etc. Locators also verify an element’s
+SeleniumLocators are used to identify and navigate web elements on a webpage. Once an element is found,
+we can perform various actions like clicking, typing, selecting, etc. SeleniumLocators also verify an element’s
 presence, absence, or visibility on a webpage.
 
 Types of locators: There are to types of locators.
 
-a. Locators:
+a. SeleniumLocators:
 ------------
 1. Below are the built-in locators which is directly supported by selenium webdriver
 2. We can access all these locators as a method
