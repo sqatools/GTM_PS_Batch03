@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as ec
 
 
 class SeleniumCode:
+
     def __init__(self, driver, timeout=30):
         self.driver1 = driver
         self.timeout1 = timeout

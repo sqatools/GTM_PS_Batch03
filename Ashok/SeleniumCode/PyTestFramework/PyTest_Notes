@@ -1,0 +1,177 @@
+1. PyTest is a popular testing framework in python. In Java, we use TestNG or JUnit.
+2. Developers will use it for unit testing and Testers use it for Automation testing.
+3. There are certain features in automation..
+
+1) Fixtures
+2) Parallel testing
+3) Skip the tests
+4) Group tests
+5) Batch testing
+6) Parameterization
+7) Reports
+etc...
+
+Pre-requisite: Install pytest package in pycharm
+
+Project-->Test suite--> Test cases--> Test steps
+Project--->Directory-->Modules(.py)-->Class-->Test Methods
+
+Naming Conventions
+-------------
+1) File names should start with test_ or ending with _test , as in test_example.py or example_test.py
+2) Class name should start with “Test”, as in TestExample
+3) Test method names should start with “test”, ex: test_example(), it will not accept ending with _test ex:method_test()
+
+Execution:
+----------
+pytest -v -s day26-pytest\test_1.py
+
+
+Single module
+------------
+pytest -v -s day26-pytest\modules\test_Login.py
+
+All the modules in a directory/package
+----------------------
+pytest -v -s day26-pytest\modules
+
+Run Specific Test Method from a Module
+-----------------------------
+pytest -v -s day26-pytest\modules\test_Login.py::TestLogin::test_LoginByEmail
+
+Run Tess with markers:
+----------------------
+ pytest -vs -m regression .\modules\test_Login.py
+ pytest -vs -m regression
+ pytest -vs -m "smoke or regression"
+
+Fixtures:
+---------
+@pytest.fixture() -> This is a decorator in Python Pytest. In Java, TestNG--> this is annotation.
+
+Example:
+-------
+@pytest.fixture(scope="function", autouse=True)                  # decorator
+def setup():
+    print("Launching browser...")  # Executes once before every test method
+    yield
+    print("closing browser..")     # Executes Once after every test method
+
+yield -> This a keyword to separate the statements before/after execution of test methods.
+In Java, TestNG -> TestSetup and TearDown methods will be used.
+In Python, everything will be written in one method with yield keyword to separate the statements.
+This setup method will be added in separate file i.e, conftest.py file. Pytest will understand the configuration from
+conftest file only.
+
+Fixture scope:
+-----------------
+session scope = session level fixture has wider scope which will initiate with session of automation execution
+package scope = package level fixture will execute for each of the folder which contains module files.
+module scope = module level fixture will execute once for each module file
+class scope = class level fixture will execute for specific class only.
+function scope = function level fixture will execute for each of the test function in the file.
+
+"If we don't provide the scope in fixture(conftest) file, by default it will consider the scope as function."
+
+Skipping:
+---------
+@pytest.mark.skip - Skip is predefined keyword in pytest to skip the methods in execution.
+
+Ordering:
+---------
+In general, the test cases will execute in a sequence but if you want to control the order you need to use ordering
+package by following some steps:
+
+1st way:
+--------
+1.Install pytest-ordering
+2.Create a own markers and add it in .ini file and use them in methods, pytest.ini file contains customized markers.
+3.Use those markers on top of the method.
+
+2nd way:
+--------
+@pytest.mark.run(order=1)   Here, run and order are the keywords in pytest.
+def test_method():
+or
+@pytest.mark.order(numbering)
+def test_method():
+
+Dependant tests:
+----------------
+Install pytest-dependency package.
+
+EX:
+@pytest.mark.dependency(depends=['TestClass::test_openApp'])
+dependency - It is a marker it should be added in .ini file, this will avoid the warnings
+TestClass - class name
+test_openApp  - method name
+
+Grouping:
+---------
+@pytest.mark.sanity
+@pytest.mark.regression
+
+These grouped tests will be managed in run time only.
+
+pytest.ini file   ---> contains customized markers
+Command to execute:
+pytest -v -s -m "sanity" day27\test_Grouping.py
+pytest -v -s -m "sanity and regression" day27\test_Grouping.py
+pytest -v -s -m "sanity or regression" day27\test_Grouping.py
+
+Parallel Execution:
+-------------------
+install package:  pytest-xdist
+
+After installing we need to handle in runtime while specifying the no of.workers (-n=3)
+
+Ex: I have three test methods to execute those methods paralley
+Command to execute:  pytest -v -s -n=3 day27\test_Parallel.py
+
+Parameterization:
+-----------------
+We can execute the test methods multiple times with different sets of data.
+EX:
+@pytest.mark.parametrize('num1,num2',[(1,1),(3,5),(10,10),(5,20)])
+
+Fixtures:
+--------
+what is the fixture method?
+
+1) how we can use fixture method in multiple test methods
+2) how fixture method returns the data
+3) how we use fixture data in test methods..
+4) passing browser name as arguments through command line
+
+pytest -s -v .\day28\test_CommandLine.py --browser chrome
+pytest -s -v .\day28\test_CommandLine.py --browser edge
+
+Imp: below two methods should  be added in conftest file with fixture methods. Below two methods are helpful to read
+the data from command line and passing the value to setup
+
+def pytest_addoption(parser):  # This will get the value from CommandLine
+    parser.addoption("--browser")
+
+
+@pytest.fixture()
+def browser(request):  # This will return the Browser value to setup method
+    _browser = request.config.getoption("--browser")
+    return _browser
+
+
+Reports:
+--------
+pip install pytest-html
+
+command to generate HTML report:
+----------------------------------
+pytest -s -v --html=day28\report.html .\day28\test_CommandLine2.py
+
+
+
+
+
+
+
+
+
