@@ -1,0 +1,37 @@
+2024-06-05 22:34:06 [INFO] (conftest.py:14) Logging is configured.
+2024-06-05 22:34:32 [INFO] (conftest.py:14) Logging is configured.
+2024-06-05 22:35:00 [INFO] (conftest.py:14) Logging is configured.
+2024-06-05 22:35:11 [INFO] (conftest.py:14) Logging is configured.
+2024-06-05 22:35:17 [DEBUG] (dummy_booking_page_class.py:14) Navigating to URL : https://automationbysqatools.blogspot.com/2021/05/dummy-website.html
+2024-06-05 22:35:19 [INFO] (SeleniumBase.py:29) enter value Ashok to element :('id', 'billing_name') 
+2024-06-05 22:35:19 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_name')
+2024-06-05 22:35:19 [CRITICAL] (dummy_booking_page_class.py:19) enter billing name : Ashok
+2024-06-05 22:35:19 [INFO] (SeleniumBase.py:29) enter value 66546456 to element :('id', 'billing_phone') 
+2024-06-05 22:35:19 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_phone')
+2024-06-05 22:35:19 [ERROR] (dummy_booking_page_class.py:23) enter billing phone number : 66546456
+2024-06-05 22:35:19 [INFO] (SeleniumBase.py:29) enter value ashok@gmail.com to element :('id', 'billing_email') 
+2024-06-05 22:35:19 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_email')
+2024-06-05 22:35:19 [WARNING] (dummy_booking_page_class.py:27) enter billing email : ashok@gmail.com
+2024-06-05 22:35:19 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_country')
+2024-06-05 22:35:19 [INFO] (dummy_booking_page_class.py:31) select country name : India
+2024-06-05 22:35:22 [INFO] (SeleniumBase.py:29) enter value Python Selenium to element :('name', 'q') 
+2024-06-05 22:35:22 [INFO] (SeleniumBase.py:16) finding element:('name', 'q')
+2024-06-05 22:35:22 [INFO] (SeleniumBase.py:24) click to element :('name', 'btnK')
+2024-06-05 22:35:22 [INFO] (SeleniumBase.py:16) finding element:('name', 'btnK')
+2024-06-05 22:37:09 [INFO] (conftest.py:14) Logging is configured.
+2024-06-05 22:37:13 [DEBUG] (dummy_booking_page_class.py:14) Navigating to URL : https://automationbysqatools.blogspot.com/2021/05/dummy-website.html
+2024-06-05 22:37:14 [INFO] (SeleniumBase.py:29) enter value Ashok to element :('id', 'billing_name') 
+2024-06-05 22:37:14 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_name')
+2024-06-05 22:37:14 [CRITICAL] (dummy_booking_page_class.py:19) enter billing name : Ashok
+2024-06-05 22:37:14 [INFO] (SeleniumBase.py:29) enter value 66546456 to element :('id', 'billing_phone') 
+2024-06-05 22:37:14 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_phone')
+2024-06-05 22:37:15 [ERROR] (dummy_booking_page_class.py:23) enter billing phone number : 66546456
+2024-06-05 22:37:15 [INFO] (SeleniumBase.py:29) enter value ashok@gmail.com to element :('id', 'billing_email') 
+2024-06-05 22:37:15 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_email')
+2024-06-05 22:37:15 [WARNING] (dummy_booking_page_class.py:27) enter billing email : ashok@gmail.com
+2024-06-05 22:37:15 [INFO] (SeleniumBase.py:16) finding element:('id', 'billing_country')
+2024-06-05 22:37:15 [INFO] (dummy_booking_page_class.py:31) select country name : India
+2024-06-05 22:37:17 [INFO] (SeleniumBase.py:29) enter value Python Selenium to element :('name', 'q') 
+2024-06-05 22:37:17 [INFO] (SeleniumBase.py:16) finding element:('name', 'q')
+2024-06-05 22:37:18 [INFO] (SeleniumBase.py:24) click to element :('name', 'btnK')
+2024-06-05 22:37:18 [INFO] (SeleniumBase.py:16) finding element:('name', 'btnK')

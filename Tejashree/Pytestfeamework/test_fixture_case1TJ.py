@@ -16,6 +16,7 @@ def setup():
     yield
     print("function execution completed")
 
+
 @pytest.fixture(scope='module', autouse=True)
 def setup_module():
     print("module execution initiated")
@@ -34,21 +35,22 @@ def setup_package():
     yield
     print("\n Package Execution completed \n")
 
-def test_addition():
+
+def test_addition(setup):
     var1 = 10
     var2 = 20
     assert var1 + var2 == 30
     print("test addition successful")
 
 
-def test_multiplication():
+def test_multiplication(setup):
     var1 = 10
     var2 = 20
     assert var1 * var2 == 200
     print("test multiplication successful")
 
 
-def test_subtraction():
+def test_subtraction(setup):
     var1 = 10
     var2 = 200
     assert var2 - var1 == 300

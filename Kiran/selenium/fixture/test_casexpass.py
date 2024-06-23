@@ -1,7 +1,7 @@
 import pytest
 
 @pytest.mark.smoke
-
+@pytest.mark.order(3)
 def test_addition_fil2():
     var1 =10
     var2 = 20
@@ -15,6 +15,7 @@ def substraction_fil2():
 
 @pytest.mark.sanity
 @pytest.mark.xfail
+@pytest.mark.order(1)
 def test_substraction_fil2():
     val1 = 30
     val2 = 10
@@ -22,6 +23,7 @@ def test_substraction_fil2():
 
 @pytest.mark.regression
 @pytest.mark.xfail
+@pytest.mark.order(2)
 def test_mul_fil2():
     var1 = 5
     var2 = 4
