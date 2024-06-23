@@ -1,2 +1,0 @@
-Python is one of the most popular programming languages in software development. 
-Python is an interpreted, object-oriented,and high-level programming language with dynamic semantics. 

@@ -1,4 +1,0 @@
-Name: Anu, Phone : 1246457897 , email: anu@gmail.com 
-Name: Ami ,Phone : 3546465465  , email : ami@gmail.com 
-Name: Aarav, Phone : 6575765  , email : arav@gmail.com 
-Name: Lya, Phone : 7675765 , email: lya@gmail.com 
