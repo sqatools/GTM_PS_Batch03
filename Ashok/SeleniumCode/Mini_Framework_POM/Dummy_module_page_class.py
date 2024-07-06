@@ -1,4 +1,4 @@
-from SaleniumBase import SeleniumCode
+from SeleniumBase import SeleniumCode
 from Dummy_locators_page import *
 
 
