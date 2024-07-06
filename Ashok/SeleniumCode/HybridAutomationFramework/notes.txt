@@ -1,0 +1,77 @@
+Automation Framework
+---------------------
+Framework is used for organizing project related files in proper order/structure.
+
+Objectives of framework/Need of framework?
+-> Re-usability
+-> Maintainability
+
+Types of frameworks
+--------------------
+1) Pre-defined frameworks / Ready made --> Unittest, pytest, Behave, Robot framework etc....
+
+2) User defined /Customized frameworks --> Data Driven framework, Keyword driven framework, Modular framework
+	                                       Hybrid driven framework
+
+Steps/Phases
+-------------
+1) Feasibility Analysis/Research
+2) Choose test cases for automation
+3) Design and implement framework
+4) Execution
+5) Maintenance
+
+	P1 - Data driven test cases/ re-test cases
+	P2- Sanity/Regression test cases
+	P3-other test cases
+
+100 tc's  ---90 tc automatable 10 not automatable
+
+Project(Application/Product)
+--------------------------
+Open Cart (e-commerce)
+
+ecommerce
+---------------
+1) Frontend App(users/customers)
+2) Backed  App (admins)
+
+Technologies
+------------
+Frontend: HTML, Bootstrap, PHP
+Backend: MySQL
+Application server: Tomcat
+
+
+Automation Framework implementation
+-----------------------------------
+Step 1: Create new Project & Install Required Packages/plugins
+
+Pytest – Python built-in unit test framework (5.4.3 Preferred)
+selenium  - selenium libraries
+webdriver-manager – for drivers
+pytest-html – reports
+pytest-xdist  - parallel testing
+openpyxl – xl file
+allure-pytest  - report
+
+Create requirements.txt file contains all packages and install it.
+
+Step 2: Create Folder Structure
+
+Step 3: Automating Register account test case
+
+	3.1: Create page object classes for HomePage & AccountRegistration page under "pageObjects"
+
+	3.2: Create conftest.py under "testCases" with driver manager.
+
+	3.3: Create AccountRegistration testcase under "testCases"
+
+	3.4 Write a utility file to generate random string for email.
+
+
+
+
+
+
+
